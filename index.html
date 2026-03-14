@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biology Club – October STEM School</title>
+  <meta name="description" content="Explore life sciences, research, and innovation with the Biology Club of October STEM School" />
+  <meta name="theme-color" content="#358062" />
+  <link rel="icon" type="image/png" href="images/logo-png.png">
+
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/icon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/icon-light-32x32.png" media="(prefers-color-scheme: light)" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/icon-dark-32x32.png" media="(prefers-color-scheme: dark)" />
+  <link rel="apple-touch-icon" href="images/apple-icon.png" />
+
+  <!-- Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<nav id="navbar" class="navbar">
+  <div class="navbar__inner">
+    <div class="navbar__top-row">
+
+      <!-- Logo -->
+      <div class="logoDiv">
+        <a href="index.html" class="navbar__logo" id="navLogo">
+          <img src="images/logo-png.png" alt="Biology Club Logo" class="navbar__logo-img" id="logoImg" />
+        </a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <ul class="navbar__menu" id="desktopMenu">
+        <li><a href="index.html">Home</a></li>
+
+        <!-- About Dropdown -->
+        <li class="navbar__dropdown">
+          <a href="index.html#about" class="navbar__dropdown-toggle">
+            About
+            <svg class="navbar__dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <ul class="navbar__dropdown-menu">
+            <li><a href="vision.html">About us</a></li>
+            <li><a href="partner.html">Partners</a></li>
+          </ul>
+        </li>
+
+        <!-- Programs Dropdown -->
+        <li class="navbar__dropdown">
+          <a href="#programs" class="navbar__dropdown-toggle">
+            Programs
+            <svg class="navbar__dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <ul class="navbar__dropdown-menu">
+            <li><a href="bioleague.html">BioLeague</a></li>
+            <li><a href="magazine.html">Magazine</a></li>
+          </ul>
+        </li>
+
+        <!-- Branches Dropdown -->
+        <li class="navbar__dropdown">
+          <a href="#branches" class="navbar__dropdown-toggle">
+            Branches
+            <svg class="navbar__dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <ul class="navbar__dropdown-menu">
+            <li><a href="#molecular-biology">Molecular Biology</a></li>
+            <li><a href="#cell-biology">Cell Biology</a></li>
+            <li><a href="#genetics">Genetics</a></li>
+            <li><a href="#ecology">Ecology</a></li>
+            <li><a href="#evolutionary-biology">Evolutionary Biology</a></li>
+            <li><a href="#microbiology">Microbiology</a></li>
+            <li><a href="#botany">Botany</a></li>
+            <li><a href="#zoology">Zoology</a></li>
+            <li><a href="#marine-biology">Marine Biology</a></li>
+            <li><a href="#biochemistry">Biochemistry</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Desktop Action Buttons -->
+      <div class="navbar__actions">
+        <!-- Theme Toggle Button (Desktop) -->
+        <button id="themeToggle" class="navbar__btn navbar__btn--theme" aria-label="Toggle dark mode">
+          <svg id="themeIcon" class="navbar__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <span id="themeLabel">Dark</span>
+        </button>
+        <button class="navbar__btn navbar__btn--donate">
+          <svg class="navbar__btn-icon navbar__btn-icon--heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span>Donate</span>
+        </button>
+        <button class="navbar__btn navbar__btn--contact">
+          <svg class="navbar__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>Contact</span>
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+        <svg class="navbar__hamburger-icon navbar__hamburger-icon--menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="navbar__hamburger-icon navbar__hamburger-icon--close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="navbar__mobile-menu" id="mobileMenu">
+      <a href="#home" class="navbar__mobile-link">Home</a>
+
+      <!-- Mobile About Dropdown -->
+      <div class="navbar__mobile-dropdown">
+        <button class="navbar__mobile-dropdown-toggle">
+          About
+          <svg class="navbar__mobile-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="navbar__mobile-dropdown-menu">
+          <a href="#vision" class="navbar__mobile-link navbar__mobile-link--sub">Our Vision</a>
+          <a href="#meet-our-board" class="navbar__mobile-link navbar__mobile-link--sub">Meet Our Board</a>
+          <a href="#partners" class="navbar__mobile-link navbar__mobile-link--sub">Partners</a>
+        </div>
+      </div>
+
+      <!-- Mobile Programs Dropdown -->
+      <div class="navbar__mobile-dropdown">
+        <button class="navbar__mobile-dropdown-toggle">
+          Programs
+          <svg class="navbar__mobile-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="navbar__mobile-dropdown-menu">
+          <a href="#bioleague" class="navbar__mobile-link navbar__mobile-link--sub">BioLeague</a>
+          <a href="#magazine" class="navbar__mobile-link navbar__mobile-link--sub">Magazine</a>
+        </div>
+      </div>
+
+      <!-- Mobile Branches Dropdown -->
+      <div class="navbar__mobile-dropdown">
+        <button class="navbar__mobile-dropdown-toggle">
+          Branches
+          <svg class="navbar__mobile-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="navbar__mobile-dropdown-menu">
+          <a href="#molecular-biology" class="navbar__mobile-link navbar__mobile-link--sub">Molecular Biology</a>
+          <a href="#cell-biology" class="navbar__mobile-link navbar__mobile-link--sub">Cell Biology</a>
+          <a href="#genetics" class="navbar__mobile-link navbar__mobile-link--sub">Genetics</a>
+          <a href="#ecology" class="navbar__mobile-link navbar__mobile-link--sub">Ecology</a>
+          <a href="#evolutionary-biology" class="navbar__mobile-link navbar__mobile-link--sub">Evolutionary Biology</a>
+          <a href="#microbiology" class="navbar__mobile-link navbar__mobile-link--sub">Microbiology</a>
+          <a href="#botany" class="navbar__mobile-link navbar__mobile-link--sub">Botany</a>
+          <a href="#zoology" class="navbar__mobile-link navbar__mobile-link--sub">Zoology</a>
+          <a href="#marine-biology" class="navbar__mobile-link navbar__mobile-link--sub">Marine Biology</a>
+          <a href="#biochemistry" class="navbar__mobile-link navbar__mobile-link--sub">Biochemistry</a>
+        </div>
+      </div>
+
+      <div class="navbar__mobile-actions">
+        <!-- Theme Toggle Button (Mobile) -->
+        <button id="themeToggleMobile" class="navbar__btn navbar__btn--theme navbar__btn--full" aria-label="Toggle dark mode">
+          <svg id="themeIconMobile" class="navbar__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <span id="themeLabelMobile">Switch to Dark Mode</span>
+        </button>
+        <button class="navbar__btn navbar__btn--donate navbar__btn--full">
+          <svg class="navbar__btn-icon navbar__btn-icon--heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Donate
+        </button>
+        <button class="navbar__btn navbar__btn--contact navbar__btn--full">
+          <svg class="navbar__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Contact
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section id="home" class="hero">
+  <canvas id="heroCanvas" class="hero__canvas"></canvas>
+  <div class="hero__content">
+    <h1 class="hero__title">
+      <span class="hero__title-line1" id="typingLine1"></span>
+      <span class="hero__title-line2" id="typingLine2"></span>
+    </h1>
+    <p class="hero__subtitle" id="heroSubtitle">
+      Explore life sciences, research, and innovation with the Biology Club of October STEM School.
+    </p>
+    <div class="hero__buttons" id="heroButtons">
+      <!-- Button linking to join.html -->
+      <a href="join.html" class="hero__btn hero__btn--primary">
+        <span class="hero__btn-overlay"></span>
+        <span class="hero__btn-text">Join the Club</span>
+        <svg class="hero__btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+
+      <!-- Button scrolling to #branches -->
+      <a href="#branches" class="hero__btn hero__btn--secondary">
+        <span class="hero__btn-text">Explore Programs</span>
+        <svg class="hero__btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="hero__scroll-indicator">
+    <span>Scroll to explore</span>
+    <div class="hero__scroll-mouse">
+      <div class="hero__scroll-dot"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATISTICS
+     ============================================================ -->
+<section class="statistics">
+  <div class="statistics__inner">
+    <div class="statistics__header reveal">
+      <h2>Our Community at a Glance</h2>
+      <p>Passionate members, inspiring achievements, and countless opportunities to explore biology together.</p>
+    </div>
+    <div class="statistics__grid">
+      <!-- Users -->
+      <div class="stat-card reveal" data-delay="100">
+        <div class="stat-card__bg"></div>
+        <div class="stat-card__icon-wrap">
+          <div class="stat-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+        </div>
+        <div class="stat-card__body">
+          <div class="stat-card__value"><span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span></div>
+          <p class="stat-card__label">Active Members</p>
+        </div>
+      </div>
+      <!-- BookOpen -->
+      <div class="stat-card reveal" data-delay="200">
+        <div class="stat-card__bg"></div>
+        <div class="stat-card__icon-wrap">
+          <div class="stat-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-1H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-1h7z"/></svg>
+          </div>
+        </div>
+        <div class="stat-card__body">
+          <div class="stat-card__value"><span class="stat-number" data-target="6">0</span><span class="stat-suffix">+</span></div>
+          <p class="stat-card__label">Weekly Sessions</p>
+        </div>
+      </div>
+      <!-- Lightbulb -->
+      <div class="stat-card reveal" data-delay="300">
+        <div class="stat-card__bg"></div>
+        <div class="stat-card__icon-wrap">
+          <div class="stat-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/></svg>
+          </div>
+        </div>
+        <div class="stat-card__body">
+          <div class="stat-card__value"><span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span></div>
+          <p class="stat-card__label">Workshops</p>
+        </div>
+      </div>
+      <!-- Award -->
+      <div class="stat-card reveal" data-delay="400">
+        <div class="stat-card__bg"></div>
+        <div class="stat-card__icon-wrap">
+          <div class="stat-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="m15.477 12.89-1.477 6.11-3.477-2.094L7.046 19l-1.477-6.11z"/></svg>
+          </div>
+        </div>
+        <div class="stat-card__body">
+          <div class="stat-card__value"><span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span></div>
+          <p class="stat-card__label">Expert Mentors</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section id="about" class="about">
+  <div class="about__inner">
+    <div class="about__grid">
+      <!-- Text -->
+      <div class="about__text reveal">
+        <h2>Who We Are</h2>
+        <p class="about__text-lead">The official Biology Club of October STEM School, a student-run organization dedicated to empowering high school students in biological sciences through research programs, competitions, workshops, and publications.</p>
+        <p class="about__text-body">We believe in fostering a collaborative environment where students can explore their passion for biology, conduct meaningful research, and develop critical thinking skills that will serve them throughout their academic and professional journeys.</p>
+        <button class="btn-primary">
+          Learn More
+          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+      <!-- Image -->
+      <div class="about__image-wrap reveal" data-delay="200">
+        <div class="about__image-box">
+          <img src="images/about-hero.jpg" alt="Biology Club students studying in lab" class="about__image" />
+          <div class="about__image-overlay"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROGRAMS
+     ============================================================ -->
+<section id="programs" class="programs">
+  <div class="programs__inner">
+    <div class="programs__header reveal">
+      <h2>Our Programs</h2>
+      <p>Discover diverse opportunities to engage with biology and develop your scientific skills.</p>
+    </div>
+    <div class="programs__grid">
+      <!-- Research Program -->
+      <div class="program-card reveal" data-delay="100" data-color="#358062">
+        <div class="program-card__image-wrap">
+          <img src="images/program-research.jpg" alt="Research Program" class="program-card__image" />
+          <div class="program-card__image-overlay"></div>
+        </div>
+        <div class="program-card__body">
+          <div class="program-card__icon-wrap">
+            <div class="program-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+            </div>
+          </div>
+          <h3>Research Program</h3>
+          <p class="program-card__desc">Conduct meaningful scientific research with expert mentorship</p>
+          <ul class="program-card__features">
+            <li><span class="program-card__dot"></span>Research papers &amp; systematic reviews</li>
+            <li><span class="program-card__dot"></span>Mentorship from experienced researchers</li>
+            <li><span class="program-card__dot"></span>Publishing guidance and support</li>
+            <li><span class="program-card__dot"></span>Access to lab facilities</li>
+          </ul>
+          <button class="program-card__cta">
+            Learn More
+            <svg class="program-card__cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+      <!-- BioLeague Competition -->
+      <div class="program-card reveal" data-delay="200" data-color="#1D5858">
+        <div class="program-card__image-wrap program-card__image-wrap--overflow">
+          <img src="images/program-competition.png" alt="BioLeague Competition" class="program-card__image" />
+          <div class="program-card__image-overlay"></div>
+        </div>
+        <div class="program-card__body">
+          <div class="program-card__icon-wrap">
+            <div class="program-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5C5 4 5 4 5 4"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5C19 4 19 4 19 4"/><path d="M4 22h16"/><path d="M10 22V12"/><path d="M14 22V12"/><path d="M8 12h8"/><circle cx="12" cy="7" r="5"/></svg>
+            </div>
+          </div>
+          <p style="padding-top: 60px" class="program-card__desc">Compete nationally and showcase your biological knowledge</p>
+          <ul class="program-card__features">
+            <li><span class="program-card__dot"></span>Free national biology competition</li>
+            <li><span class="program-card__dot"></span>International recognition opportunities</li>
+            <li><span class="program-card__dot"></span>Valuable prizes and scholarships</li>
+            <li><span class="program-card__dot"></span>Team and individual categories</li>
+          </ul>
+          <button class="program-card__cta">
+            Learn More
+            <svg class="program-card__cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+      <!-- Hands-on Workshops -->
+      <div class="program-card reveal" data-delay="300" data-color="#39B090">
+        <div class="program-card__image-wrap">
+          <img src="images/program-workshops.jpg" alt="Hands-on Workshops" class="program-card__image" />
+          <div class="program-card__image-overlay"></div>
+        </div>
+        <div class="program-card__body">
+          <div class="program-card__icon-wrap">
+            <div class="program-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+          </div>
+          <h3>Hands-on Workshops</h3>
+          <p class="program-card__desc">Interactive lab sessions with practical skills development</p>
+          <ul class="program-card__features">
+            <li><span class="program-card__dot"></span>Interactive biology lab sessions</li>
+            <li><span class="program-card__dot"></span>Practical skills development</li>
+            <li><span class="program-card__dot"></span>Modern laboratory equipment</li>
+            <li><span class="program-card__dot"></span>Expert instructor guidance</li>
+          </ul>
+          <button class="program-card__cta">
+            Learn More
+            <svg class="program-card__cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+      <!-- Computational Biology -->
+      <div class="program-card reveal" data-delay="400" data-color="#2B665A">
+        <div class="program-card__image-wrap">
+          <img src="images/program-computational.jpeg" alt="Computational Biology" class="program-card__image" />
+          <div class="program-card__image-overlay"></div>
+        </div>
+        <div class="program-card__body">
+          <div class="program-card__icon-wrap">
+            <div class="program-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+          </div>
+          <h3>Computational Biology</h3>
+          <p class="program-card__desc">Master programming and data analysis for biological sciences</p>
+          <ul class="program-card__features">
+            <li><span class="program-card__dot"></span>Python programming for biology</li>
+            <li><span class="program-card__dot"></span>Data analysis and visualization</li>
+            <li><span class="program-card__dot"></span>Biology simulations</li>
+            <li><span class="program-card__dot"></span>Coming soon - Advanced modules</li>
+          </ul>
+          <button class="program-card__cta">
+            Learn More
+            <svg class="program-card__cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Did you know?
+     ============================================================ -->
+
+<section id="did-you-know" class="partners facts">
+  <div class="partners__inner">
+    <div class="partners__header reveal">
+      <h2>Did You Know?</h2>
+      <p>Fascinating facts from the world of biology that will surprise you.</p>
+    </div>
+
+    <div class="partners__carousel-wrap">
+      <div class="partners__track" id="factsTrack">
+        <!-- duplicated set for seamless loop -->
+        <div class="partners__item">🧬 Your DNA is about 2 meters long in every cell</div>
+        <div class="partners__item">🧠 The human brain contains around 86 billion neurons</div>
+        <div class="partners__item">🦠 There are more bacteria in your body than human cells</div>
+        <div class="partners__item">🌱 Plants can communicate through chemical signals</div>
+        <div class="partners__item">💓 Your heart beats about 100,000 times every day</div>
+        <div class="partners__item">👁️ The human eye can distinguish over 10 million colors</div>
+        <div class="partners__item">🧫 Some cells can repair themselves</div>
+        <div class="partners__item">🦖 Birds are modern-day dinosaurs</div>
+
+        <!-- duplicated for infinite scroll -->
+        <div class="partners__item">🧬 Your DNA is about 2 meters long in every cell</div>
+        <div class="partners__item">🧠 The human brain contains around 86 billion neurons</div>
+        <div class="partners__item">🦠 There are more bacteria in your body than human cells</div>
+        <div class="partners__item">🌱 Plants can communicate through chemical signals</div>
+        <div class="partners__item">💓 Your heart beats about 100,000 times every day</div>
+        <div class="partners__item">👁️ The human eye can distinguish over 10 million colors</div>
+        <div class="partners__item">🧫 Some cells can repair themselves</div>
+        <div class="partners__item">🦖 Birds are modern-day dinosaurs</div>
+      </div>
+
+      <div class="partners__fade partners__fade--left"></div>
+      <div class="partners__fade partners__fade--right"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BRANCHES
+     ============================================================ -->
+<section id="branches" class="branches">
+  <div class="branches__inner">
+    <div class="branches__header reveal">
+      <h2>Our Specialized Branches</h2>
+      <p>Dive deep into specialized areas of biological science with dedicated branches.</p>
+    </div>
+    <div class="branches__grid">
+      <!-- Biochemistry -->
+      <div class="branch-card reveal" data-delay="0">
+        <img src="images/branch-biochemistry.jpg" alt="Biochemistry &amp; Cell Biology" class="branch-card__image" />
+        <div class="branch-card__overlay"></div>
+        <div class="branch-card__content">
+          <div class="branch-card__top">
+            <span class="branch-card__badge" style="background:linear-gradient(to right,#358062,#39B090)">70 Sessions</span>
+            <h3>Biochemistry &amp; Cell Biology</h3>
+            <p>Explore the molecular mechanisms of life at the cellular level.</p>
+          </div>
+          <div class="branch-card__bottom">
+            <h4>Key Topics:</h4>
+            <div class="branch-card__topics">
+              <span>Proteins</span><span>Enzymes</span><span>Cell Signaling</span><span>Pathways</span>
+            </div>
+            <button class="branch-card__cta">
+              Explore Branch
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Genetics -->
+      <div class="branch-card reveal" data-delay="100">
+        <img src="images/branch-genetics.jpg" alt="Genetics &amp; Evolution" class="branch-card__image" />
+        <div class="branch-card__overlay"></div>
+        <div class="branch-card__content">
+          <div class="branch-card__top">
+            <span class="branch-card__badge" style="background:linear-gradient(to right,#1D5858,#2B665A)">50 Sessions</span>
+            <h3>Genetics &amp; Evolution</h3>
+            <p>Study heredity, genetic variation, and the process of evolution.</p>
+          </div>
+          <div class="branch-card__bottom">
+            <h4>Key Topics:</h4>
+            <div class="branch-card__topics">
+              <span>DNA</span><span>Mutation</span><span>Selection</span><span>Genetics</span>
+            </div>
+            <button class="branch-card__cta">
+              Explore Branch
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Anatomy -->
+      <div class="branch-card reveal" data-delay="200">
+        <img src="images/branch-anatomy.jpg" alt="Anatomy &amp; Physiology" class="branch-card__image" />
+        <div class="branch-card__overlay"></div>
+        <div class="branch-card__content">
+          <div class="branch-card__top">
+            <span class="branch-card__badge" style="background:linear-gradient(to right,#358062,#1D5858)">60 Sessions</span>
+            <h3>Anatomy &amp; Physiology</h3>
+            <p>Understand the structure and function of living organisms.</p>
+          </div>
+          <div class="branch-card__bottom">
+            <h4>Key Topics:</h4>
+            <div class="branch-card__topics">
+              <span>Systems</span><span>Homeostasis</span><span>Control</span><span>Functions</span>
+            </div>
+            <button class="branch-card__cta">
+              Explore Branch
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Ecology -->
+      <div class="branch-card reveal" data-delay="300">
+        <img src="images/branch-ecology.jpg" alt="Ecology &amp; Ethology" class="branch-card__image" />
+        <div class="branch-card__overlay"></div>
+        <div class="branch-card__content">
+          <div class="branch-card__top">
+            <span class="branch-card__badge" style="background:linear-gradient(to right,#39B090,#358062)">50 Sessions</span>
+            <h3>Ecology &amp; Ethology</h3>
+            <p>Investigate ecosystems, biodiversity, and animal behavior.</p>
+          </div>
+          <div class="branch-card__bottom">
+            <h4>Key Topics:</h4>
+            <div class="branch-card__topics">
+              <span>Ecosystems</span><span>Biodiversity</span><span>Biomes</span><span>Behavior</span>
+            </div>
+            <button class="branch-card__cta">
+              Explore Branch
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Pathology -->
+      <div class="branch-card reveal" data-delay="400">
+        <img src="images/branch-pathology.jpg" alt="Pathology &amp; Disease" class="branch-card__image" />
+        <div class="branch-card__overlay"></div>
+        <div class="branch-card__content">
+          <div class="branch-card__top">
+            <span class="branch-card__badge" style="background:linear-gradient(to right,#2B665A,#1D5858)">70 Sessions</span>
+            <h3>Pathology &amp; Disease</h3>
+            <p>Study disease mechanisms and medical research applications.</p>
+          </div>
+          <div class="branch-card__bottom">
+            <h4>Key Topics:</h4>
+            <div class="branch-card__topics">
+              <span>Immunology</span><span>Infection</span><span>Cancer</span><span>Diagnostics</span>
+            </div>
+            <button class="branch-card__cta">
+              Explore Branch
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MAGAZINE
+     ============================================================ -->
+<section id="magazine" class="magazine">
+  <div class="magazine__inner">
+    <div class="magazine__card reveal">
+      <div class="magazine__deco magazine__deco--tr"></div>
+      <div class="magazine__deco magazine__deco--bl"></div>
+      <div class="magazine__content">
+        <div class="magazine__head">
+          <div class="magazine__icon-wrap">
+            <svg class="magazine__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-1H2z"/>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-1h7z"/>
+            </svg>
+          </div>
+          <div>
+            <h2>Biology Club Magazine</h2>
+            <p>Scientific articles written by our talented student researchers, exploring cutting-edge discoveries and innovative research in biological sciences.</p>
+          </div>
+        </div>
+
+        <!-- Read Magazine -->
+        <a href="magazine.html" class="magazine__link">
+          <button class="magazine__btn">
+            Read Magazine
+            <svg class="magazine__btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+        </a>
+
+        <!-- Submit Article -->
+        <a href="submit-article.html" class="magazine__link">
+          <button class="magazine__btn">
+            Submit article
+            <svg class="magazine__btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Partners
+     ============================================================ -->
+     
+<!--
+     <section id="partners" class="partners">
+  <div class="partners__inner">
+    <div class="partners__header reveal">
+      <h2>Our Partners</h2>
+      <p>The principles that guide our journey in science, research, and teamwork.</p>
+    </div>
+
+    <div class="partners__carousel-wrap">
+      <div class="partners__track" id="partnersTrack">
+        <div class="partners__item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo">
+        </div>
+        <div class="partners__item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
+        </div>
+        <div class="partners__item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube Logo">
+        </div>
+        <div class="partners__item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Coursera_logo_2017.svg" alt="Coursera Logo">
+        </div>
+
+        <div class="partners__item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo">
+        </div>
+        <div class="partners__item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
+        </div>
+        <div class="partners__item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube Logo">
+        </div>
+        <div class="partners__item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Coursera_logo_2017.svg" alt="Coursera Logo">
+        </div>
+      </div>
+
+      <div class="partners__fade partners__fade--left"></div>
+      <div class="partners__fade partners__fade--right"></div>
+    </div>
+  </div>
+</section>
+
+-->
+
+<!-- ==================== CONTACT ==================== -->
+<section id="contact" class="contact" data-contact-section>
+  <div class="contact-inner">
+    
+    <!-- Header -->
+    <div class="contact-header">
+      <span class="contact-badge">Get In Touch</span>
+      <h2 class="contact-title">Let's Explore Biology Together</h2>
+      <p class="contact-subtitle">
+        Ready to join our community of passionate biology enthusiasts? Let's discuss how you can get involved 
+        in our programs, research opportunities, and workshops.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="contact-grid">
+      
+      <!-- Left Side -->
+      <div class="contact-left">
+        
+        <!-- Contact Information -->
+        <div class="contact-info-block">
+          <h3 class="contact-section-title">Contact Information</h3>
+          <div class="contact-info-row">
+            <svg class="contact-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            <span>info@biologyclub.com</span>
+          </div>
+          <div class="contact-info-row">
+            <svg class="contact-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>+20 123 456 7890</span>
+          </div>
+          <div class="contact-info-row">
+            <svg class="contact-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>STEM October School, 6th of October City, Giza, Egypt</span>
+          </div>
+        </div>
+
+        <!-- Programs Offered -->
+        <div class="contact-programs-block">
+          <h3 class="contact-section-title">Programs Offered</h3>
+          <div class="contact-services-grid">
+            <span class="contact-service-badge">Research Program</span>
+            <span class="contact-service-badge">BioLeague Competition</span>
+            <span class="contact-service-badge">Lab Workshops</span>
+            <span class="contact-service-badge">Computational Biology</span>
+            <span class="contact-service-badge">Scientific Publications</span>
+            <span class="contact-service-badge">Branch Sessions</span>
+            <span class="contact-service-badge">Mentorship Program</span>
+            <span class="contact-service-badge">Student Research</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side - Form Card -->
+      <div class="contact-card">
+        <h3 class="contact-card-title">Send a Message</h3>
+        <form class="contact-form" id="contactForm">
+          <div class="contact-form-double">
+            <input type="text" name="firstName" placeholder="First Name" required>
+            <input type="text" name="lastName" placeholder="Last Name" required>
+          </div>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="text" name="subject" placeholder="Subject" required>
+          <textarea name="message" placeholder="Tell us about your interest in biology and how we can help..." rows="5" required></textarea>
+          <button type="submit" class="contact-submit-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+            Send Message
+          </button>
+        </form>
+        <div class="contact-status" id="contactStatus"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <!-- Brand row -->
+    <div class="footer__brand-row">
+      <div class="footer__brand">
+        <img src="images/logo-png.png" alt="Biology Club Logo" class="footer__logo" />
+        <div>
+          <h3>Biology Club</h3>
+          <p>Empowering high school students in biological sciences through research programs, competitions, workshops, and innovative education.</p>
+        </div>
+      </div>
+      <div class="footer__contacts">
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#39B090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:info@biologyclub.com">info@biologyclub.com</a>
+        </div>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#39B090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>STEM October School, 6th of October City, Giza, Egypt</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Four-column links -->
+    <div class="footer__links-grid">
+      <div class="footer__col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="#programs">Research Program</a></li>
+          <li><a href="#programs">BioLeague Competition</a></li>
+          <li><a href="#programs">Hands-on Workshops</a></li>
+          <li><a href="#programs">Computational Biology</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Branches</h4>
+        <ul>
+          <li><a href="#branches">Biochemistry &amp; Cell</a></li>
+          <li><a href="#branches">Genetics &amp; Evolution</a></li>
+          <li><a href="#branches">Anatomy &amp; Physiology</a></li>
+          <li><a href="#branches">Pathology &amp; Disease</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Research Guide</a></li>
+          <li><a href="#">Publications</a></li>
+          <li><a href="#">Magazine</a></li>
+          <li><a href="#">Guidelines</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#meet-our-board">Board</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__divider"></div>
+
+    <!-- Bottom row -->
+    <div class="footer__bottom">
+      <p class="footer__copyright">© 2025 Biology Club – October STEM School. &nbsp; All rights reserved to <a href="https://abdelrahman-website-sigma.vercel.app">Abdelrahman Mohamed</a></p>
+      <div class="footer__socials">
+        <a href="#" class="footer__social footer__social--fb" title="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" class="footer__social footer__social--ig" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="mailto:info@biologyclub.com" class="footer__social footer__social--mail" title="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="script.js"></script>
+<script src="themeToggle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("wRQ3dH4Dlkh4GPO5p");
+  })();
+</script>
+
+</body>
+</html>

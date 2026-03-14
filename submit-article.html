@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Your Article – Biology Club Magazine | October STEM School</title>
+  <meta name="description" content="Submit your scientific article to the Biology Club Magazine. Share your research, reviews, and discoveries with the October STEM School community." />
+  <meta name="theme-color" content="#358062" />
+  <link rel="icon" type="image/png" href="images/logo-png.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ============================================================
+       SUBMIT ARTICLE PAGE – PAGE-SPECIFIC STYLES
+       ============================================================ */
+
+    /* ---- Hero -------------------------------------------------- */
+    .sub-hero {
+      position: relative;
+      min-height: 62vh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0a0e27 0%, #0f1f18 55%, #0a1a12 100%);
+    }
+    .sub-hero__bg { position: absolute; inset: 0; overflow: hidden; }
+    .sub-hero__orb {
+      position: absolute; border-radius: 50%;
+      filter: blur(90px);
+      animation: orbFloat 9s ease-in-out infinite;
+    }
+    .sub-hero__orb--1 {
+      width: 46rem; height: 46rem;
+      background: radial-gradient(circle, rgba(53,128,98,0.22) 0%, transparent 70%);
+      top: -14rem; left: -12rem;
+    }
+    .sub-hero__orb--2 {
+      width: 28rem; height: 28rem;
+      background: radial-gradient(circle, rgba(57,176,144,0.12) 0%, transparent 70%);
+      bottom: -8rem; right: -6rem; animation-delay: 4s;
+    }
+    .sub-hero__orb--3 {
+      width: 18rem; height: 18rem;
+      background: radial-gradient(circle, rgba(29,88,88,0.18) 0%, transparent 70%);
+      top: 30%; left: 58%; animation-delay: 7s;
+    }
+    @keyframes orbFloat {
+      0%,100% { transform: translateY(0) scale(1); }
+      50%      { transform: translateY(-18px) scale(1.04); }
+    }
+    .sub-hero__grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(57,176,144,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57,176,144,0.035) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .sub-hero__content {
+      position: relative; z-index: 10;
+      text-align: center; max-width: 54rem;
+      padding: 0 1.5rem; margin-top: -2rem;
+    }
+    .sub-hero__eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(57,176,144,0.12); border: 1px solid rgba(57,176,144,0.3);
+      color: #39B090; padding: 0.4rem 1.1rem; border-radius: 999px;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.09em;
+      text-transform: uppercase; margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s ease 0.1s both;
+    }
+    .sub-hero__eyebrow svg { width: 0.85rem; height: 0.85rem; }
+    .sub-hero__title {
+      font-size: 3.25rem; font-weight: 700; color: #fff;
+      line-height: 1.08; letter-spacing: -3px; margin-bottom: 1.25rem;
+      animation: fadeUp 0.8s ease 0.25s both;
+    }
+    @media (min-width:640px)  { .sub-hero__title { font-size: 4.5rem; } }
+    @media (min-width:1024px) { .sub-hero__title { font-size: 5rem; } }
+    .sub-hero__title span {
+      background: linear-gradient(to right, #39B090, #4DAF82);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .sub-hero__subtitle {
+      font-size: 1.05rem; color: rgba(255,255,255,0.62);
+      max-width: 36rem; margin: 0 auto;
+      line-height: 1.75; letter-spacing: -0.3px;
+      animation: fadeUp 0.8s ease 0.4s both;
+    }
+    @media (min-width:640px) { .sub-hero__subtitle { font-size: 1.15rem; } }
+    .breadcrumb {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.78rem; color: rgba(255,255,255,0.4); white-space: nowrap;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .breadcrumb a:hover { color: #39B090; }
+    .breadcrumb svg { width: 0.7rem; height: 0.7rem; }
+
+    /* ---- Process steps strip ---------------------------------- */
+    .sub-process {
+      background: linear-gradient(135deg, #358062, #1D5858);
+      padding: 2.5rem 1.5rem;
+    }
+    .sub-process__inner {
+      max-width: 80rem; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem;
+    }
+    @media (min-width:768px) { .sub-process__inner { grid-template-columns: repeat(4,1fr); } }
+    .sub-process__step { display: flex; align-items: flex-start; gap: 0.85rem; }
+    .sub-process__num {
+      flex-shrink: 0; width: 2rem; height: 2rem; border-radius: 50%;
+      background: rgba(255,255,255,0.2); color: #fff;
+      font-size: 0.75rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .sub-process__text h4 { font-size: 0.875rem; font-weight: 700; color: #fff; margin-bottom: 0.2rem; }
+    .sub-process__text p  { font-size: 0.78rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
+
+    /* ---- Main layout ------------------------------------------ */
+    .sub-main {
+      padding: 5rem 1.5rem 7rem;
+      background: linear-gradient(135deg, var(--bg-soft,#f9fafb), var(--bg,#fff));
+    }
+    .sub-main__inner {
+      max-width: 80rem; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: start;
+    }
+    @media (min-width:1024px) { .sub-main__inner { grid-template-columns: 1fr 1.7fr; gap: 5rem; } }
+
+    /* ---- Left sidebar ----------------------------------------- */
+    .sub-sidebar__badge {
+      display: inline-block; background: rgba(53,128,98,0.1); color: #358062;
+      padding: 0.3rem 0.9rem; border-radius: 999px; font-size: 0.78rem;
+      font-weight: 600; border: 1px solid rgba(53,128,98,0.2); margin-bottom: 1rem;
+    }
+    .sub-sidebar h2 {
+      font-size: 2rem; font-weight: 700; color: var(--text,#111827);
+      letter-spacing: -2px; margin-bottom: 0.85rem; line-height: 1.2;
+    }
+    @media (min-width:640px) { .sub-sidebar h2 { font-size: 2.4rem; } }
+    .sub-sidebar__lead {
+      font-size: 0.975rem; color: var(--text-muted,#4b5563); line-height: 1.75; margin-bottom: 2rem;
+    }
+    .types-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-bottom: 1.5rem;
+    }
+    .type-chip {
+      background: var(--bg-card,#fff); border: 1.5px solid var(--border-soft,#f3f4f6);
+      border-radius: 0.65rem; padding: 0.85rem 0.9rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .type-chip:hover { border-color: rgba(53,128,98,0.3); background: rgba(53,128,98,0.04); }
+    .type-chip__icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 1.8rem; height: 1.8rem; border-radius: 0.45rem; margin-bottom: 0.5rem;
+    }
+    .type-chip__icon svg { width: 0.9rem; height: 0.9rem; }
+    .type-chip h5 { font-size: 0.8rem; font-weight: 700; color: var(--text,#111827); margin-bottom: 0.15rem; }
+    .type-chip p  { font-size: 0.72rem; color: var(--text-faint,#6b7280); line-height: 1.4; }
+    .guide-card {
+      background: var(--bg-card,#fff); border: 1px solid var(--border-soft,#f3f4f6);
+      border-radius: 1.25rem; padding: 1.75rem; margin-bottom: 1.5rem;
+      box-shadow: 0 4px 20px -4px rgba(0,0,0,0.05);
+    }
+    .guide-card__title {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.95rem; font-weight: 700; color: var(--text,#111827); margin-bottom: 1.25rem;
+    }
+    .guide-card__title svg { width: 1rem; height: 1rem; color: #358062; flex-shrink: 0; }
+    .guide-list { display: flex; flex-direction: column; gap: 0.7rem; }
+    .guide-list__item {
+      display: flex; align-items: flex-start; gap: 0.65rem;
+      font-size: 0.875rem; color: var(--text-muted,#4b5563); line-height: 1.55;
+    }
+    .guide-list__dot {
+      flex-shrink: 0; width: 1.25rem; height: 1.25rem; border-radius: 50%;
+      background: linear-gradient(135deg, #358062, #39B090);
+      display: flex; align-items: center; justify-content: center; margin-top: 0.1rem;
+    }
+    .guide-list__dot svg { width: 0.55rem; height: 0.55rem; color: #fff; stroke-width: 3.5; }
+    .sub-note {
+      background: linear-gradient(135deg, #0a0e27, #0f1f18);
+      border-radius: 1rem; padding: 1.4rem 1.6rem;
+    }
+    .sub-note p { font-size: 0.875rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin: 0; }
+    .sub-note strong { color: #39B090; }
+
+    /* ---- Form card -------------------------------------------- */
+    .sub-form-card {
+      background: var(--bg-card,#fff); border: 1px solid var(--border,#e5e7eb);
+      border-radius: 1.5rem; padding: 2.5rem;
+      box-shadow: 0 20px 60px -12px rgba(0,0,0,0.08);
+      position: relative; overflow: hidden;
+    }
+    @media (min-width:640px) { .sub-form-card { padding: 3rem; } }
+    .sub-form-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(to right, #358062, #39B090, #4DAF82);
+      border-radius: 1.5rem 1.5rem 0 0;
+    }
+
+    /* Progress stepper */
+    .sub-progress { display: flex; align-items: flex-start; gap: 0; margin-bottom: 2.5rem; }
+    .sub-progress__step {
+      flex: 1; display: flex; flex-direction: column; align-items: center;
+      gap: 0.4rem; position: relative;
+    }
+    .sub-progress__step:not(:last-child)::after {
+      content: ''; position: absolute; top: 1rem; left: 50%; right: -50%;
+      height: 2px; z-index: 0;
+      background: var(--border,#e5e7eb); transition: background 0.4s;
+    }
+    .sub-progress__step.completed:not(:last-child)::after { background: #39B090; }
+    .sub-progress__dot {
+      width: 2rem; height: 2rem; border-radius: 50%;
+      border: 2px solid var(--border,#e5e7eb); background: var(--bg-card,#fff);
+      position: relative; z-index: 1;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 700; color: var(--text-faint,#9ca3af);
+      transition: all 0.35s ease;
+    }
+    .sub-progress__step.active .sub-progress__dot {
+      border-color: #39B090; background: #39B090; color: #fff;
+      box-shadow: 0 0 0 4px rgba(57,176,144,0.2);
+    }
+    .sub-progress__step.completed .sub-progress__dot {
+      border-color: #358062; background: #358062; color: #fff;
+    }
+    .sub-progress__label {
+      font-size: 0.68rem; font-weight: 600;
+      color: var(--text-faint,#9ca3af); text-align: center;
+      transition: color 0.3s; white-space: nowrap;
+    }
+    .sub-progress__step.active .sub-progress__label,
+    .sub-progress__step.completed .sub-progress__label { color: #358062; }
+
+    .sub-form-card__title {
+      font-size: 1.5rem; font-weight: 700; color: var(--text,#111827);
+      letter-spacing: -1px; margin-bottom: 0.35rem;
+    }
+    .sub-form-card__sub { font-size: 0.875rem; color: var(--text-muted,#6b7280); margin-bottom: 2rem; }
+
+    /* Step panels */
+    .sub-step { display: none; }
+    .sub-step.active { display: block; animation: fadeUp 0.35s ease both; }
+
+    /* Field system */
+    .field-group { display: flex; flex-direction: column; gap: 1.25rem; }
+    .field-row   { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    @media (min-width:500px) { .field-row { grid-template-columns: 1fr 1fr; } }
+    .field { display: flex; flex-direction: column; gap: 0.35rem; }
+    .field label {
+      font-size: 0.82rem; font-weight: 600; color: var(--text,#374151); letter-spacing: -0.2px;
+    }
+    .field label .req { color: #dc2626; margin-left: 2px; }
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%; padding: 0.75rem 1rem;
+      border-radius: 0.6rem; border: 1.5px solid var(--border,#e5e7eb);
+      font-size: 0.9rem; color: var(--text,#111827);
+      background: var(--bg-input,#f9fafb);
+      font-family: inherit; outline: none; resize: vertical;
+      transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: #39B090;
+      box-shadow: 0 0 0 4px rgba(57,176,144,0.15);
+      background: var(--bg-card,#fff);
+    }
+    .field input::placeholder, .field textarea::placeholder { color: var(--text-faint,#9ca3af); font-size: 0.875rem; }
+    .field select { appearance: none; cursor: pointer; }
+    .field__select-wrap { position: relative; }
+    .field__select-wrap::after {
+      content: ''; position: absolute; right: 1rem; top: 50%; transform: translateY(-50%);
+      border: 5px solid transparent; border-top: 6px solid var(--text-faint,#6b7280); pointer-events: none;
+    }
+    .field textarea { min-height: 120px; }
+    .field__hint  { font-size: 0.78rem; color: var(--text-faint,#6b7280); margin-top: 0.2rem; line-height: 1.5; }
+    .field__counter { font-size: 0.75rem; color: var(--text-faint,#9ca3af); text-align: right; margin-top: 0.2rem; }
+
+    /* Co-authors */
+    .coauthors-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .coauthor-row { display: flex; gap: 0.65rem; align-items: flex-end; }
+    .coauthor-row .field { flex: 1; }
+    .coauthor-remove {
+      flex-shrink: 0; width: 2.4rem; height: 2.4rem; border-radius: 0.5rem;
+      background: rgba(220,38,38,0.08); color: #dc2626;
+      border: 1.5px solid rgba(220,38,38,0.15);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all 0.2s; margin-bottom: 1px;
+    }
+    .coauthor-remove:hover { background: #dc2626; color: #fff; border-color: #dc2626; }
+    .coauthor-remove svg { width: 0.9rem; height: 0.9rem; }
+    .add-coauthor-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.55rem 1rem; border-radius: 0.55rem;
+      background: rgba(53,128,98,0.08); color: #358062;
+      border: 1.5px dashed rgba(53,128,98,0.3);
+      font-size: 0.82rem; font-weight: 600; font-family: inherit;
+      cursor: pointer; transition: all 0.2s; width: fit-content;
+    }
+    .add-coauthor-btn:hover { background: rgba(53,128,98,0.14); border-color: #358062; }
+    .add-coauthor-btn svg { width: 0.85rem; height: 0.85rem; }
+
+    /* File upload */
+    .upload-zone {
+      border: 2px dashed var(--border,#e5e7eb); border-radius: 0.75rem;
+      padding: 2rem 1.5rem; text-align: center;
+      cursor: pointer; transition: all 0.3s;
+      background: var(--bg-input,#f9fafb); position: relative;
+    }
+    .upload-zone:hover, .upload-zone.drag-over { border-color: #39B090; background: rgba(57,176,144,0.06); }
+    .upload-zone input[type="file"] {
+      position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+    }
+    .upload-zone__icon {
+      width: 2.5rem; height: 2.5rem; border-radius: 50%;
+      background: rgba(53,128,98,0.1); color: #358062;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem;
+    }
+    .upload-zone__icon svg { width: 1.2rem; height: 1.2rem; }
+    .upload-zone__title { font-size: 0.9rem; font-weight: 600; color: var(--text,#111827); margin-bottom: 0.25rem; }
+    .upload-zone__sub   { font-size: 0.8rem; color: var(--text-faint,#6b7280); }
+    .upload-zone__sub span { color: #358062; font-weight: 600; }
+    .upload-zone__file-name { margin-top: 0.75rem; font-size: 0.82rem; font-weight: 600; color: #358062; display: none; }
+
+    /* Keywords */
+    .keyword-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.5rem; }
+    .keyword-chip {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      padding: 0.28rem 0.7rem; border-radius: 999px;
+      background: rgba(53,128,98,0.1); color: #358062;
+      border: 1px solid rgba(53,128,98,0.25);
+      font-size: 0.78rem; font-weight: 600;
+    }
+    .keyword-chip__remove { cursor: pointer; opacity: 0.6; transition: opacity 0.2s; display: flex; align-items: center; }
+    .keyword-chip__remove:hover { opacity: 1; }
+    .keyword-chip__remove svg { width: 0.75rem; height: 0.75rem; }
+
+    /* Declarations */
+    .declaration-list { display: flex; flex-direction: column; gap: 0.85rem; }
+    .declaration-item {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      padding: 0.85rem 1rem; border-radius: 0.65rem;
+      border: 1.5px solid var(--border-soft,#f3f4f6);
+      cursor: pointer; transition: border-color 0.2s, background 0.2s; user-select: none;
+    }
+    .declaration-item:hover { border-color: rgba(53,128,98,0.25); background: rgba(53,128,98,0.03); }
+    .declaration-item.checked { border-color: rgba(53,128,98,0.35); background: rgba(53,128,98,0.06); }
+    .declaration-item input[type="checkbox"] { display: none; }
+    .declaration-item__box {
+      flex-shrink: 0; width: 1.1rem; height: 1.1rem; border-radius: 3px;
+      border: 1.5px solid var(--border,#d1d5db); background: var(--bg-card,#fff);
+      position: relative; margin-top: 0.1rem; transition: all 0.2s;
+    }
+    .declaration-item__box::after {
+      content: ''; position: absolute; top: 1px; left: 3px;
+      width: 5px; height: 7px;
+      border-right: 2px solid #fff; border-bottom: 2px solid #fff;
+      transform: rotate(45deg); opacity: 0; transition: opacity 0.15s;
+    }
+    .declaration-item.checked .declaration-item__box { background: #39B090; border-color: #39B090; }
+    .declaration-item.checked .declaration-item__box::after { opacity: 1; }
+    .declaration-item__text { font-size: 0.875rem; color: var(--text-muted,#4b5563); line-height: 1.6; }
+    .declaration-item__text strong { color: var(--text,#111827); }
+
+    /* Nav buttons */
+    .form-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; gap: 0.75rem; }
+    .form-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.82rem 1.65rem; border-radius: 0.65rem;
+      font-size: 0.925rem; font-weight: 600; border: none;
+      cursor: pointer; font-family: inherit; transition: all 0.3s;
+    }
+    .form-btn svg { width: 1rem; height: 1rem; flex-shrink: 0; }
+    .form-btn--next, .form-btn--submit {
+      background: linear-gradient(135deg, #358062, #1D5858); color: #fff; flex: 1; justify-content: center;
+    }
+    .form-btn--next:hover, .form-btn--submit:hover { box-shadow: 0 10px 24px rgba(53,128,98,0.35); transform: translateY(-2px); }
+    .form-btn--submit { background: linear-gradient(135deg, #39B090, #1D5858); }
+    .form-btn--back { background: var(--hover-bg,#f3f4f6); color: var(--text-muted,#374151); flex-shrink: 0; }
+    .form-btn--back:hover { background: var(--border,#e5e7eb); }
+    .form-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
+
+    /* Success screen */
+    .sub-success { display: none; text-align: center; padding: 1.5rem 0 0.5rem; animation: fadeUp 0.5s ease both; }
+    .sub-success.active { display: block; }
+    .sub-success__icon {
+      width: 5rem; height: 5rem; border-radius: 50%;
+      background: linear-gradient(135deg, #358062, #39B090);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 12px 32px rgba(53,128,98,0.4);
+      animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.1s both;
+    }
+    .sub-success__icon svg { width: 2.5rem; height: 2.5rem; color: #fff; }
+    .sub-success h3 { font-size: 1.75rem; font-weight: 700; color: var(--text,#111827); letter-spacing: -1px; margin-bottom: 0.75rem; }
+    .sub-success p  { font-size: 0.95rem; color: var(--text-muted,#4b5563); line-height: 1.7; max-width: 30rem; margin: 0 auto 1.25rem; }
+    .sub-success__ref {
+      display: inline-block; background: rgba(53,128,98,0.1); color: #358062;
+      border: 1px solid rgba(53,128,98,0.25); padding: 0.45rem 1.2rem; border-radius: 999px;
+      font-size: 0.82rem; font-weight: 600; margin-bottom: 2rem;
+    }
+    .sub-success__steps { display: flex; flex-direction: column; gap: 0.65rem; text-align: left; max-width: 28rem; margin: 0 auto 2rem; }
+    .sub-success__step {
+      display: flex; align-items: center; gap: 0.7rem;
+      padding: 0.7rem 1rem; border-radius: 0.6rem;
+      background: var(--bg-soft,#f9fafb); border: 1px solid var(--border-soft,#f3f4f6);
+      font-size: 0.875rem; color: var(--text-muted,#4b5563);
+    }
+    .sub-success__step-num {
+      width: 1.5rem; height: 1.5rem; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, #358062, #39B090);
+      color: #fff; font-size: 0.65rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .sub-success__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .success-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.78rem 1.5rem; border-radius: 0.65rem;
+      font-size: 0.9rem; font-weight: 600; font-family: inherit;
+      cursor: pointer; border: none; transition: all 0.3s; text-decoration: none;
+    }
+    .success-btn svg { width: 1rem; height: 1rem; }
+    .success-btn--home { background: linear-gradient(135deg, #358062, #1D5858); color: #fff; }
+    .success-btn--home:hover { box-shadow: 0 8px 20px rgba(53,128,98,0.35); transform: translateY(-2px); }
+    .success-btn--mag  { background: var(--hover-bg,#f3f4f6); color: var(--text-muted,#374151); }
+    .success-btn--mag:hover { background: var(--border,#e5e7eb); }
+
+    /* Toast */
+    .sub-toast {
+      position: fixed; bottom: 1.5rem; left: 50%;
+      transform: translateX(-50%) translateY(5rem);
+      background: #dc2626; color: #fff;
+      padding: 0.85rem 1.5rem; border-radius: 0.75rem;
+      font-size: 0.875rem; font-weight: 500;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+      z-index: 9999; opacity: 0; pointer-events: none;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      max-width: 90vw; text-align: center;
+    }
+    .sub-toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes popIn  { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    @keyframes spin   { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<nav id="navbar" class="navbar">
+  <div class="navbar__inner">
+    <div class="navbar__top-row">
+
+      <!-- Logo -->
+      <div class="logoDiv">
+        <a href="index.html" class="navbar__logo" id="navLogo">
+          <img src="images/logo-png.png" alt="Biology Club Logo" class="navbar__logo-img" id="logoImg" />
+        </a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <ul class="navbar__menu" id="desktopMenu">
+        <li><a href="index.html">Home</a></li>
+
+        <!-- About Dropdown -->
+        <li class="navbar__dropdown">
+          <a href="index.html#about" class="navbar__dropdown-toggle">
+            About
+            <svg class="navbar__dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <ul class="navbar__dropdown-menu">
+            <li><a href="vision.html">About us</a></li>
+            <li><a href="partner.html">Partners</a></li>
+          </ul>
+        </li>
+
+        <!-- Programs Dropdown -->
+        <li class="navbar__dropdown">
+          <a href="#programs" class="navbar__dropdown-toggle">
+            Programs
+            <svg class="navbar__dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <ul class="navbar__dropdown-menu">
+            <li><a href="bioleague.html">BioLeague</a></li>
+            <li><a href="magazine.html">Magazine</a></li>
+          </ul>
+        </li>
+
+        <!-- Branches Dropdown -->
+        <li class="navbar__dropdown">
+          <a href="#branches" class="navbar__dropdown-toggle">
+            Branches
+            <svg class="navbar__dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <ul class="navbar__dropdown-menu">
+            <li><a href="#molecular-biology">Molecular Biology</a></li>
+            <li><a href="#cell-biology">Cell Biology</a></li>
+            <li><a href="#genetics">Genetics</a></li>
+            <li><a href="#ecology">Ecology</a></li>
+            <li><a href="#evolutionary-biology">Evolutionary Biology</a></li>
+            <li><a href="#microbiology">Microbiology</a></li>
+            <li><a href="#botany">Botany</a></li>
+            <li><a href="#zoology">Zoology</a></li>
+            <li><a href="#marine-biology">Marine Biology</a></li>
+            <li><a href="#biochemistry">Biochemistry</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Desktop Action Buttons -->
+      <div class="navbar__actions">
+        <!-- Theme Toggle Button (Desktop) -->
+        <button id="themeToggle" class="navbar__btn navbar__btn--theme" aria-label="Toggle dark mode">
+          <svg id="themeIcon" class="navbar__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <span id="themeLabel">Dark</span>
+        </button>
+        <button class="navbar__btn navbar__btn--donate">
+          <svg class="navbar__btn-icon navbar__btn-icon--heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span>Donate</span>
+        </button>
+        <button class="navbar__btn navbar__btn--contact">
+          <svg class="navbar__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>Contact</span>
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+        <svg class="navbar__hamburger-icon navbar__hamburger-icon--menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="navbar__hamburger-icon navbar__hamburger-icon--close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="navbar__mobile-menu" id="mobileMenu">
+      <a href="#home" class="navbar__mobile-link">Home</a>
+
+      <!-- Mobile About Dropdown -->
+      <div class="navbar__mobile-dropdown">
+        <button class="navbar__mobile-dropdown-toggle">
+          About
+          <svg class="navbar__mobile-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="navbar__mobile-dropdown-menu">
+          <a href="#vision" class="navbar__mobile-link navbar__mobile-link--sub">Our Vision</a>
+          <a href="#meet-our-board" class="navbar__mobile-link navbar__mobile-link--sub">Meet Our Board</a>
+          <a href="#partners" class="navbar__mobile-link navbar__mobile-link--sub">Partners</a>
+        </div>
+      </div>
+
+      <!-- Mobile Programs Dropdown -->
+      <div class="navbar__mobile-dropdown">
+        <button class="navbar__mobile-dropdown-toggle">
+          Programs
+          <svg class="navbar__mobile-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="navbar__mobile-dropdown-menu">
+          <a href="#bioleague" class="navbar__mobile-link navbar__mobile-link--sub">BioLeague</a>
+          <a href="#magazine" class="navbar__mobile-link navbar__mobile-link--sub">Magazine</a>
+        </div>
+      </div>
+
+      <!-- Mobile Branches Dropdown -->
+      <div class="navbar__mobile-dropdown">
+        <button class="navbar__mobile-dropdown-toggle">
+          Branches
+          <svg class="navbar__mobile-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="navbar__mobile-dropdown-menu">
+          <a href="#molecular-biology" class="navbar__mobile-link navbar__mobile-link--sub">Molecular Biology</a>
+          <a href="#cell-biology" class="navbar__mobile-link navbar__mobile-link--sub">Cell Biology</a>
+          <a href="#genetics" class="navbar__mobile-link navbar__mobile-link--sub">Genetics</a>
+          <a href="#ecology" class="navbar__mobile-link navbar__mobile-link--sub">Ecology</a>
+          <a href="#evolutionary-biology" class="navbar__mobile-link navbar__mobile-link--sub">Evolutionary Biology</a>
+          <a href="#microbiology" class="navbar__mobile-link navbar__mobile-link--sub">Microbiology</a>
+          <a href="#botany" class="navbar__mobile-link navbar__mobile-link--sub">Botany</a>
+          <a href="#zoology" class="navbar__mobile-link navbar__mobile-link--sub">Zoology</a>
+          <a href="#marine-biology" class="navbar__mobile-link navbar__mobile-link--sub">Marine Biology</a>
+          <a href="#biochemistry" class="navbar__mobile-link navbar__mobile-link--sub">Biochemistry</a>
+        </div>
+      </div>
+
+      <div class="navbar__mobile-actions">
+        <!-- Theme Toggle Button (Mobile) -->
+        <button id="themeToggleMobile" class="navbar__btn navbar__btn--theme navbar__btn--full" aria-label="Toggle dark mode">
+          <svg id="themeIconMobile" class="navbar__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <span id="themeLabelMobile">Switch to Dark Mode</span>
+        </button>
+        <button class="navbar__btn navbar__btn--donate navbar__btn--full">
+          <svg class="navbar__btn-icon navbar__btn-icon--heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Donate
+        </button>
+        <button class="navbar__btn navbar__btn--contact navbar__btn--full">
+          <svg class="navbar__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Contact
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="sub-hero">
+  <div class="sub-hero__bg">
+    <div class="sub-hero__orb sub-hero__orb--1"></div>
+    <div class="sub-hero__orb sub-hero__orb--2"></div>
+    <div class="sub-hero__orb sub-hero__orb--3"></div>
+  </div>
+  <div class="sub-hero__grid"></div>
+  <div class="sub-hero__content">
+    <div class="sub-hero__eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      Open Submissions · 2025
+    </div>
+    <h1 class="sub-hero__title">Submit Your <span>Article</span></h1>
+    <p class="sub-hero__subtitle">
+      Share your research, reviews, and discoveries with the Biology Club community. All members are welcome to contribute to our peer-reviewed magazine.
+    </p>
+  </div>
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="magazine.html">Magazine</a>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    <span>Submit Article</span>
+  </div>
+</section>
+
+<!-- PROCESS STRIP -->
+<div class="sub-process">
+  <div class="sub-process__inner">
+    <div class="sub-process__step">
+      <div class="sub-process__num">01</div>
+      <div class="sub-process__text"><h4>Fill the Form</h4><p>Complete all sections with your article details and upload your manuscript.</p></div>
+    </div>
+    <div class="sub-process__step">
+      <div class="sub-process__num">02</div>
+      <div class="sub-process__text"><h4>Peer Review</h4><p>Your article is reviewed by fellow members within 5–7 business days.</p></div>
+    </div>
+    <div class="sub-process__step">
+      <div class="sub-process__num">03</div>
+      <div class="sub-process__text"><h4>Feedback</h4><p>You'll receive editorial feedback and revision requests if needed.</p></div>
+    </div>
+    <div class="sub-process__step">
+      <div class="sub-process__num">04</div>
+      <div class="sub-process__text"><h4>Published!</h4><p>Accepted articles appear in the next issue of the Biology Club Magazine.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<section class="sub-main">
+  <div class="sub-main__inner">
+
+    <!-- LEFT SIDEBAR -->
+    <div class="sub-sidebar reveal">
+      <span class="sub-sidebar__badge">Open to All Members</span>
+      <h2>Share Your Science with the World</h2>
+      <p class="sub-sidebar__lead">Whether it's a research paper, a review article, or a compelling scientific opinion — we want to read it. The Biology Club Magazine is your platform.</p>
+
+      <div class="types-grid">
+        <div class="type-chip">
+          <div class="type-chip__icon" style="background:rgba(53,128,98,0.1);color:#358062;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+          </div>
+          <h5>Original Research</h5><p>Experiments, data, and findings</p>
+        </div>
+        <div class="type-chip">
+          <div class="type-chip__icon" style="background:rgba(29,88,88,0.1);color:#1D5858;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-1H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-1h7z"/></svg>
+          </div>
+          <h5>Review Article</h5><p>Systematic literature review</p>
+        </div>
+        <div class="type-chip">
+          <div class="type-chip__icon" style="background:rgba(57,176,144,0.1);color:#39B090;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h5>Opinion Piece</h5><p>Perspective on a bio topic</p>
+        </div>
+        <div class="type-chip">
+          <div class="type-chip__icon" style="background:rgba(43,102,90,0.1);color:#2B665A;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/></svg>
+          </div>
+          <h5>Lab Report</h5><p>Experiment documentation</p>
+        </div>
+      </div>
+
+      <div class="guide-card reveal" data-delay="100">
+        <div class="guide-card__title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          Submission Guidelines
+        </div>
+        <div class="guide-list">
+          <div class="guide-list__item"><div class="guide-list__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>500 – 2,000 words per article</span></div>
+          <div class="guide-list__item"><div class="guide-list__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>Original, unpublished work only</span></div>
+          <div class="guide-list__item"><div class="guide-list__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>Cite all sources in APA or Vancouver style</span></div>
+          <div class="guide-list__item"><div class="guide-list__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>Upload as .docx or Google Doc link</span></div>
+          <div class="guide-list__item"><div class="guide-list__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>Peer review takes 5 – 7 business days</span></div>
+          <div class="guide-list__item"><div class="guide-list__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>Open to all active Biology Club members</span></div>
+          <div class="guide-list__item"><div class="guide-list__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>Include an abstract of 80 – 150 words</span></div>
+        </div>
+      </div>
+
+      <div class="sub-note">
+        <p><strong>Questions about your submission?</strong><br>Contact our editorial team at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1974787e786370777c59767a6d767b7c6b6a6d7c7874377c7d6c377c7e">[email&#160;protected]</a></strong> or reach the Research &amp; Publications Director directly.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT: FORM CARD -->
+    <div class="sub-form-card reveal" data-delay="150">
+
+      <!-- Stepper -->
+      <div class="sub-progress" id="subProgress">
+        <div class="sub-progress__step active" data-step="1">
+          <div class="sub-progress__dot">1</div>
+          <span class="sub-progress__label">Author</span>
+        </div>
+        <div class="sub-progress__step" data-step="2">
+          <div class="sub-progress__dot">2</div>
+          <span class="sub-progress__label">Article</span>
+        </div>
+        <div class="sub-progress__step" data-step="3">
+          <div class="sub-progress__dot">3</div>
+          <span class="sub-progress__label">Upload</span>
+        </div>
+        <div class="sub-progress__step" data-step="4">
+          <div class="sub-progress__dot">4</div>
+          <span class="sub-progress__label">Declare</span>
+        </div>
+      </div>
+
+      <h3 class="sub-form-card__title" id="formTitle">Author Information</h3>
+      <p class="sub-form-card__sub" id="formSub">Tell us about yourself — step 1 of 4</p>
+
+      <!-- STEP 1 -->
+      <div class="sub-step active" id="step1">
+        <div class="field-group">
+          <div class="field-row">
+            <div class="field">
+              <label>First Name <span class="req">*</span></label>
+              <input type="text" id="firstName" placeholder="e.g. Ahmed" autocomplete="given-name" />
+            </div>
+            <div class="field">
+              <label>Last Name <span class="req">*</span></label>
+              <input type="text" id="lastName" placeholder="e.g. Hassan" autocomplete="family-name" />
+            </div>
+          </div>
+          <div class="field">
+            <label>Email Address <span class="req">*</span></label>
+            <input type="email" id="email" placeholder="your@email.com" autocomplete="email" />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>Grade / Year <span class="req">*</span></label>
+              <div class="field__select-wrap">
+                <select id="grade">
+                  <option value="">Select grade</option>
+                  <option value="grade-9">Grade 9 (Prep 3)</option>
+                  <option value="grade-10">Grade 10 (Year 1)</option>
+                  <option value="grade-11">Grade 11 (Year 2)</option>
+                  <option value="grade-12">Grade 12 (Year 3)</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label>Biology Branch <span class="req">*</span></label>
+              <div class="field__select-wrap">
+                <select id="branch">
+                  <option value="">Select branch</option>
+                  <option value="Molecular Biology">Molecular Biology</option>
+                  <option value="Cell Biology">Cell Biology</option>
+                  <option value="Genetics">Genetics</option>
+                  <option value="Ecology">Ecology</option>
+                  <option value="Evolutionary Biology">Evolutionary Biology</option>
+                  <option value="Microbiology">Microbiology</option>
+                  <option value="Botany">Botany</option>
+                  <option value="Zoology">Zoology</option>
+                  <option value="Marine Biology">Marine Biology</option>
+                  <option value="Biochemistry">Biochemistry</option>
+                  <option value="Other">Other / Cross-disciplinary</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label>Co-Authors <span style="font-weight:400;color:var(--text-faint,#9ca3af);">(optional)</span></label>
+            <p class="field__hint">Add any other members who contributed to this article.</p>
+            <div class="coauthors-list" id="coauthorsList"></div>
+            <button class="add-coauthor-btn" id="addCoauthorBtn" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Add Co-Author
+            </button>
+          </div>
+        </div>
+        <div class="form-nav">
+          <button class="form-btn form-btn--next" id="nextBtn1">
+            Next: Article Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="sub-step" id="step2">
+        <div class="field-group">
+          <div class="field">
+            <label>Article Title <span class="req">*</span></label>
+            <input type="text" id="title" placeholder="e.g. CRISPR-Cas9 and the Future of Gene Editing in Human Disease" />
+          </div>
+          <div class="field">
+            <label>Article Type <span class="req">*</span></label>
+            <div class="field__select-wrap">
+              <select id="articleType">
+                <option value="">Select type</option>
+                <option value="original-research">Original Research</option>
+                <option value="review">Review Article / Systematic Review</option>
+                <option value="opinion">Opinion / Perspective Piece</option>
+                <option value="lab-report">Lab Report</option>
+                <option value="case-study">Case Study</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>Abstract <span class="req">*</span></label>
+            <textarea id="abstract" placeholder="Summarise your article in 80–150 words. Include the background, main findings, and conclusion..." style="min-height:130px;"></textarea>
+            <div class="field__counter" id="abstractCounter">0 / 150 words</div>
+          </div>
+          <div class="field">
+            <label>Keywords <span class="req">*</span></label>
+            <p class="field__hint">Type a keyword and press Enter or comma to add it. Minimum 3 keywords.</p>
+            <input type="text" id="keywordInput" placeholder="e.g. CRISPR, gene therapy, genetics..." />
+            <div class="keyword-chips" id="keywordChips"></div>
+            <input type="hidden" id="keywordsHidden" />
+          </div>
+          <div class="field">
+            <label>Target Issue</label>
+            <div class="field__select-wrap">
+              <select id="targetIssue">
+                <option value="next">Next available issue</option>
+                <option value="issue-4-2025">Issue 04 · Late 2025</option>
+                <option value="issue-1-2026">Issue 01 · 2026</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>Cover Letter <span style="font-weight:400;color:var(--text-faint,#9ca3af);">(optional)</span></label>
+            <textarea id="coverLetter" placeholder="Briefly tell the editorial team why this article should be published and any relevant context about the research..." style="min-height:90px;"></textarea>
+          </div>
+        </div>
+        <div class="form-nav">
+          <button class="form-btn form-btn--back" id="backBtn2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back
+          </button>
+          <button class="form-btn form-btn--next" id="nextBtn2">
+            Next: Upload
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="sub-step" id="step3">
+        <div class="field-group">
+          <div class="field">
+            <label>Manuscript File <span class="req">*</span></label>
+            <p class="field__hint">Upload your article as a .docx or .pdf file. Max 10 MB. Your file will be securely stored and visible to editors.</p>
+            <div class="upload-zone" id="manuscriptZone">
+              <input type="file" id="manuscriptFile" accept=".docx,.doc,.pdf" />
+              <div class="upload-zone__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="12" y2="12"/><line x1="15" y1="15" x2="12" y2="12"/></svg>
+              </div>
+              <div class="upload-zone__title">Click to upload or drag and drop</div>
+              <div class="upload-zone__sub">Supported: <span>.docx, .doc, .pdf</span> · Max 10 MB</div>
+              <div class="upload-zone__file-name" id="manuscriptFileName"></div>
+            </div>
+          </div>
+          <div class="field">
+            <label>Or Paste a Google Doc Link</label>
+            <input type="url" id="gdocLink" placeholder="https://docs.google.com/document/d/..." />
+            <p class="field__hint">Make sure sharing is set to "Anyone with the link can view" before submitting.</p>
+          </div>
+          <div class="field">
+            <label>Supporting Figures / Images <span style="font-weight:400;color:var(--text-faint,#9ca3af);">(optional)</span></label>
+            <div class="upload-zone" id="figuresZone">
+              <input type="file" id="figuresFiles" accept=".png,.jpg,.jpeg,.pdf" multiple />
+              <div class="upload-zone__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              </div>
+              <div class="upload-zone__title">Upload figures (optional)</div>
+              <div class="upload-zone__sub">Supported: <span>.png, .jpg, .pdf</span> · Multiple files OK</div>
+              <div class="upload-zone__file-name" id="figuresFileName"></div>
+            </div>
+          </div>
+          <div class="field">
+            <label>References / Bibliography <span class="req">*</span></label>
+            <textarea id="references" placeholder="Paste your full reference list here (APA or Vancouver format)...&#10;&#10;e.g. Doudna, J. A., &amp; Charpentier, E. (2012). A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity. Science, 337(6096), 816–821." style="min-height:140px;font-size:0.83rem;line-height:1.6;"></textarea>
+          </div>
+          <div class="field">
+            <label>Word Count <span class="req">*</span></label>
+            <input type="number" id="wordCount" placeholder="e.g. 1250" min="300" max="3000" />
+            <p class="field__hint">Total words in manuscript, excluding references and captions. Must be 500–2,000 words.</p>
+          </div>
+        </div>
+        <div class="form-nav">
+          <button class="form-btn form-btn--back" id="backBtn3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back
+          </button>
+          <button class="form-btn form-btn--next" id="nextBtn3">
+            Next: Declaration
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="sub-step" id="step4">
+        <div class="field-group">
+          <p style="font-size:0.9rem;color:var(--text-muted,#4b5563);line-height:1.7;margin-bottom:0.25rem;">Please read and confirm each declaration. All boxes must be checked to submit.</p>
+          <div class="declaration-list" id="declarationList">
+            <div class="declaration-item" data-id="original">
+              <input type="checkbox" /><div class="declaration-item__box"></div>
+              <div class="declaration-item__text"><strong>Original Work:</strong> This article is my own original work and has not been published elsewhere, nor is it currently under review by another publication.</div>
+            </div>
+            <div class="declaration-item" data-id="accurate">
+              <input type="checkbox" /><div class="declaration-item__box"></div>
+              <div class="declaration-item__text"><strong>Accuracy:</strong> All facts, data, and citations in this article are accurate and properly sourced to the best of my knowledge.</div>
+            </div>
+            <div class="declaration-item" data-id="plagiarism">
+              <input type="checkbox" /><div class="declaration-item__box"></div>
+              <div class="declaration-item__text"><strong>No Plagiarism:</strong> I have not copied text, figures, or data from other sources without proper attribution and citation.</div>
+            </div>
+            <div class="declaration-item" data-id="rights">
+              <input type="checkbox" /><div class="declaration-item__box"></div>
+              <div class="declaration-item__text"><strong>Publication Rights:</strong> I grant the Biology Club Magazine the right to publish, edit, and distribute this article in print and digital formats.</div>
+            </div>
+            <div class="declaration-item" data-id="member">
+              <input type="checkbox" /><div class="declaration-item__box"></div>
+              <div class="declaration-item__text"><strong>Membership:</strong> I confirm that I am an active member of the Biology Club of October STEM School.</div>
+            </div>
+          </div>
+          <div class="field" style="margin-top:0.5rem;">
+            <label>Additional Notes to Editors <span style="font-weight:400;color:var(--text-faint,#9ca3af);">(optional)</span></label>
+            <textarea id="editorNotes" placeholder="Any special instructions, context, or requests for the editorial team..." style="min-height:80px;"></textarea>
+          </div>
+        </div>
+        <div class="form-nav">
+          <button class="form-btn form-btn--back" id="backBtn4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back
+          </button>
+          <button class="form-btn form-btn--submit" id="submitBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Submit Article
+          </button>
+        </div>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="sub-success" id="subSuccess">
+        <div class="sub-success__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>Article Submitted! 🎉</h3>
+        <p>Your article has been received by the Biology Club editorial team. We'll review it and get back to you within 5–7 business days.</p>
+        <div class="sub-success__ref" id="successRef">Submission #MAG-2025-XXXXXX</div>
+        <div class="sub-success__steps">
+          <div class="sub-success__step"><div class="sub-success__step-num">1</div>Watch your email for a confirmation from our editorial team.</div>
+          <div class="sub-success__step"><div class="sub-success__step-num">2</div>Peer review takes 5–7 business days. You may receive revision requests.</div>
+          <div class="sub-success__step"><div class="sub-success__step-num">3</div>Accepted articles will be included in the next magazine issue.</div>
+        </div>
+        <div class="sub-success__actions">
+          <a href="magazine.html" class="success-btn success-btn--home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-1H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-1h7z"/></svg>
+            Back to Magazine
+          </a>
+          <button class="success-btn success-btn--mag" id="resetBtn">Submit Another</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand-row">
+      <div class="footer__brand">
+        <img src="images/logo-png.png" alt="Biology Club Logo" class="footer__logo" />
+        <div>
+          <h3>Biology Club</h3>
+          <p>Empowering high school students in biological sciences through research programs, competitions, workshops, and innovative education.</p>
+        </div>
+      </div>
+      <div class="footer__contacts">
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#39B090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="/cdn-cgi/l/email-protection#fe9c9791929199879d928b9cbe919d8a919c9b8c8d8a9b9f93d09b9a8bd09b99"><span class="__cf_email__" data-cfemail="43212a2c2f2c243a202f3621032c20372c212631303726222e6d2627366d2624">[email&#160;protected]</span></a>
+        </div>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#39B090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>STEM October School, 6th of October City, Giza, Egypt</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__links-grid">
+      <div class="footer__col"><h4>Magazine</h4><ul><li><a href="magazine.html#latest-issue">Latest Issue</a></li><li><a href="magazine.html#all-issues">All Issues</a></li><li><a href="magazine.html#articles">Articles</a></li><li><a href="submit-article.html">Submit Article</a></li></ul></div>
+      <div class="footer__col"><h4>Programs</h4><ul><li><a href="index.html#programs">Research Program</a></li><li><a href="index.html#bioleague">BioLeague</a></li><li><a href="index.html#programs">Workshops</a></li></ul></div>
+      <div class="footer__col"><h4>Resources</h4><ul><li><a href="#">Citation Guide</a></li><li><a href="vision.html">Our Vision</a></li><li><a href="join.html">Join the Club</a></li></ul></div>
+      <div class="footer__col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="index.html#meet-our-board">Board</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+    </div>
+    <div class="footer__divider"></div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">© 2025 Biology Club – October STEM School. All rights reserved.</p>
+      <div class="footer__socials">
+        <a href="#" class="footer__social footer__social--fb" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" class="footer__social footer__social--ig" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="#" class="footer__social footer__social--mail" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="sub-toast" id="subToast"></div>
+
+<!-- Firebase compat SDK (works without a local server / file://) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-storage-compat.js"></script>
+
+<script src="script.js"></script>
+<script>
+  /* ---- Firebase init --------------------------------------- */
+  const firebaseConfig = {
+    apiKey:            "AIzaSyCpRpeTi467dWB6dRInIPdAS6c5v0R2qs0",
+    authDomain:        "octbioclub-7abib.firebaseapp.com",
+    projectId:         "octbioclub-7abib",
+    storageBucket:     "octbioclub-7abib.firebasestorage.app",
+    messagingSenderId: "930548525478",
+    appId:             "1:930548525478:web:6ca448018d8a3a7d598767"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+  const storage = firebase.storage();
+
+  /* ---- Helpers --------------------------------------------- */
+  const $ = id => document.getElementById(id);
+  const toast = msg => {
+    const t = $('subToast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 4000);
+  };
+
+  let current = 1;
+  const TITLES = ['Author Information','Article Details','Upload Manuscript','Declaration'];
+  const SUBS   = ['Tell us about yourself — step 1 of 4','Describe your article — step 2 of 4','Upload your files — step 3 of 4','Read and confirm — step 4 of 4'];
+
+  function goTo(n) {
+    $(`step${current}`).classList.remove('active');
+    document.querySelectorAll('.sub-progress__step').forEach((el, i) => {
+      el.classList.remove('active','completed');
+      if (i + 1 < n)  el.classList.add('completed');
+      if (i + 1 === n) el.classList.add('active');
+    });
+    current = n;
+    $(`step${n}`).classList.add('active');
+    $('formTitle').textContent = TITLES[n - 1];
+    $('formSub').textContent   = SUBS[n - 1];
+    document.querySelector('.sub-form-card').scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+
+  function validate(step) {
+    if (step === 1) {
+      if (!$('firstName').value.trim())  { toast('Please enter your first name.');       return false; }
+      if (!$('lastName').value.trim())   { toast('Please enter your last name.');        return false; }
+      const e = $('email').value.trim();
+      if (!e || !e.includes('@'))        { toast('Please enter a valid email address.'); return false; }
+      if (!$('grade').value)             { toast('Please select your grade/year.');      return false; }
+      if (!$('branch').value)            { toast('Please select a biology branch.');     return false; }
+    }
+    if (step === 2) {
+      if (!$('title').value.trim())      { toast('Please enter your article title.');    return false; }
+      if (!$('articleType').value)       { toast('Please select the article type.');     return false; }
+      if (!$('abstract').value.trim())   { toast('Please write an abstract.');           return false; }
+      const words = $('abstract').value.trim().split(/\s+/).filter(Boolean).length;
+      if (words < 30)                    { toast('Abstract must be at least 30 words.'); return false; }
+      if (document.querySelectorAll('.keyword-chip').length < 3) { toast('Please add at least 3 keywords.'); return false; }
+    }
+    if (step === 3) {
+      const hasFile = $('manuscriptFile').files.length > 0;
+      const hasGdoc = $('gdocLink').value.trim().length > 0;
+      if (!hasFile && !hasGdoc) { toast('Please upload a manuscript file or paste a Google Doc link.'); return false; }
+      if (!$('references').value.trim()) { toast('Please include your references/bibliography.'); return false; }
+      const wc = parseInt($('wordCount').value, 10);
+      if (!wc || wc < 300)               { toast('Please enter a valid word count (min 300).'); return false; }
+    }
+    if (step === 4) {
+      for (const item of document.querySelectorAll('.declaration-item')) {
+        if (!item.classList.contains('checked')) { toast('Please confirm all declarations before submitting.'); return false; }
+      }
+    }
+    return true;
+  }
+
+  $('nextBtn1').addEventListener('click', () => { if (validate(1)) goTo(2); });
+  $('backBtn2').addEventListener('click', () => goTo(1));
+  $('nextBtn2').addEventListener('click', () => { if (validate(2)) goTo(3); });
+  $('backBtn3').addEventListener('click', () => goTo(2));
+  $('nextBtn3').addEventListener('click', () => { if (validate(3)) goTo(4); });
+  $('backBtn4').addEventListener('click', () => goTo(3));
+
+  /* Co-authors */
+  $('addCoauthorBtn').addEventListener('click', () => {
+    const row = document.createElement('div');
+    row.className = 'coauthor-row';
+    row.innerHTML = `
+      <div class="field"><input type="text" placeholder="Full name" /></div>
+      <div class="field"><input type="email" placeholder="Email (optional)" /></div>
+      <button class="coauthor-remove" type="button" title="Remove">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>`;
+    row.querySelector('.coauthor-remove').addEventListener('click', () => row.remove());
+    $('coauthorsList').appendChild(row);
+    row.querySelector('input').focus();
+  });
+
+  /* Keywords */
+  const keywordInput = $('keywordInput');
+  function addKeyword(val) {
+    val = val.trim().replace(/,+$/, '').trim();
+    if (!val) return;
+    if (document.querySelectorAll('.keyword-chip').length >= 10) { toast('Max 10 keywords.'); return; }
+    const chip = document.createElement('span');
+    chip.className = 'keyword-chip';
+    chip.innerHTML = `${val}<span class="keyword-chip__remove"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>`;
+    chip.querySelector('.keyword-chip__remove').addEventListener('click', () => { chip.remove(); updateKW(); });
+    $('keywordChips').appendChild(chip);
+    keywordInput.value = '';
+    updateKW();
+  }
+  function updateKW() {
+    $('keywordsHidden').value = [...document.querySelectorAll('.keyword-chip')].map(c => c.childNodes[0].textContent).join(', ');
+  }
+  keywordInput.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ',') { e.preventDefault(); addKeyword(keywordInput.value); } });
+  keywordInput.addEventListener('blur', () => { if (keywordInput.value.trim()) addKeyword(keywordInput.value); });
+
+  /* Abstract counter */
+  $('abstract').addEventListener('input', function() {
+    const w = this.value.trim().split(/\s+/).filter(Boolean).length;
+    const c = $('abstractCounter');
+    c.textContent = `${w} / 150 words`;
+    c.style.color = (w < 30 || w > 150) ? '#dc2626' : '#358062';
+  });
+
+  /* File display */
+  $('manuscriptFile').addEventListener('change', function() {
+    const el = $('manuscriptFileName');
+    if (this.files.length) { el.textContent = '📄 ' + this.files[0].name; el.style.display = 'block'; }
+  });
+  $('figuresFiles').addEventListener('change', function() {
+    const el = $('figuresFileName');
+    if (this.files.length) { el.textContent = `🖼 ${this.files.length} file(s) selected`; el.style.display = 'block'; }
+  });
+
+  /* Drag styling */
+  ['manuscriptZone','figuresZone'].forEach(id => {
+    const z = $(id);
+    z.addEventListener('dragover', e => { e.preventDefault(); z.classList.add('drag-over'); });
+    z.addEventListener('dragleave', () => z.classList.remove('drag-over'));
+    z.addEventListener('drop', () => z.classList.remove('drag-over'));
+  });
+
+  /* Declarations */
+  document.querySelectorAll('.declaration-item').forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('checked');
+      item.querySelector('input').checked = item.classList.contains('checked');
+    });
+  });
+
+  /* Submit → Firebase magazine collection */
+  $('submitBtn').addEventListener('click', async () => {
+    if (!validate(4)) return;
+
+    const btn = $('submitBtn');
+    btn.disabled = true;
+    btn.innerHTML = `<svg style="animation:spin .8s linear infinite;width:1rem;height:1rem;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Submitting…`;
+
+    /* Collect all co-author names */
+    const coauthors = [...document.querySelectorAll('.coauthor-row')].map(row => {
+      const inputs = row.querySelectorAll('input');
+      return { name: inputs[0].value.trim(), email: inputs[1].value.trim() };
+    }).filter(a => a.name);
+
+    /* Collect all keywords */
+    const keywords = [...document.querySelectorAll('.keyword-chip')]
+      .map(c => c.childNodes[0].textContent.trim());
+
+    /* ── Upload files to Firebase Storage ────────────── */
+    const uploadFile = async (file, path) => {
+      const ref = storage.ref(path);
+      const snap = await ref.put(file);
+      return await snap.ref.getDownloadURL();
+    };
+
+    let manuscriptURL = '';
+    let manuscriptName = '';
+    let figureURLs = [];
+    let figureNames = [];
+
+    btn.innerHTML = `<svg style="animation:spin .8s linear infinite;width:1rem;height:1rem;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Uploading files…`;
+
+    const year     = new Date().getFullYear();
+    const safeName = ($('firstName').value.trim() + '_' + $('lastName').value.trim()).replace(/\s+/g,'_');
+
+    try {
+      /* Upload manuscript if provided */
+      const msFile = $('manuscriptFile').files[0];
+      if (msFile) {
+        const ext  = msFile.name.split('.').pop();
+        const path = `magazine/${year}/${safeName}_manuscript.${ext}`;
+        manuscriptURL  = await uploadFile(msFile, path);
+        manuscriptName = msFile.name;
+      }
+
+      /* Upload figures if provided */
+      const figFiles = $('figuresFiles').files;
+      if (figFiles.length) {
+        btn.innerHTML = `<svg style="animation:spin .8s linear infinite;width:1rem;height:1rem;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Uploading figures…`;
+        for (let i = 0; i < figFiles.length; i++) {
+          const f    = figFiles[i];
+          const ext  = f.name.split('.').pop();
+          const path = `magazine/${year}/${safeName}_figure${i+1}.${ext}`;
+          const url  = await uploadFile(f, path);
+          figureURLs.push(url);
+          figureNames.push(f.name);
+        }
+      }
+    } catch (uploadErr) {
+      console.warn('File upload failed, continuing without files:', uploadErr);
+      toast('⚠ File upload failed — submission saved without attached files.');
+    }
+
+    btn.innerHTML = `<svg style="animation:spin .8s linear infinite;width:1rem;height:1rem;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Saving submission…`;
+
+    const data = {
+      /* Author */
+      firstName:    $('firstName').value.trim(),
+      lastName:     $('lastName').value.trim(),
+      fullName:     `${$('firstName').value.trim()} ${$('lastName').value.trim()}`,
+      email:        $('email').value.trim(),
+      grade:        $('grade').value,
+      branch:       $('branch').value,
+      coauthors,
+
+      /* Article */
+      title:        $('title').value.trim(),
+      articleType:  $('articleType').value,
+      abstract:     $('abstract').value.trim(),
+      keywords,
+      targetIssue:  $('targetIssue').value,
+      coverLetter:  $('coverLetter').value.trim(),
+
+      /* Upload */
+      gdocLink:       $('gdocLink').value.trim(),
+      manuscriptURL,
+      manuscriptName,
+      figureURLs,
+      figureNames,
+      references:     $('references').value.trim(),
+      wordCount:      parseInt($('wordCount').value, 10) || 0,
+
+      /* Meta */
+      editorNotes:  $('editorNotes').value.trim(),
+      submittedAt:  firebase.firestore.FieldValue.serverTimestamp(),
+      status:       'pending',
+      year:         new Date().getFullYear()
+    };
+
+    /* 10-second timeout safety net */
+    const timeout = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('timeout')), 10000)
+    );
+
+    try {
+      const docRef = await Promise.race([
+        db.collection('magazine').add(data),
+        timeout
+      ]);
+
+      /* Build human-readable reference from Firestore doc ID */
+      const ref = `MAG-${new Date().getFullYear()}-${docRef.id.slice(0, 6).toUpperCase()}`;
+      $('successRef').textContent = `Submission #${ref}`;
+
+      document.querySelectorAll('.sub-step').forEach(s => s.classList.remove('active'));
+      $('subProgress').style.display = 'none';
+      $('formTitle').style.display   = 'none';
+      $('formSub').style.display     = 'none';
+      $('subSuccess').classList.add('active');
+
+    } catch (err) {
+      console.error('Submission error:', err);
+      const msg = err.message === 'timeout'
+        ? '⏱ Timed out — check your Firestore security rules (see console).'
+        : `❌ ${err.message}`;
+      toast(msg);
+      btn.disabled = false;
+      btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Submit Article`;
+    }
+  });
+
+/* Reset */
+$('resetBtn').addEventListener('click', () => {
+  // Clear text inputs
+  ['firstName','lastName','email','gdocLink','title','abstract','references','editorNotes','coverLetter','wordCount']
+    .forEach(id => { $(id).value = ''; });
+
+  // Reset selects
+  ['grade','branch','articleType','targetIssue']
+    .forEach(id => { $(id).selectedIndex = 0; });
+
+  // Reset counters & dynamic UI
+  $('abstractCounter').textContent = '0 / 150 words';
+  $('keywordChips').innerHTML = '';
+  $('coauthorsList').innerHTML = '';
+
+  // Reset file UI
+  $('manuscriptFileName').style.display = 'none';
+  $('figuresFileName').style.display    = 'none';
+  $('manuscriptFile').value = '';
+  $('figuresFiles').value   = '';
+
+  // Reset declarations
+  document.querySelectorAll('.declaration-item').forEach(i => {
+    i.classList.remove('checked');
+    const checkbox = i.querySelector('input');
+    if (checkbox) checkbox.checked = false;
+  });
+
+  // Reset UI state
+  $('subSuccess').classList.remove('active');
+  $('subProgress').style.display = '';
+  $('formTitle').style.display   = '';
+  $('formSub').style.display     = '';
+
+  // Go back to step 1
+  document.querySelectorAll('.sub-step').forEach(s => s.classList.remove('active'));
+  $('step1').classList.add('active');
+});
+
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const delay = parseInt(e.target.dataset.delay, 10) || 0;
+      setTimeout(() => e.target.classList.add('visible'), delay);
+      revealObs.unobserve(e.target);
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+</script>
+
+</body>
+</html>

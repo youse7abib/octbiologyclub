@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join the Club – Biology Club | October STEM School</title>
+  <meta name="description" content="Apply to join the Biology Club of October STEM School. Start your journey in biological sciences today." />
+  <meta name="theme-color" content="#358062" />
+  <link rel="icon" type="image/png" href="images/logo-png.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ============================================================
+       JOIN PAGE – PAGE-SPECIFIC STYLES
+       ============================================================ */
+
+    /* ---- Hero -------------------------------------------------- */
+    .join-hero {
+      position: relative;
+      min-height: 65vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0a0e27 0%, #0a1a12 60%, #071410 100%);
+    }
+    .join-hero__bg { position: absolute; inset: 0; overflow: hidden; }
+    .join-hero__orb {
+      position: absolute; border-radius: 50%;
+      filter: blur(90px);
+      animation: orbFloat 9s ease-in-out infinite;
+    }
+    .join-hero__orb--1 {
+      width: 44rem; height: 44rem;
+      background: radial-gradient(circle, rgba(53,128,98,0.22) 0%, transparent 70%);
+      top: -14rem; left: -12rem;
+    }
+    .join-hero__orb--2 {
+      width: 28rem; height: 28rem;
+      background: radial-gradient(circle, rgba(57,176,144,0.13) 0%, transparent 70%);
+      bottom: -8rem; right: -6rem; animation-delay: 4s;
+    }
+    .join-hero__orb--3 {
+      width: 18rem; height: 18rem;
+      background: radial-gradient(circle, rgba(29,88,88,0.18) 0%, transparent 70%);
+      top: 30%; left: 55%; animation-delay: 7s;
+    }
+    @keyframes orbFloat {
+      0%,100% { transform: translateY(0) scale(1); }
+      50%      { transform: translateY(-18px) scale(1.04); }
+    }
+    .join-hero__grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(57,176,144,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57,176,144,0.035) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .join-hero__content {
+      position: relative; z-index: 10;
+      text-align: center; max-width: 54rem;
+      padding: 0 1.5rem; margin-top: -2rem;
+    }
+    .join-hero__eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(57,176,144,0.12); border: 1px solid rgba(57,176,144,0.3);
+      color: #39B090; padding: 0.4rem 1.1rem; border-radius: 999px;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.09em;
+      text-transform: uppercase; margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s ease 0.1s both;
+    }
+    .join-hero__eyebrow svg { width: 0.85rem; height: 0.85rem; }
+    .join-hero__title {
+      font-size: 3.25rem; font-weight: 700; color: #fff;
+      line-height: 1.08; letter-spacing: -3px; margin-bottom: 1.25rem;
+      animation: fadeUp 0.8s ease 0.25s both;
+    }
+    @media (min-width:640px)  { .join-hero__title { font-size: 4.5rem; } }
+    @media (min-width:1024px) { .join-hero__title { font-size: 5.25rem; } }
+    .join-hero__title span {
+      background: linear-gradient(to right, #39B090, #4DAF82);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .join-hero__subtitle {
+      font-size: 1.05rem; color: rgba(255,255,255,0.62);
+      max-width: 36rem; margin: 0 auto;
+      line-height: 1.75; letter-spacing: -0.3px;
+      animation: fadeUp 0.8s ease 0.4s both;
+    }
+    @media (min-width:640px) { .join-hero__subtitle { font-size: 1.2rem; } }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.78rem; color: rgba(255,255,255,0.4); white-space: nowrap;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .breadcrumb a:hover { color: #39B090; }
+    .breadcrumb svg { width: 0.7rem; height: 0.7rem; }
+
+    /* Scroll indicator */
+    .join-hero__scroll {
+      position: absolute; bottom: 2rem; right: 2rem;
+      display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+      animation: bounce 2s infinite;
+    }
+    .join-hero__scroll span { font-size: 0.7rem; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.1em; }
+    .join-hero__scroll-line { width: 1px; height: 2rem; background: linear-gradient(to bottom, rgba(57,176,144,0.5), transparent); }
+
+    /* ---- Perks strip ------------------------------------------ */
+    .join-perks {
+      background: linear-gradient(135deg, var(--bg-soft, #f9fafb), var(--bg, #fff));
+      padding: 4.5rem 1.5rem;
+    }
+    .join-perks__inner { max-width: 80rem; margin: 0 auto; }
+    .join-perks__header { text-align: center; margin-bottom: 3rem; }
+    .join-perks__header h2 {
+      font-size: 2rem; font-weight: 700; color: var(--text, #111827);
+      letter-spacing: -1.5px; margin-bottom: 0.5rem;
+    }
+    .join-perks__header p { font-size: 1rem; color: var(--text-muted, #4b5563); }
+    .join-perks__grid {
+      display: grid; grid-template-columns: 1fr; gap: 1.25rem;
+    }
+    @media (min-width:640px)  { .join-perks__grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width:1024px) { .join-perks__grid { grid-template-columns: repeat(4,1fr); } }
+
+    .perk-card {
+      background: var(--bg-card, #fff); border: 1px solid var(--border-soft, #f3f4f6);
+      border-radius: 1.25rem; padding: 1.75rem 1.5rem;
+      display: flex; flex-direction: column; gap: 0.75rem;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      position: relative; overflow: hidden; cursor: default;
+    }
+    .perk-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      border-radius: 1.25rem 1.25rem 0 0; opacity: 0; transition: opacity 0.3s;
+    }
+    .perk-card:hover { border-color: rgba(53,128,98,0.3); box-shadow: 0 16px 40px -8px rgba(53,128,98,0.12); transform: translateY(-4px); }
+    .perk-card:hover::before { opacity: 1; }
+    .perk-card__icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 2.75rem; height: 2.75rem; border-radius: 0.75rem;
+      transition: transform 0.3s;
+    }
+    .perk-card:hover .perk-card__icon { transform: scale(1.1) rotate(6deg); }
+    .perk-card__icon svg { width: 1.3rem; height: 1.3rem; }
+    .perk-card h3 { font-size: 1rem; font-weight: 700; color: var(--text, #111827); letter-spacing: -0.3px; }
+    .perk-card p  { font-size: 0.875rem; color: var(--text-muted, #4b5563); line-height: 1.65; }
+
+    /* ---- Steps ------------------------------------------------ */
+    .join-steps { padding: 5rem 1.5rem; background: var(--bg, #fff); }
+    .join-steps__inner { max-width: 80rem; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-badge {
+      display: inline-block; background: rgba(53,128,98,0.1); color: #358062;
+      padding: 0.3rem 0.9rem; border-radius: 999px; font-size: 0.78rem; font-weight: 600;
+      border: 1px solid rgba(53,128,98,0.2); margin-bottom: 0.85rem;
+    }
+    .section-title {
+      font-size: 2.25rem; font-weight: 700; color: var(--text, #111827);
+      letter-spacing: -2px; margin-bottom: 0.6rem;
+    }
+    @media (min-width:640px) { .section-title { font-size: 2.75rem; } }
+    .section-subtitle { font-size: 1rem; color: var(--text-muted, #4b5563); max-width: 38rem; margin: 0 auto; line-height: 1.65; }
+
+    .steps-row {
+      display: grid; grid-template-columns: 1fr; gap: 0;
+    }
+    @media (min-width:768px) { .steps-row { grid-template-columns: repeat(3,1fr); } }
+
+    .step-item {
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+      padding: 2rem 1.5rem; position: relative;
+    }
+    @media (min-width:768px) {
+      .step-item:not(:last-child)::after {
+        content: ''; position: absolute; top: 2.85rem; right: -1px;
+        width: calc(50% + 1px); height: 2px;
+        background: linear-gradient(to right, #39B090, var(--border-soft, #f3f4f6));
+      }
+      .step-item:not(:first-child)::before {
+        content: ''; position: absolute; top: 2.85rem; left: -1px;
+        width: calc(50%); height: 2px;
+        background: linear-gradient(to right, var(--border-soft, #f3f4f6), #39B090);
+      }
+    }
+    .step-item__num {
+      width: 3.5rem; height: 3.5rem; border-radius: 50%;
+      background: linear-gradient(135deg, #358062, #1D5858); color: #fff;
+      font-size: 1.1rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem; position: relative; z-index: 1;
+      box-shadow: 0 8px 24px rgba(53,128,98,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .step-item:hover .step-item__num { transform: scale(1.12); box-shadow: 0 12px 32px rgba(53,128,98,0.45); }
+    .step-item h4 { font-size: 1.05rem; font-weight: 700; color: var(--text, #111827); margin-bottom: 0.5rem; letter-spacing: -0.3px; }
+    .step-item p  { font-size: 0.875rem; color: var(--text-muted, #4b5563); line-height: 1.65; max-width: 18rem; }
+
+    /* ---- Form section ---------------------------------------- */
+    .join-form-section {
+      padding: 5rem 1.5rem 7rem;
+      background: linear-gradient(135deg, var(--bg-soft, #f9fafb), var(--bg, #fff));
+    }
+    .join-form-section__inner {
+      max-width: 80rem; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: start;
+    }
+    @media (min-width:1024px) { .join-form-section__inner { grid-template-columns: 1fr 1.65fr; gap: 5rem; } }
+
+    /* ---- Left info panel ------------------------------------- */
+    .join-info {}
+    .join-info__badge {
+      display: inline-block; background: rgba(53,128,98,0.1); color: #358062;
+      padding: 0.3rem 0.9rem; border-radius: 999px; font-size: 0.78rem;
+      font-weight: 600; border: 1px solid rgba(53,128,98,0.2); margin-bottom: 1rem;
+    }
+    .join-info h2 {
+      font-size: 2rem; font-weight: 700; color: var(--text, #111827);
+      letter-spacing: -2px; margin-bottom: 0.85rem; line-height: 1.2;
+    }
+    @media (min-width:640px) { .join-info h2 { font-size: 2.5rem; } }
+    .join-info__lead {
+      font-size: 1rem; color: var(--text-muted, #4b5563); line-height: 1.75; margin-bottom: 2rem;
+    }
+
+    /* Checklist */
+    .join-checklist { display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 2rem; }
+    .join-checklist__item { display: flex; align-items: flex-start; gap: 0.75rem; }
+    .join-checklist__tick {
+      flex-shrink: 0; width: 1.35rem; height: 1.35rem; border-radius: 50%;
+      background: linear-gradient(135deg, #358062, #39B090);
+      display: flex; align-items: center; justify-content: center; margin-top: 0.15rem;
+    }
+    .join-checklist__tick svg { width: 0.65rem; height: 0.65rem; color: #fff; stroke-width: 3; }
+    .join-checklist__item span { font-size: 0.9rem; color: var(--text-muted, #4b5563); line-height: 1.6; }
+
+    /* Info note card */
+    .join-info__note {
+      background: linear-gradient(135deg, #0a0e27, #0f1f18);
+      border-radius: 1rem; padding: 1.4rem 1.6rem;
+    }
+    .join-info__note p { font-size: 0.875rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin: 0; }
+    .join-info__note strong { color: #39B090; }
+
+    /* ---- Form card ------------------------------------------- */
+    .join-form-card {
+      background: var(--bg-card, #fff);
+      border: 1px solid var(--border, #e5e7eb);
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      box-shadow: 0 20px 60px -12px rgba(0,0,0,0.08);
+      position: relative; overflow: hidden;
+    }
+    @media (min-width:640px) { .join-form-card { padding: 3rem; } }
+    .join-form-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(to right, #358062, #39B090, #4DAF82);
+      border-radius: 1.5rem 1.5rem 0 0;
+    }
+
+    /* Multi-step progress */
+    .join-progress { display: flex; align-items: flex-start; gap: 0; margin-bottom: 2.5rem; }
+    .join-progress__step {
+      flex: 1; display: flex; flex-direction: column; align-items: center;
+      gap: 0.4rem; position: relative;
+    }
+    .join-progress__step:not(:last-child)::after {
+      content: ''; position: absolute; top: 1rem; left: 50%; right: -50%;
+      height: 2px; z-index: 0;
+      background: var(--border, #e5e7eb); transition: background 0.4s;
+    }
+    .join-progress__step.completed:not(:last-child)::after { background: #39B090; }
+    .join-progress__dot {
+      width: 2rem; height: 2rem; border-radius: 50%;
+      border: 2px solid var(--border, #e5e7eb); background: var(--bg-card, #fff);
+      position: relative; z-index: 1;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 700; color: var(--text-faint, #9ca3af);
+      transition: all 0.35s ease;
+    }
+    .join-progress__step.active .join-progress__dot {
+      border-color: #39B090; background: #39B090; color: #fff;
+      box-shadow: 0 0 0 4px rgba(57,176,144,0.2);
+    }
+    .join-progress__step.completed .join-progress__dot {
+      border-color: #358062; background: #358062; color: #fff;
+    }
+    .join-progress__label {
+      font-size: 0.68rem; font-weight: 600;
+      color: var(--text-faint, #9ca3af); text-align: center;
+      transition: color 0.3s; white-space: nowrap;
+    }
+    .join-progress__step.active .join-progress__label   { color: #358062; }
+    .join-progress__step.completed .join-progress__label { color: #358062; }
+
+    .join-form-card__title {
+      font-size: 1.5rem; font-weight: 700; color: var(--text, #111827);
+      letter-spacing: -1px; margin-bottom: 0.35rem;
+    }
+    .join-form-card__sub {
+      font-size: 0.875rem; color: var(--text-muted, #6b7280); margin-bottom: 2rem;
+    }
+
+    /* ---- Form steps ------------------------------------------ */
+    .join-step { display: none; }
+    .join-step.active { display: block; animation: fadeUp 0.35s ease both; }
+
+    /* Fields */
+    .field-group { display: flex; flex-direction: column; gap: 1.1rem; }
+    .field-row   { display: grid; grid-template-columns: 1fr; gap: 1.1rem; }
+    @media (min-width:480px) { .field-row { grid-template-columns: 1fr 1fr; } }
+
+    .field { display: flex; flex-direction: column; gap: 0.35rem; }
+    .field label {
+      font-size: 0.82rem; font-weight: 600;
+      color: var(--text, #374151); letter-spacing: -0.2px;
+    }
+    .field label .req { color: #dc2626; margin-left: 2px; }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%; padding: 0.72rem 1rem;
+      border-radius: 0.6rem; border: 1.5px solid var(--border, #e5e7eb);
+      font-size: 0.9rem; color: var(--text, #111827);
+      background: var(--bg-input, #f9fafb);
+      font-family: inherit; outline: none; resize: none;
+      transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+    }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: #39B090;
+      box-shadow: 0 0 0 4px rgba(57,176,144,0.15);
+      background: var(--bg-card, #fff);
+    }
+    .field input::placeholder,
+    .field textarea::placeholder { color: var(--text-faint, #9ca3af); font-size: 0.87rem; }
+    .field select { appearance: none; cursor: pointer; }
+    .field__select-wrap { position: relative; }
+    .field__select-wrap::after {
+      content: ''; position: absolute; right: 1rem; top: 50%; transform: translateY(-50%);
+      border: 5px solid transparent; border-top: 6px solid var(--text-faint, #6b7280);
+      pointer-events: none;
+    }
+    .field textarea { min-height: 110px; }
+    .field__hint { font-size: 0.78rem; color: var(--text-faint, #6b7280); margin-top: 0.2rem; }
+
+    /* Branch checkboxes */
+    .branches-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; margin-top: 0.4rem;
+    }
+    @media (min-width:480px) { .branches-grid { grid-template-columns: repeat(3,1fr); } }
+
+    .branch-chip {
+      display: flex; align-items: center; gap: 0.45rem;
+      padding: 0.55rem 0.75rem;
+      border: 1.5px solid var(--border, #e5e7eb);
+      border-radius: 0.5rem; cursor: pointer;
+      transition: all 0.2s; font-size: 0.8rem;
+      font-weight: 500; color: var(--text-muted, #374151);
+      user-select: none;
+    }
+    .branch-chip:hover { border-color: #39B090; background: rgba(57,176,144,0.06); }
+    .branch-chip input[type="checkbox"] { display: none; }
+    .branch-chip__box {
+      width: 0.95rem; height: 0.95rem; border-radius: 3px;
+      border: 1.5px solid var(--border, #d1d5db); flex-shrink: 0;
+      background: var(--bg-card, #fff); position: relative; transition: all 0.2s;
+    }
+    .branch-chip__box::after {
+      content: ''; position: absolute; top: 1px; left: 3px;
+      width: 5px; height: 7px;
+      border-right: 2px solid #fff; border-bottom: 2px solid #fff;
+      transform: rotate(45deg); opacity: 0; transition: opacity 0.15s;
+    }
+    .branch-chip.checked { border-color: #39B090; background: rgba(57,176,144,0.09); color: #1D5858; }
+    .branch-chip.checked .branch-chip__box { background: #39B090; border-color: #39B090; }
+    .branch-chip.checked .branch-chip__box::after { opacity: 1; }
+
+    /* Nav buttons */
+    .form-nav {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 1.75rem; gap: 0.75rem;
+    }
+    .form-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.78rem 1.6rem;
+      border-radius: 0.65rem; font-size: 0.925rem;
+      font-weight: 600; border: none; cursor: pointer;
+      font-family: inherit; transition: all 0.3s;
+    }
+    .form-btn svg { width: 1rem; height: 1rem; flex-shrink: 0; }
+    .form-btn--next, .form-btn--submit {
+      background: linear-gradient(135deg, #358062, #1D5858);
+      color: #fff; flex: 1; justify-content: center;
+    }
+    .form-btn--next:hover, .form-btn--submit:hover {
+      box-shadow: 0 10px 24px rgba(53,128,98,0.35); transform: translateY(-2px);
+    }
+    .form-btn--submit { background: linear-gradient(135deg, #39B090, #1D5858); }
+    .form-btn--back { background: var(--hover-bg, #f3f4f6); color: var(--text-muted, #374151); flex-shrink: 0; }
+    .form-btn--back:hover { background: var(--border, #e5e7eb); }
+    .form-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
+
+    /* ---- Success screen --------------------------------------- */
+    .join-success {
+      display: none; text-align: center;
+      padding: 1.5rem 0 0.5rem; animation: fadeUp 0.5s ease both;
+    }
+    .join-success.active { display: block; }
+    .join-success__icon {
+      width: 5rem; height: 5rem; border-radius: 50%;
+      background: linear-gradient(135deg, #358062, #39B090);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 12px 32px rgba(53,128,98,0.4);
+      animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.1s both;
+    }
+    .join-success__icon svg { width: 2.5rem; height: 2.5rem; color: #fff; }
+    @keyframes popIn {
+      from { transform: scale(0); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+    .join-success h3 {
+      font-size: 1.75rem; font-weight: 700; color: var(--text, #111827);
+      letter-spacing: -1px; margin-bottom: 0.75rem;
+    }
+    .join-success p { font-size: 0.95rem; color: var(--text-muted, #4b5563); line-height: 1.7; max-width: 30rem; margin: 0 auto 1.25rem; }
+    .join-success__ref {
+      display: inline-block;
+      background: rgba(53,128,98,0.1); color: #358062;
+      border: 1px solid rgba(53,128,98,0.25);
+      padding: 0.45rem 1.2rem; border-radius: 999px;
+      font-size: 0.82rem; font-weight: 600; margin-bottom: 2rem;
+    }
+    .join-success__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .success-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.5rem; border-radius: 0.65rem;
+      font-size: 0.9rem; font-weight: 600; font-family: inherit;
+      cursor: pointer; border: none; transition: all 0.3s;
+    }
+    .success-btn svg { width: 1rem; height: 1rem; }
+    .success-btn--home { background: linear-gradient(135deg, #358062, #1D5858); color: #fff; }
+    .success-btn--home:hover { box-shadow: 0 8px 20px rgba(53,128,98,0.35); transform: translateY(-2px); }
+    .success-btn--reset { background: var(--hover-bg, #f3f4f6); color: var(--text-muted, #374151); }
+    .success-btn--reset:hover { background: var(--border, #e5e7eb); }
+
+    /* ---- Error toast ------------------------------------------ */
+    .join-toast {
+      position: fixed; bottom: 1.5rem; left: 50%;
+      transform: translateX(-50%) translateY(5rem);
+      background: #dc2626; color: #fff;
+      padding: 0.85rem 1.5rem; border-radius: 0.75rem;
+      font-size: 0.875rem; font-weight: 500;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+      z-index: 9999; opacity: 0; pointer-events: none;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      max-width: 90vw; text-align: center;
+    }
+    .join-toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+    /* ---- Keyframes -------------------------------------------- */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      0%,20%,50%,80%,100% { transform: translateY(0); }
+      40% { transform: translateY(-7px); }
+      60% { transform: translateY(-3px); }
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ---- Dark mode overrides ---------------------------------- */
+    body.dark-mode .join-form-card { box-shadow: 0 20px 60px -12px rgba(0,0,0,0.4); }
+    body.dark-mode .field label    { color: var(--text, #f1f5f9); }
+    body.dark-mode .branch-chip    { color: var(--text-muted, #94a3b8); }
+    body.dark-mode .branch-chip.checked { color: #39B090; }
+    body.dark-mode .join-success h3 { color: var(--text, #f1f5f9); }
+    body.dark-mode .join-success p  { color: var(--text-muted, #94a3b8); }
+    body.dark-mode .success-btn--reset { color: var(--text-muted, #94a3b8); }
+
+    /* ---- Applications Closed Message ----------------------- */
+    .application-closed-message {
+      padding: 5rem 1.5rem 7rem;
+      background: linear-gradient(135deg, var(--bg-soft, #f9fafb), var(--bg, #fff));
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .closed-message__content {
+      text-align: center;
+      max-width: 38rem;
+      animation: fadeUp 0.6s ease both;
+    }
+    .closed-message__icon {
+      width: 5rem; height: 5rem;
+      border-radius: 50%;
+      background: rgba(220, 38, 38, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      color: #dc2626;
+    }
+    .closed-message__icon svg { width: 2.5rem; height: 2.5rem; }
+    .closed-message__content h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text, #111827);
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+    }
+    @media (min-width:640px) { .closed-message__content h2 { font-size: 2.5rem; } }
+    .closed-message__content p {
+      font-size: 1rem;
+      color: var(--text-muted, #4b5563);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .closed-message__sub {
+      font-size: 0.95rem;
+      color: var(--text-muted, #6b7280);
+      margin: 1.5rem 0 2rem !important;
+    }
+    .closed-message__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.8rem;
+      background: linear-gradient(135deg, #358062, #1D5858);
+      color: #fff;
+      border-radius: 0.65rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .closed-message__btn:hover {
+      box-shadow: 0 10px 24px rgba(53,128,98,0.35);
+      transform: translateY(-2px);
+    }
+    body.dark-mode .closed-message__content h2 { color: var(--text, #f1f5f9); }
+    body.dark-mode .closed-message__content p { color: var(--text-muted, #94a3b8); }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<nav id="navbar" class="navbar">
+  <div class="navbar__inner">
+    <div class="navbar__top-row">
+
+      <!-- Logo -->
+      <div class="logoDiv">
+        <a href="index.html" class="navbar__logo" id="navLogo">
+          <img src="images/logo-png.png" alt="Biology Club Logo" class="navbar__logo-img" id="logoImg" />
+        </a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <ul class="navbar__menu" id="desktopMenu">
+        <li><a href="index.html">Home</a></li>
+
+        <!-- About Dropdown -->
+        <li class="navbar__dropdown">
+          <a href="index.html#about" class="navbar__dropdown-toggle">
+            About
+            <svg class="navbar__dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <ul class="navbar__dropdown-menu">
+            <li><a href="vision.html">About us</a></li>
+            <li><a href="partner.html">Partners</a></li>
+          </ul>
+        </li>
+
+        <!-- Programs Dropdown -->
+        <li class="navbar__dropdown">
+          <a href="#programs" class="navbar__dropdown-toggle">
+            Programs
+            <svg class="navbar__dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <ul class="navbar__dropdown-menu">
+            <li><a href="bioleague.html">BioLeague</a></li>
+            <li><a href="magazine.html">Magazine</a></li>
+          </ul>
+        </li>
+
+        <!-- Branches Dropdown -->
+        <li class="navbar__dropdown">
+          <a href="#branches" class="navbar__dropdown-toggle">
+            Branches
+            <svg class="navbar__dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <ul class="navbar__dropdown-menu">
+            <li><a href="#molecular-biology">Molecular Biology</a></li>
+            <li><a href="#cell-biology">Cell Biology</a></li>
+            <li><a href="#genetics">Genetics</a></li>
+            <li><a href="#ecology">Ecology</a></li>
+            <li><a href="#evolutionary-biology">Evolutionary Biology</a></li>
+            <li><a href="#microbiology">Microbiology</a></li>
+            <li><a href="#botany">Botany</a></li>
+            <li><a href="#zoology">Zoology</a></li>
+            <li><a href="#marine-biology">Marine Biology</a></li>
+            <li><a href="#biochemistry">Biochemistry</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Desktop Action Buttons -->
+      <div class="navbar__actions">
+        <!-- Theme Toggle Button (Desktop) -->
+        <button id="themeToggle" class="navbar__btn navbar__btn--theme" aria-label="Toggle dark mode">
+          <svg id="themeIcon" class="navbar__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <span id="themeLabel">Dark</span>
+        </button>
+        <button class="navbar__btn navbar__btn--donate">
+          <svg class="navbar__btn-icon navbar__btn-icon--heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span>Donate</span>
+        </button>
+        <button class="navbar__btn navbar__btn--contact">
+          <svg class="navbar__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>Contact</span>
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+        <svg class="navbar__hamburger-icon navbar__hamburger-icon--menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="navbar__hamburger-icon navbar__hamburger-icon--close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="navbar__mobile-menu" id="mobileMenu">
+      <a href="#home" class="navbar__mobile-link">Home</a>
+
+      <!-- Mobile About Dropdown -->
+      <div class="navbar__mobile-dropdown">
+        <button class="navbar__mobile-dropdown-toggle">
+          About
+          <svg class="navbar__mobile-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="navbar__mobile-dropdown-menu">
+          <a href="#vision" class="navbar__mobile-link navbar__mobile-link--sub">Our Vision</a>
+          <a href="#meet-our-board" class="navbar__mobile-link navbar__mobile-link--sub">Meet Our Board</a>
+          <a href="#partners" class="navbar__mobile-link navbar__mobile-link--sub">Partners</a>
+        </div>
+      </div>
+
+      <!-- Mobile Programs Dropdown -->
+      <div class="navbar__mobile-dropdown">
+        <button class="navbar__mobile-dropdown-toggle">
+          Programs
+          <svg class="navbar__mobile-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="navbar__mobile-dropdown-menu">
+          <a href="#bioleague" class="navbar__mobile-link navbar__mobile-link--sub">BioLeague</a>
+          <a href="#magazine" class="navbar__mobile-link navbar__mobile-link--sub">Magazine</a>
+        </div>
+      </div>
+
+      <!-- Mobile Branches Dropdown -->
+      <div class="navbar__mobile-dropdown">
+        <button class="navbar__mobile-dropdown-toggle">
+          Branches
+          <svg class="navbar__mobile-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="navbar__mobile-dropdown-menu">
+          <a href="#molecular-biology" class="navbar__mobile-link navbar__mobile-link--sub">Molecular Biology</a>
+          <a href="#cell-biology" class="navbar__mobile-link navbar__mobile-link--sub">Cell Biology</a>
+          <a href="#genetics" class="navbar__mobile-link navbar__mobile-link--sub">Genetics</a>
+          <a href="#ecology" class="navbar__mobile-link navbar__mobile-link--sub">Ecology</a>
+          <a href="#evolutionary-biology" class="navbar__mobile-link navbar__mobile-link--sub">Evolutionary Biology</a>
+          <a href="#microbiology" class="navbar__mobile-link navbar__mobile-link--sub">Microbiology</a>
+          <a href="#botany" class="navbar__mobile-link navbar__mobile-link--sub">Botany</a>
+          <a href="#zoology" class="navbar__mobile-link navbar__mobile-link--sub">Zoology</a>
+          <a href="#marine-biology" class="navbar__mobile-link navbar__mobile-link--sub">Marine Biology</a>
+          <a href="#biochemistry" class="navbar__mobile-link navbar__mobile-link--sub">Biochemistry</a>
+        </div>
+      </div>
+
+      <div class="navbar__mobile-actions">
+        <!-- Theme Toggle Button (Mobile) -->
+        <button id="themeToggleMobile" class="navbar__btn navbar__btn--theme navbar__btn--full" aria-label="Toggle dark mode">
+          <svg id="themeIconMobile" class="navbar__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <span id="themeLabelMobile">Switch to Dark Mode</span>
+        </button>
+        <button class="navbar__btn navbar__btn--donate navbar__btn--full">
+          <svg class="navbar__btn-icon navbar__btn-icon--heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Donate
+        </button>
+        <button class="navbar__btn navbar__btn--contact navbar__btn--full">
+          <svg class="navbar__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Contact
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="join-hero">
+  <div class="join-hero__bg">
+    <div class="join-hero__orb join-hero__orb--1"></div>
+    <div class="join-hero__orb join-hero__orb--2"></div>
+    <div class="join-hero__orb join-hero__orb--3"></div>
+  </div>
+  <div class="join-hero__grid"></div>
+  <div class="join-hero__content">
+    <div class="join-hero__eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Applications Open · 2025
+    </div>
+    <h1 class="join-hero__title">Join the <span>Biology Club</span></h1>
+    <p class="join-hero__subtitle">
+      Become part of October STEM School's most passionate scientific community. Research, compete, discover, and grow alongside the next generation of biologists.
+    </p>
+  </div>
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    <span>Join the Club</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     PERKS
+     ============================================================ -->
+<section class="join-perks">
+  <div class="join-perks__inner">
+    <div class="join-perks__header reveal">
+      <h2>What You Get as a Member</h2>
+      <p>Access to a full ecosystem of science, competition, and mentorship.</p>
+    </div>
+    <div class="join-perks__grid">
+
+      <div class="perk-card reveal" data-delay="50">
+        <div class="perk-card__icon" style="background:rgba(53,128,98,0.1);color:#358062;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+        </div>
+        <h3>Real Research</h3>
+        <p>Conduct genuine scientific research, write systematic reviews, and get guidance to publish your findings.</p>
+        <style>.perk-card:nth-child(1)::before { background: linear-gradient(to right, #358062, #39B090); }</style>
+      </div>
+
+      <div class="perk-card reveal" data-delay="100">
+        <div class="perk-card__icon" style="background:rgba(29,88,88,0.1);color:#1D5858;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="m15.477 12.89-1.477 6.11-3.477-2.094L7.046 19l-1.477-6.11z"/></svg>
+        </div>
+        <h3>BioLeague Competition</h3>
+        <p>Represent your school in our free national biology competition with prizes, recognition and scholarships.</p>
+        <style>.perk-card:nth-child(2)::before { background: linear-gradient(to right, #1D5858, #358062); }</style>
+      </div>
+
+      <div class="perk-card reveal" data-delay="150">
+        <div class="perk-card__icon" style="background:rgba(57,176,144,0.1);color:#39B090;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/></svg>
+        </div>
+        <h3>Lab Workshops</h3>
+        <p>Hands-on sessions using modern equipment with expert instructors and techniques beyond your classroom.</p>
+        <style>.perk-card:nth-child(3)::before { background: linear-gradient(to right, #39B090, #4DAF82); }</style>
+      </div>
+
+      <div class="perk-card reveal" data-delay="200">
+        <div class="perk-card__icon" style="background:rgba(43,102,90,0.1);color:#2B665A;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Expert Mentorship</h3>
+        <p>Direct access to 10+ mentors across all biology fields, supporting your academic and professional growth.</p>
+        <style>.perk-card:nth-child(4)::before { background: linear-gradient(to right, #2B665A, #358062); }</style>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HOW IT WORKS
+     ============================================================ -->
+<section class="join-steps">
+  <div class="join-steps__inner">
+    <div class="section-header reveal">
+      <span class="section-badge">Simple Process</span>
+      <h2 class="section-title">How to Join</h2>
+      <p class="section-subtitle">Three simple steps stand between you and the Biology Club community.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step-item reveal" data-delay="100">
+        <div class="step-item__num">01</div>
+        <h4>Fill the Application</h4>
+        <p>Complete the form below with your personal details, academic background, and areas of interest in biology.</p>
+      </div>
+      <div class="step-item reveal" data-delay="200">
+        <div class="step-item__num">02</div>
+        <h4>Review</h4>
+        <p>Our board reviews your application. </p>
+      </div>
+      <div class="step-item reveal" data-delay="300">
+        <div class="step-item__num">03</div>
+        <h4>Welcome to the Club</h4>
+        <p>Accepted members get a confirmation email with onboarding details, schedule, and first session info.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     APPLICATION FORM
+     ============================================================ -->
+<section class="join-form-section">
+  <div class="join-form-section__inner">
+
+    <!-- Left info -->
+    <div class="join-info reveal">
+      <span class="join-info__badge">Open Application</span>
+      <h2>Start Your Journey in Biology</h2>
+      <p class="join-info__lead">
+        Fill out the form and take your first step into real science. We welcome all levels — curiosity is the only prerequisite.
+      </p>
+
+      <div class="join-checklist">
+        <div class="join-checklist__item">
+          <div class="join-checklist__tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>Access to all 10 specialized biology branches</span>
+        </div>
+        <div class="join-checklist__item">
+          <div class="join-checklist__tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>Participate in BioLeague national competition</span>
+        </div>
+        <div class="join-checklist__item">
+          <div class="join-checklist__tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>Hands-on lab workshop sessions every semester</span>
+        </div>
+        <div class="join-checklist__item">
+          <div class="join-checklist__tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>Research paper writing and publishing support</span>
+        </div>
+        <div class="join-checklist__item">
+          <div class="join-checklist__tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>Mentorship from experienced researchers</span>
+        </div>
+        <div class="join-checklist__item">
+          <div class="join-checklist__tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>Contribute to the Biology Club magazine</span>
+        </div>
+      </div>
+
+      <div class="join-info__note">
+        <p>
+          <strong>Applications are reviewed weekly.</strong><br>
+          You'll receive a reply within 3–5 business days. Questions? Reach us at
+          <strong>info@octbiologyclub.com</strong>
+        </p>
+      </div>
+    </div>
+
+    <!-- Right: form card -->
+    <div class="join-form-card reveal" data-delay="150">
+
+      <!-- Progress indicator -->
+      <div class="join-progress" id="joinProgress">
+        <div class="join-progress__step active" data-step="1">
+          <div class="join-progress__dot">1</div>
+          <span class="join-progress__label">Personal</span>
+        </div>
+        <div class="join-progress__step" data-step="2">
+          <div class="join-progress__dot">2</div>
+          <span class="join-progress__label">Academic</span>
+        </div>
+        <div class="join-progress__step" data-step="3">
+          <div class="join-progress__dot">3</div>
+          <span class="join-progress__label">Interests</span>
+        </div>
+      </div>
+
+      <h3 class="join-form-card__title" id="formTitle">Personal Information</h3>
+      <p class="join-form-card__sub" id="formSub">Tell us who you are — step 1 of 3</p>
+
+      <!-- ===== STEP 1: Personal ===== -->
+      <div class="join-step active" id="step1">
+        <div class="field-group">
+          <div class="field-row">
+            <div class="field">
+              <label>First Name <span class="req">*</span></label>
+              <input type="text" id="firstName" placeholder="e.g. Ahmed" autocomplete="given-name" />
+            </div>
+            <div class="field">
+              <label>Last Name <span class="req">*</span></label>
+              <input type="text" id="lastName" placeholder="e.g. Hassan" autocomplete="family-name" />
+            </div>
+          </div>
+          <div class="field">
+            <label>Email Address <span class="req">*</span></label>
+            <input type="email" id="email" placeholder="your@email.com" autocomplete="email" />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>Phone Number <span class="req">*</span></label>
+              <input type="tel" id="phone" placeholder="+20 1XX XXX XXXX" autocomplete="tel" />
+            </div>
+            <div class="field">
+              <label>Date of Birth <span class="req">*</span></label>
+              <input type="date" id="dob" />
+            </div>
+          </div>
+          <div class="field">
+            <label>Gender</label>
+            <div class="field__select-wrap">
+              <select id="gender">
+                <option value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="prefer_not">Prefer not to say</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-nav">
+          <button class="form-btn form-btn--next" id="nextBtn1">
+            Next: Academic Info
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ===== STEP 2: Academic ===== -->
+      <div class="join-step" id="step2">
+        <div class="field-group">
+          <div class="field-row">
+            <div class="field">
+              <label>Grade / Year <span class="req">*</span></label>
+              <div class="field__select-wrap">
+                <select id="grade">
+                  <option value="">Select grade</option>
+                  <option value="grade-9">Grade 9 (Prep 3)</option>
+                  <option value="grade-10">Grade 10 (Year 1)</option>
+                  <option value="grade-11">Grade 11 (Year 2)</option>
+                  <option value="grade-12">Grade 12 (Year 3)</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label>GPA / Average</label>
+              <input type="text" id="gpa" placeholder="e.g. 95% or 3.8" />
+            </div>
+          </div>
+          <div class="field">
+            <label>Class / Section</label>
+            <input type="text" id="section" placeholder="e.g. 11A or 10B" />
+          </div>
+          <div class="field">
+            <label>Prior Biology Experience</label>
+            <div class="field__select-wrap">
+              <select id="experience">
+                <option value="none">No prior experience — classroom only</option>
+                <option value="basic">Basic — some extra reading or projects</option>
+                <option value="moderate">Moderate — clubs or school competitions</option>
+                <option value="advanced">Advanced — research or national competitions</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>Have you joined a science competition before?</label>
+            <div class="field__select-wrap">
+              <select id="competitions">
+                <option value="no">No, this would be my first</option>
+                <option value="school">Yes — school level</option>
+                <option value="national">Yes — national level</option>
+                <option value="international">Yes — international level</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>Language you're comfortable reading science in</label>
+            <div class="field__select-wrap">
+              <select id="language">
+                <option value="arabic">Arabic only</option>
+                <option value="english">English only</option>
+                <option value="both">Both Arabic & English</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-nav">
+          <button class="form-btn form-btn--back" id="backBtn2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back
+          </button>
+          <button class="form-btn form-btn--next" id="nextBtn2">
+            Next: Interests
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ===== STEP 3: Interests ===== -->
+      <div class="join-step" id="step3">
+        <div class="field-group">
+          <div class="field">
+            <label>Preferred Branches <span class="req">*</span></label>
+            <p class="field__hint">Select all the branches that interest you</p>
+            <div class="branches-grid" id="branchesGrid">
+              <label class="branch-chip"><input type="checkbox" value="Molecular Biology"><div class="branch-chip__box"></div>Molecular Bio</label>
+              <label class="branch-chip"><input type="checkbox" value="Cell Biology"><div class="branch-chip__box"></div>Cell Biology</label>
+              <label class="branch-chip"><input type="checkbox" value="Genetics"><div class="branch-chip__box"></div>Genetics</label>
+              <label class="branch-chip"><input type="checkbox" value="Ecology"><div class="branch-chip__box"></div>Ecology</label>
+              <label class="branch-chip"><input type="checkbox" value="Evolutionary Biology"><div class="branch-chip__box"></div>Evolution</label>
+              <label class="branch-chip"><input type="checkbox" value="Microbiology"><div class="branch-chip__box"></div>Microbiology</label>
+              <label class="branch-chip"><input type="checkbox" value="Botany"><div class="branch-chip__box"></div>Botany</label>
+              <label class="branch-chip"><input type="checkbox" value="Zoology"><div class="branch-chip__box"></div>Zoology</label>
+              <label class="branch-chip"><input type="checkbox" value="Marine Biology"><div class="branch-chip__box"></div>Marine Bio</label>
+              <label class="branch-chip"><input type="checkbox" value="Biochemistry"><div class="branch-chip__box"></div>Biochemistry</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Which program interests you most?</label>
+            <div class="field__select-wrap">
+              <select id="programInterest">
+                <option value="research">Research Program</option>
+                <option value="bioleague">BioLeague Competition</option>
+                <option value="workshops">Lab Workshops</option>
+                <option value="computational">Computational Biology</option>
+                <option value="magazine">Biology Magazine</option>
+                <option value="all">All of them!</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>Why do you want to join? <span class="req">*</span></label>
+            <textarea id="motivation" placeholder="Tell us what excites you about biology and why you'd like to be part of our club..."></textarea>
+          </div>
+          <div class="field">
+            <label>Anything else you'd like us to know?</label>
+            <textarea id="extra" placeholder="Skills, hobbies, past projects, questions, or anything you'd like to share..." style="min-height:85px;"></textarea>
+          </div>
+        </div>
+        <div class="form-nav">
+          <button class="form-btn form-btn--back" id="backBtn3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back
+          </button>
+          <button class="form-btn form-btn--submit" id="submitBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Submit Application
+          </button>
+        </div>
+      </div>
+
+      <!-- Success screen -->
+      <div class="join-success" id="joinSuccess">
+        <div class="join-success__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>Application Submitted! 🎉</h3>
+        <p>Thank you for applying to the Biology Club. We've received your application and will review it within 3–5 business days. Keep an eye on your inbox!</p>
+        <div class="join-success__ref" id="successRef">Application #BIO-2025-XXXX</div>
+        <div class="join-success__actions">
+          <a href="index.html" class="success-btn success-btn--home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Back to Home
+          </a>
+          <button class="success-btn success-btn--reset" id="resetBtn">Submit Another</button>
+        </div>
+      </div>
+
+    </div><!-- /.join-form-card -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <!-- Brand row -->
+    <div class="footer__brand-row">
+      <div class="footer__brand">
+        <img src="images/logo-png.png" alt="Biology Club Logo" class="footer__logo" />
+        <div>
+          <h3>Biology Club</h3>
+          <p>Empowering high school students in biological sciences through research programs, competitions, workshops, and innovative education.</p>
+        </div>
+      </div>
+      <div class="footer__contacts">
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#39B090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:info@biologyclub.com">info@biologyclub.com</a>
+        </div>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#39B090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>STEM October School, 6th of October City, Giza, Egypt</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Four-column links -->
+    <div class="footer__links-grid">
+      <div class="footer__col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="#programs">Research Program</a></li>
+          <li><a href="#programs">BioLeague Competition</a></li>
+          <li><a href="#programs">Hands-on Workshops</a></li>
+          <li><a href="#programs">Computational Biology</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Branches</h4>
+        <ul>
+          <li><a href="#branches">Biochemistry &amp; Cell</a></li>
+          <li><a href="#branches">Genetics &amp; Evolution</a></li>
+          <li><a href="#branches">Anatomy &amp; Physiology</a></li>
+          <li><a href="#branches">Pathology &amp; Disease</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Research Guide</a></li>
+          <li><a href="#">Publications</a></li>
+          <li><a href="#">Magazine</a></li>
+          <li><a href="#">Guidelines</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#meet-our-board">Board</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__divider"></div>
+
+    <!-- Bottom row -->
+    <div class="footer__bottom">
+      <p class="footer__copyright">© 2025 Biology Club – October STEM School. &nbsp; All rights reserved to <a href="https://abdelrahman-website-sigma.vercel.app">Abdelrahman Mohamed</a></p>
+      <div class="footer__socials">
+        <a href="#" class="footer__social footer__social--fb" title="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" class="footer__social footer__social--ig" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="mailto:info@biologyclub.com" class="footer__social footer__social--mail" title="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div class="join-toast" id="joinToast"></div>
+
+<script src="firebase.js"></script>
+<script src="themeToggle.js"></script>
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<!-- <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-analytics.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBdshK30VmLob2YbBy3wpr5TnfEgjaaHy4",
+    authDomain: "octbioclub.firebaseapp.com",
+    projectId: "octbioclub",
+    storageBucket: "octbioclub.firebasestorage.app",
+    messagingSenderId: "505676867746",
+    appId: "1:505676867746:web:ccd769cbd1d5445afecffb",
+    measurementId: "G-NR2TPG6MFG"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script> -->
+
+<!-- Firebase compat SDK (works without a local server) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics-compat.js"></script>
+
+<script>
+  /* ============================================================
+     FIREBASE + FORM LOGIC
+     ============================================================ */
+
+  /* ---- Init Firebase --------------------------------------- */
+  const firebaseConfig = {
+    apiKey:            "AIzaSyBdshK30VmLob2YbBy3wpr5TnfEgjaaHy4",
+    authDomain:        "octbioclub.firebaseapp.com",
+    projectId:         "octbioclub",
+    storageBucket:     "octbioclub.firebasestorage.app",
+    messagingSenderId: "505676867746",
+    appId:             "1:505676867746:web:ccd769cbd1d5445afecffb",
+    measurementId:     "G-NR2TPG6MFG"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  /* ---- Helpers --------------------------------------------- */
+  const $    = id => document.getElementById(id);
+  const toast = (msg) => {
+    const t = $('joinToast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 4000);
+  };
+
+  /* ---- Step state ------------------------------------------ */
+  let current = 1;
+  const TITLES = ['Personal Information', 'Academic Background', 'Interests & Motivation'];
+  const SUBS   = ['Tell us who you are — step 1 of 3', 'Your academic profile — step 2 of 3', 'What drives you — step 3 of 3'];
+
+  function goTo(n) {
+    $(`step${current}`).classList.remove('active');
+
+    document.querySelectorAll('.join-progress__step').forEach((el, i) => {
+      el.classList.remove('active', 'completed');
+      if (i + 1 < n)  el.classList.add('completed');
+      if (i + 1 === n) el.classList.add('active');
+    });
+
+    current = n;
+    $(`step${n}`).classList.add('active');
+    $('formTitle').textContent = TITLES[n - 1];
+    $('formSub').textContent   = SUBS[n - 1];
+    document.querySelector('.join-form-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  /* ---- Validation ------------------------------------------ */
+  function validate(step) {
+    if (step === 1) {
+      if (!$('firstName').value.trim())               { toast('Please enter your first name.');        return false; }
+      if (!$('lastName').value.trim())                { toast('Please enter your last name.');         return false; }
+      const e = $('email').value.trim();
+      if (!e || !e.includes('@') || !e.includes('.')) { toast('Please enter a valid email address.');  return false; }
+      if (!$('phone').value.trim())                   { toast('Please enter your phone number.');      return false; }
+      if (!$('dob').value)                            { toast('Please enter your date of birth.');     return false; }
+    }
+    if (step === 2) {
+      if (!$('grade').value)                          { toast('Please select your grade/year.');       return false; }
+    }
+    if (step === 3) {
+      const selected = [...document.querySelectorAll('#branchesGrid input:checked')];
+      if (selected.length === 0)                      { toast('Please select at least one branch.');   return false; }
+      const mot = $('motivation').value.trim();
+      if (!mot)                                       { toast('Please tell us why you want to join.'); return false; }
+      if (mot.length < 30)                            { toast('Please write a bit more (min. 30 characters).'); return false; }
+    }
+    return true;
+  }
+
+  /* ---- Branch chip toggle ---------------------------------- */
+  document.querySelectorAll('.branch-chip').forEach(chip => {
+    chip.addEventListener('click', (e) => {
+      e.preventDefault();
+      const cb = chip.querySelector('input[type="checkbox"]');
+      cb.checked = !cb.checked;
+      chip.classList.toggle('checked', cb.checked);
+    });
+  });
+
+  /* ---- Navigation ------------------------------------------ */
+  $('nextBtn1').addEventListener('click', () => { if (validate(1)) goTo(2); });
+  $('backBtn2').addEventListener('click', () => goTo(1));
+  $('nextBtn2').addEventListener('click', () => { if (validate(2)) goTo(3); });
+  $('backBtn3').addEventListener('click', () => goTo(2));
+
+  /* ---- Submit ---------------------------------------------- */
+  $('submitBtn').addEventListener('click', async () => {
+    if (!validate(3)) return;
+
+    const btn = $('submitBtn');
+    btn.disabled = true;
+    btn.innerHTML = `<svg style="animation:spin .8s linear infinite;width:1rem;height:1rem;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Submitting…`;
+
+    const branches = [...document.querySelectorAll('#branchesGrid input:checked')].map(cb => cb.value);
+
+    const data = {
+      firstName:       $('firstName').value.trim(),
+      lastName:        $('lastName').value.trim(),
+      fullName:        `${$('firstName').value.trim()} ${$('lastName').value.trim()}`,
+      email:           $('email').value.trim(),
+      phone:           $('phone').value.trim(),
+      dob:             $('dob').value,
+      gender:          $('gender').value,
+      grade:           $('grade').value,
+      gpa:             $('gpa').value.trim(),
+      section:         $('section').value.trim(),
+      experience:      $('experience').value,
+      competitions:    $('competitions').value,
+      language:        $('language').value,
+      branches,
+      programInterest: $('programInterest').value,
+      motivation:      $('motivation').value.trim(),
+      extra:           $('extra').value.trim(),
+      submittedAt:     firebase.firestore.FieldValue.serverTimestamp(),
+      status:          'pending',
+      year:            new Date().getFullYear()
+    };
+
+    /* 10-second timeout */
+    const timeout = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('timeout')), 10000)
+    );
+
+    try {
+      const docRef = await Promise.race([
+        db.collection('applications').add(data),
+        timeout
+      ]);
+
+      const refCode = `BIO-${new Date().getFullYear()}-${docRef.id.slice(0, 6).toUpperCase()}`;
+      $('successRef').textContent = `Application #${refCode}`;
+
+      document.querySelectorAll('.join-step').forEach(s => s.classList.remove('active'));
+      $('joinProgress').style.display = 'none';
+      $('formTitle').style.display    = 'none';
+      $('formSub').style.display      = 'none';
+      $('joinSuccess').classList.add('active');
+
+    } catch (err) {
+      console.error('Submit error:', err);
+      const msg = err.message === 'timeout'
+        ? '⏱ Timed out — please check your Firestore rules (see console for details).'
+        : `❌ ${err.message}`;
+      toast(msg);
+      btn.disabled = false;
+      btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Submit Application`;
+    }
+  });
+
+  /* ---- Reset ----------------------------------------------- */
+  $('resetBtn').addEventListener('click', () => {
+    ['firstName','lastName','email','phone','dob','gpa','section','motivation','extra']
+      .forEach(id => { $(id).value = ''; });
+    ['gender','grade','experience','competitions','language','programInterest']
+      .forEach(id => { $(id).selectedIndex = 0; });
+    document.querySelectorAll('.branch-chip').forEach(chip => {
+      chip.classList.remove('checked');
+      chip.querySelector('input').checked = false;
+    });
+    $('joinSuccess').classList.remove('active');
+    $('joinProgress').style.display = '';
+    $('formTitle').style.display    = '';
+    $('formSub').style.display      = '';
+    current = 0;
+    goTo(1);
+  });
+
+  /* ---- Scroll reveal --------------------------------------- */
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const delay = parseInt(e.target.dataset.delay, 10) || 0;
+      setTimeout(() => e.target.classList.add('visible'), delay);
+      revealObs.unobserve(e.target);
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+</script>
+
+<!-- Application Form Logic & Firebase Integration -->
+<script type="module" src="join.js"></script>
+
+</body>
+</html>

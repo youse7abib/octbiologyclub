@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magazine – Biology Club | October STEM School</title>
+  <meta name="description" content="Read the Biology Club magazine — student-written scientific articles, research highlights, and discoveries in biological sciences." />
+  <meta name="theme-color" content="#358062" />
+  <link rel="icon" type="image/png" href="images/logo-png.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ============================================================
+       MAGAZINE PAGE – PAGE-SPECIFIC STYLES
+       ============================================================ */
+
+    /* ---- Hero -------------------------------------------------- */
+    .mag-hero {
+      position: relative;
+      min-height: 68vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0a0e27 0%, #0f1f18 55%, #0a1a12 100%);
+    }
+    .mag-hero__bg { position: absolute; inset: 0; overflow: hidden; }
+    .mag-hero__orb {
+      position: absolute; border-radius: 50%;
+      filter: blur(90px);
+      animation: orbFloat 9s ease-in-out infinite;
+    }
+    .mag-hero__orb--1 {
+      width: 48rem; height: 48rem;
+      background: radial-gradient(circle, rgba(53,128,98,0.2) 0%, transparent 70%);
+      top: -16rem; left: -14rem;
+    }
+    .mag-hero__orb--2 {
+      width: 30rem; height: 30rem;
+      background: radial-gradient(circle, rgba(57,176,144,0.12) 0%, transparent 70%);
+      bottom: -10rem; right: -8rem; animation-delay: 4s;
+    }
+    .mag-hero__orb--3 {
+      width: 20rem; height: 20rem;
+      background: radial-gradient(circle, rgba(29,88,88,0.18) 0%, transparent 70%);
+      top: 35%; left: 60%; animation-delay: 7s;
+    }
+    @keyframes orbFloat {
+      0%,100% { transform: translateY(0) scale(1); }
+      50%      { transform: translateY(-18px) scale(1.04); }
+    }
+    .mag-hero__grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(57,176,144,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57,176,144,0.035) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .mag-hero__content {
+      position: relative; z-index: 10;
+      text-align: center; max-width: 56rem;
+      padding: 0 1.5rem; margin-top: -2rem;
+    }
+    .mag-hero__eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(57,176,144,0.12); border: 1px solid rgba(57,176,144,0.3);
+      color: #39B090; padding: 0.4rem 1.1rem; border-radius: 999px;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.09em;
+      text-transform: uppercase; margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s ease 0.1s both;
+    }
+    .mag-hero__eyebrow svg { width: 0.85rem; height: 0.85rem; }
+    .mag-hero__title {
+      font-size: 3.5rem; font-weight: 700; color: #fff;
+      line-height: 1.08; letter-spacing: -3px; margin-bottom: 1.25rem;
+      animation: fadeUp 0.8s ease 0.25s both;
+    }
+    @media (min-width:640px)  { .mag-hero__title { font-size: 4.75rem; } }
+    @media (min-width:1024px) { .mag-hero__title { font-size: 5.5rem; } }
+    .mag-hero__title span {
+      background: linear-gradient(to right, #39B090, #4DAF82);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .mag-hero__subtitle {
+      font-size: 1.1rem; color: rgba(255,255,255,0.6);
+      max-width: 38rem; margin: 0 auto 2rem;
+      line-height: 1.75; letter-spacing: -0.3px;
+      animation: fadeUp 0.8s ease 0.4s both;
+    }
+    @media (min-width:640px) { .mag-hero__subtitle { font-size: 1.2rem; } }
+    .mag-hero__actions {
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+      animation: fadeUp 0.8s ease 0.55s both;
+    }
+    .mag-hero__btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 1.75rem; border-radius: 0.65rem;
+      font-size: 0.95rem; font-weight: 600;
+      border: none; cursor: pointer; font-family: inherit;
+      transition: all 0.3s; text-decoration: none;
+    }
+    .mag-hero__btn svg { width: 1rem; height: 1rem; }
+    .mag-hero__btn--primary {
+      background: linear-gradient(135deg, #358062, #1D5858); color: #fff;
+    }
+    .mag-hero__btn--primary:hover {
+      box-shadow: 0 12px 28px rgba(53,128,98,0.4); transform: translateY(-2px);
+    }
+    .mag-hero__btn--secondary {
+      background: rgba(255,255,255,0.1); color: #fff;
+      border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(8px);
+    }
+    .mag-hero__btn--secondary:hover {
+      background: rgba(255,255,255,0.18); transform: translateY(-2px);
+    }
+    .breadcrumb {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.78rem; color: rgba(255,255,255,0.4); white-space: nowrap;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .breadcrumb a:hover { color: #39B090; }
+    .breadcrumb svg { width: 0.7rem; height: 0.7rem; }
+
+    /* ---- Stats bar -------------------------------------------- */
+    .mag-stats {
+      background: linear-gradient(135deg, #358062, #1D5858);
+      padding: 2rem 1.5rem;
+    }
+    .mag-stats__inner {
+      max-width: 80rem; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+    }
+    @media (min-width:640px) { .mag-stats__inner { grid-template-columns: repeat(4,1fr); } }
+    .mag-stat { text-align: center; }
+    .mag-stat__val {
+      font-size: 2rem; font-weight: 700; color: #fff;
+      letter-spacing: -1.5px; line-height: 1;
+    }
+    .mag-stat__label { font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 0.25rem; }
+
+    /* ---- Featured issue --------------------------------------- */
+    .mag-featured {
+      padding: 5rem 1.5rem;
+      background: linear-gradient(135deg, var(--bg-soft,#f9fafb), var(--bg,#fff));
+    }
+    .mag-featured__inner { max-width: 80rem; margin: 0 auto; }
+
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-badge {
+      display: inline-block; background: rgba(53,128,98,0.1); color: #358062;
+      padding: 0.3rem 0.9rem; border-radius: 999px;
+      font-size: 0.78rem; font-weight: 600;
+      border: 1px solid rgba(53,128,98,0.2); margin-bottom: 0.85rem;
+    }
+    .section-title {
+      font-size: 2.25rem; font-weight: 700;
+      color: var(--text,#111827); letter-spacing: -2px; margin-bottom: 0.6rem;
+    }
+    @media (min-width:640px) { .section-title { font-size: 2.75rem; } }
+    .section-subtitle { font-size: 1rem; color: var(--text-muted,#4b5563); max-width: 38rem; margin: 0 auto; line-height: 1.65; }
+
+    /* Featured card — big horizontal layout */
+    .featured-card {
+      display: grid; grid-template-columns: 1fr;
+      background: var(--bg-card,#fff);
+      border: 1px solid var(--border-soft,#f3f4f6);
+      border-radius: 1.5rem; overflow: hidden;
+      box-shadow: 0 20px 60px -12px rgba(0,0,0,0.08);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    @media (min-width:768px) { .featured-card { grid-template-columns: 1fr 1fr; } }
+    .featured-card:hover { box-shadow: 0 28px 70px -12px rgba(53,128,98,0.15); transform: translateY(-3px); }
+
+    .featured-card__cover {
+      position: relative; min-height: 280px; overflow: hidden;
+      background: linear-gradient(135deg, #0a0e27, #0f1f18);
+    }
+    @media (min-width:768px) { .featured-card__cover { min-height: 420px; } }
+    .featured-card__cover-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #0a0e27 0%, #0f2518 50%, #071f14 100%);
+    }
+    .featured-card__cover-orb {
+      position: absolute; border-radius: 50%; filter: blur(50px); pointer-events: none;
+    }
+    .featured-card__cover-orb--1 {
+      width: 20rem; height: 20rem;
+      background: radial-gradient(circle, rgba(53,128,98,0.35) 0%, transparent 70%);
+      top: -4rem; right: -4rem;
+    }
+    .featured-card__cover-orb--2 {
+      width: 12rem; height: 12rem;
+      background: radial-gradient(circle, rgba(57,176,144,0.2) 0%, transparent 70%);
+      bottom: -2rem; left: -2rem;
+    }
+    .featured-card__cover-content {
+      position: relative; z-index: 1;
+      padding: 2.5rem; height: 100%;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .issue-badge {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      background: rgba(57,176,144,0.2); border: 1px solid rgba(57,176,144,0.4);
+      color: #39B090; padding: 0.35rem 0.9rem; border-radius: 999px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; width: fit-content;
+    }
+    .issue-badge svg { width: 0.7rem; height: 0.7rem; }
+    .featured-card__cover-bottom {}
+    .featured-card__cover-title {
+      font-size: 2.25rem; font-weight: 700; color: #fff;
+      letter-spacing: -1.5px; line-height: 1.15; margin-bottom: 0.85rem;
+    }
+    @media (min-width:1024px) { .featured-card__cover-title { font-size: 2.75rem; } }
+    .featured-card__cover-title em {
+      font-style: normal;
+      background: linear-gradient(to right, #39B090, #4DAF82);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .featured-card__cover-meta {
+      display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+    }
+    .cover-meta-item {
+      display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.8rem; color: rgba(255,255,255,0.55);
+    }
+    .cover-meta-item svg { width: 0.85rem; height: 0.85rem; color: #39B090; }
+
+    .featured-card__body {
+      padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;
+    }
+    .featured-card__tag-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .mag-tag {
+      display: inline-block; padding: 0.25rem 0.75rem;
+      border-radius: 999px; font-size: 0.75rem; font-weight: 600;
+      border: 1px solid;
+    }
+    .mag-tag--green  { background: rgba(53,128,98,0.1);  color: #358062; border-color: rgba(53,128,98,0.2); }
+    .mag-tag--teal   { background: rgba(29,88,88,0.1);   color: #1D5858; border-color: rgba(29,88,88,0.2); }
+    .mag-tag--mint   { background: rgba(57,176,144,0.1); color: #39B090; border-color: rgba(57,176,144,0.2); }
+    .mag-tag--slate  { background: rgba(71,85,105,0.1);  color: #475569; border-color: rgba(71,85,105,0.2); }
+
+    .featured-card__headline {
+      font-size: 1.5rem; font-weight: 700; color: var(--text,#111827);
+      letter-spacing: -1px; line-height: 1.3;
+    }
+    .featured-card__excerpt {
+      font-size: 0.95rem; color: var(--text-muted,#4b5563); line-height: 1.75;
+    }
+    .featured-card__articles {
+      display: flex; flex-direction: column; gap: 0.85rem;
+      border-top: 1px solid var(--border-soft,#f3f4f6);
+      padding-top: 1.5rem;
+    }
+    .mini-article {
+      display: flex; align-items: flex-start; gap: 0.85rem;
+      padding: 0.85rem; border-radius: 0.65rem;
+      border: 1px solid var(--border-soft,#f3f4f6);
+      transition: border-color 0.2s, background 0.2s; cursor: pointer;
+    }
+    .mini-article:hover { border-color: rgba(53,128,98,0.3); background: rgba(53,128,98,0.04); }
+    .mini-article__num {
+      flex-shrink: 0; width: 1.75rem; height: 1.75rem; border-radius: 50%;
+      background: linear-gradient(135deg, #358062, #1D5858);
+      color: #fff; font-size: 0.65rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .mini-article__info {}
+    .mini-article__title { font-size: 0.85rem; font-weight: 600; color: var(--text,#111827); margin-bottom: 0.2rem; line-height: 1.4; }
+    .mini-article__author { font-size: 0.75rem; color: var(--text-faint,#9ca3af); }
+    .featured-card__cta {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 1.75rem; border-radius: 0.65rem;
+      background: linear-gradient(135deg, #358062, #1D5858); color: #fff;
+      font-size: 0.925rem; font-weight: 600; font-family: inherit;
+      border: none; cursor: pointer; transition: all 0.3s;
+      width: fit-content;
+    }
+    .featured-card__cta:hover { box-shadow: 0 10px 24px rgba(53,128,98,0.35); transform: translateY(-2px); }
+    .featured-card__cta svg { width: 1rem; height: 1rem; }
+
+    /* ---- All Issues grid -------------------------------------- */
+    .mag-issues {
+      padding: 5rem 1.5rem;
+      background: var(--bg,#fff);
+    }
+    .mag-issues__inner { max-width: 80rem; margin: 0 auto; }
+
+    /* Filter tabs */
+    .mag-filters {
+      display: flex; gap: 0.6rem; flex-wrap: wrap;
+      justify-content: center; margin-bottom: 3rem;
+    }
+    .mag-filter-btn {
+      padding: 0.5rem 1.25rem; border-radius: 999px;
+      font-size: 0.85rem; font-weight: 600; font-family: inherit;
+      border: 1.5px solid var(--border,#e5e7eb);
+      background: var(--bg-card,#fff); color: var(--text-muted,#4b5563);
+      cursor: pointer; transition: all 0.25s;
+    }
+    .mag-filter-btn:hover { border-color: #39B090; color: #358062; }
+    .mag-filter-btn.active {
+      background: linear-gradient(135deg, #358062, #1D5858);
+      border-color: transparent; color: #fff;
+    }
+
+    .mag-issues__grid {
+      display: grid; grid-template-columns: 1fr; gap: 1.75rem;
+    }
+    @media (min-width:640px)  { .mag-issues__grid { grid-template-columns: repeat(2,1fr); } }
+    @media (min-width:1024px) { .mag-issues__grid { grid-template-columns: repeat(3,1fr); } }
+
+    /* Issue card */
+    .issue-card {
+      background: var(--bg-card,#fff);
+      border: 1px solid var(--border-soft,#f3f4f6);
+      border-radius: 1.25rem; overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+    .issue-card:hover {
+      border-color: rgba(53,128,98,0.25);
+      box-shadow: 0 16px 40px -8px rgba(53,128,98,0.12);
+      transform: translateY(-4px);
+    }
+    .issue-card__cover {
+      height: 11rem; position: relative; overflow: hidden;
+    }
+    .issue-card__cover-bg {
+      position: absolute; inset: 0; transition: transform 0.4s;
+    }
+    .issue-card:hover .issue-card__cover-bg { transform: scale(1.05); }
+    .issue-card__cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 60%);
+    }
+    .issue-card__cover-num {
+      position: absolute; top: 1rem; left: 1rem;
+      background: rgba(57,176,144,0.25); border: 1px solid rgba(57,176,144,0.5);
+      color: #39B090; padding: 0.25rem 0.7rem; border-radius: 999px;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .issue-card__cover-year {
+      position: absolute; bottom: 0.85rem; right: 1rem;
+      font-size: 0.72rem; color: rgba(255,255,255,0.65); font-weight: 500;
+    }
+    .issue-card__body { padding: 1.4rem; }
+    .issue-card__tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+    .issue-card__title {
+      font-size: 1.05rem; font-weight: 700; color: var(--text,#111827);
+      letter-spacing: -0.5px; line-height: 1.4; margin-bottom: 0.5rem;
+    }
+    .issue-card__desc {
+      font-size: 0.85rem; color: var(--text-muted,#4b5563); line-height: 1.65; margin-bottom: 1.1rem;
+    }
+    .issue-card__footer {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border-soft,#f3f4f6); padding-top: 0.9rem;
+    }
+    .issue-card__meta { font-size: 0.75rem; color: var(--text-faint,#9ca3af); }
+    .issue-card__read {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-size: 0.8rem; font-weight: 600; color: #358062;
+      transition: gap 0.2s;
+    }
+    .issue-card__read svg { width: 0.85rem; height: 0.85rem; transition: transform 0.2s; }
+    .issue-card:hover .issue-card__read { gap: 0.5rem; }
+    .issue-card:hover .issue-card__read svg { transform: translateX(3px); }
+
+    /* ---- Articles section ------------------------------------- */
+    .mag-articles {
+      padding: 5rem 1.5rem;
+      background: linear-gradient(135deg, var(--bg-soft,#f9fafb), var(--bg,#fff));
+    }
+    .mag-articles__inner { max-width: 80rem; margin: 0 auto; }
+
+    .articles-grid {
+      display: grid; grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width:768px)  { .articles-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (min-width:1024px) { .articles-grid { grid-template-columns: repeat(3,1fr); } }
+
+    .article-card {
+      background: var(--bg-card,#fff);
+      border: 1px solid var(--border-soft,#f3f4f6);
+      border-radius: 1.25rem; padding: 1.5rem;
+      display: flex; flex-direction: column; gap: 0.85rem;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      cursor: pointer; position: relative; overflow: hidden;
+    }
+    .article-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      border-radius: 1.25rem 1.25rem 0 0;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .article-card:hover { border-color: rgba(53,128,98,0.25); box-shadow: 0 16px 40px -8px rgba(53,128,98,0.1); transform: translateY(-3px); }
+    .article-card:hover::before { opacity: 1; }
+    .article-card__icon-wrap {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 2.5rem; height: 2.5rem; border-radius: 0.65rem;
+      transition: transform 0.3s;
+    }
+    .article-card:hover .article-card__icon-wrap { transform: scale(1.1) rotate(5deg); }
+    .article-card__icon-wrap svg { width: 1.2rem; height: 1.2rem; }
+    .article-card__tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .article-card__title {
+      font-size: 1rem; font-weight: 700; color: var(--text,#111827);
+      letter-spacing: -0.3px; line-height: 1.45;
+    }
+    .article-card__abstract {
+      font-size: 0.85rem; color: var(--text-muted,#4b5563); line-height: 1.65; flex: 1;
+    }
+    .article-card__footer {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border-soft,#f3f4f6); padding-top: 0.85rem;
+    }
+    .article-card__author {
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .article-card__avatar {
+      width: 1.6rem; height: 1.6rem; border-radius: 50%;
+      background: linear-gradient(135deg, #358062, #39B090);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.6rem; font-weight: 700; color: #fff; flex-shrink: 0;
+    }
+    .article-card__author-name { font-size: 0.78rem; font-weight: 600; color: var(--text,#111827); }
+    .article-card__date { font-size: 0.72rem; color: var(--text-faint,#9ca3af); }
+    .article-card__read-link {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-size: 0.8rem; font-weight: 600; color: #358062;
+      transition: gap 0.2s;
+    }
+    .article-card__read-link svg { width: 0.85rem; height: 0.85rem; transition: transform 0.2s; }
+    .article-card:hover .article-card__read-link { gap: 0.5rem; }
+    .article-card:hover .article-card__read-link svg { transform: translateX(3px); }
+
+    /* ---- Contribute CTA --------------------------------------- */
+    .mag-contribute {
+      padding: 5rem 1.5rem;
+      background: var(--bg,#fff);
+    }
+    .mag-contribute__inner { max-width: 80rem; margin: 0 auto; }
+
+    .contribute-banner {
+      position: relative; overflow: hidden;
+      border-radius: 1.5rem;
+      background: linear-gradient(135deg, #0a0e27 0%, #0f2518 50%, #071f14 100%);
+      padding: 3.5rem 2.5rem;
+    }
+    @media (min-width:640px) { .contribute-banner { padding: 4rem 3.5rem; } }
+    .contribute-banner__orb {
+      position: absolute; border-radius: 50%; filter: blur(70px); pointer-events: none;
+    }
+    .contribute-banner__orb--1 {
+      width: 28rem; height: 28rem;
+      background: radial-gradient(circle, rgba(53,128,98,0.28) 0%, transparent 70%);
+      top: -8rem; right: -6rem;
+    }
+    .contribute-banner__orb--2 {
+      width: 18rem; height: 18rem;
+      background: radial-gradient(circle, rgba(57,176,144,0.15) 0%, transparent 70%);
+      bottom: -5rem; left: -4rem;
+    }
+    .contribute-banner__content {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center;
+    }
+    @media (min-width:768px) { .contribute-banner__content { grid-template-columns: 1fr auto; } }
+    .contribute-banner__badge {
+      display: inline-block; background: rgba(57,176,144,0.15); color: #39B090;
+      border: 1px solid rgba(57,176,144,0.3); padding: 0.3rem 0.9rem;
+      border-radius: 999px; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .contribute-banner__title {
+      font-size: 2.25rem; font-weight: 700; color: #fff;
+      letter-spacing: -2px; line-height: 1.15; margin-bottom: 1rem;
+    }
+    @media (min-width:640px) { .contribute-banner__title { font-size: 2.75rem; } }
+    .contribute-banner__title em {
+      font-style: normal;
+      background: linear-gradient(to right, #39B090, #4DAF82);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .contribute-banner__body {
+      font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.75; max-width: 34rem;
+    }
+    .contribute-banner__actions {
+      display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;
+    }
+    .contribute-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 1.75rem; border-radius: 0.65rem;
+      font-size: 0.925rem; font-weight: 600; font-family: inherit;
+      cursor: pointer; border: none; transition: all 0.3s; text-decoration: none;
+    }
+    .contribute-btn svg { width: 1rem; height: 1rem; }
+    .contribute-btn--primary { background: #fff; color: #111827; }
+    .contribute-btn--primary:hover { box-shadow: 0 10px 24px rgba(0,0,0,0.2); transform: translateY(-2px); }
+    .contribute-btn--secondary {
+      background: rgba(255,255,255,0.1); color: #fff;
+      border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(8px);
+    }
+    .contribute-btn--secondary:hover { background: rgba(255,255,255,0.18); transform: translateY(-2px); }
+
+    /* Right side guidelines card */
+    .contribute-guide {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 1rem; padding: 1.75rem; min-width: 18rem;
+    }
+    .contribute-guide h4 {
+      font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 1.25rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .contribute-guide h4 svg { width: 1rem; height: 1rem; color: #39B090; }
+    .contribute-guide__list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .contribute-guide__item {
+      display: flex; align-items: flex-start; gap: 0.6rem;
+      font-size: 0.875rem; color: rgba(255,255,255,0.7); line-height: 1.5;
+    }
+    .contribute-guide__dot {
+      flex-shrink: 0; width: 0.4rem; height: 0.4rem; border-radius: 50%;
+      background: #39B090; margin-top: 0.45rem;
+    }
+
+    /* ---- Newsletter strip ------------------------------------- */
+    .mag-newsletter {
+      padding: 3rem 1.5rem;
+      background: linear-gradient(135deg, var(--bg-soft,#f9fafb), var(--bg,#fff));
+      border-top: 1px solid var(--border-soft,#f3f4f6);
+    }
+    .mag-newsletter__inner {
+      max-width: 80rem; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 1.5rem; text-align: center;
+    }
+    @media (min-width:768px) {
+      .mag-newsletter__inner { flex-direction: row; justify-content: space-between; text-align: left; }
+    }
+    .mag-newsletter__text h3 {
+      font-size: 1.35rem; font-weight: 700; color: var(--text,#111827);
+      letter-spacing: -0.5px; margin-bottom: 0.35rem;
+    }
+    .mag-newsletter__text p { font-size: 0.9rem; color: var(--text-muted,#4b5563); }
+    .mag-newsletter__form {
+      display: flex; gap: 0.6rem; flex-shrink: 0; flex-wrap: wrap; justify-content: center;
+    }
+    .mag-newsletter__form input {
+      padding: 0.75rem 1.1rem; border-radius: 0.6rem;
+      border: 1.5px solid var(--border,#e5e7eb);
+      font-size: 0.9rem; color: var(--text,#111827);
+      background: var(--bg-input,#f9fafb);
+      font-family: inherit; outline: none; min-width: 220px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .mag-newsletter__form input:focus {
+      border-color: #39B090;
+      box-shadow: 0 0 0 4px rgba(57,176,144,0.15);
+      background: var(--bg-card,#fff);
+    }
+    .mag-newsletter__form input::placeholder { color: var(--text-faint,#9ca3af); }
+    .mag-newsletter__btn {
+      padding: 0.75rem 1.5rem; border-radius: 0.6rem;
+      background: linear-gradient(135deg, #358062, #1D5858);
+      color: #fff; font-size: 0.9rem; font-weight: 600;
+      font-family: inherit; border: none; cursor: pointer; transition: all 0.3s;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+    }
+    .mag-newsletter__btn svg { width: 0.9rem; height: 0.9rem; }
+    .mag-newsletter__btn:hover { box-shadow: 0 8px 20px rgba(53,128,98,0.35); transform: translateY(-1px); }
+
+    /* ---- Keyframes -------------------------------------------- */
+
+    /* ---- Dynamic articles search & controls ---------------- */
+    .articles-search-wrap { margin-bottom: 2rem; }
+    .articles-search {
+      display: flex; align-items: center; gap: 0.75rem;
+      background: var(--bg-card,#fff); border: 1.5px solid var(--border,#e5e7eb);
+      border-radius: 0.75rem; padding: 0.65rem 1rem;
+      max-width: 520px; margin: 0 auto;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .articles-search:focus-within {
+      border-color: #39B090;
+      box-shadow: 0 0 0 4px rgba(57,176,144,0.12);
+    }
+    .articles-search svg { width: 1rem; height: 1rem; stroke: var(--text-faint,#9ca3af); flex-shrink: 0; }
+    .articles-search input {
+      flex: 1; border: none; outline: none; background: transparent;
+      font-size: 0.9rem; color: var(--text,#111827); font-family: inherit;
+    }
+    .articles-search input::placeholder { color: var(--text-faint,#9ca3af); }
+    #articlesSearchClear {
+      background: none; border: none; cursor: pointer; color: var(--text-faint,#9ca3af);
+      display: none; padding: 0.1rem; transition: color 0.2s; flex-shrink: 0;
+    }
+    #articlesSearchClear:hover { color: var(--text,#111827); }
+    #articlesSearchClear svg { width: 0.85rem; height: 0.85rem; }
+    #articlesSearchClear.visible { display: flex; align-items: center; }
+
+    /* Article type icon colors */
+    .atype-research  { background: rgba(53,128,98,0.1);  color: #358062; }
+    .atype-review    { background: rgba(29,88,88,0.1);   color: #1D5858; }
+    .atype-opinion   { background: rgba(57,176,144,0.1); color: #39B090; }
+    .atype-lab       { background: rgba(43,102,90,0.1);  color: #2B665A; }
+    .atype-case      { background: rgba(96,125,100,0.1); color: #607d64; }
+    .atype-other     { background: rgba(100,116,139,0.1);color: #64748b; }
+
+    /* Skeleton loaders */
+    .article-skeleton {
+      background: var(--bg-card,#fff);
+      border: 1px solid var(--border-soft,#f3f4f6);
+      border-radius: 1.25rem; padding: 1.5rem;
+      min-height: 260px;
+    }
+    .article-skeleton::before {
+      content: '';
+      display: block;
+      background: linear-gradient(90deg, var(--border-soft,#f3f4f6) 25%, var(--bg-soft,#f9fafb) 50%, var(--border-soft,#f3f4f6) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+      border-radius: 0.5rem;
+      height: 100%;
+      min-height: 220px;
+    }
+    @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+    /* Show more button */
+    #showMoreBtn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.82rem 2rem; border-radius: 0.65rem;
+      background: var(--bg-card,#fff); border: 1.5px solid var(--border,#e5e7eb);
+      color: var(--text-muted,#374151); font-size: 0.925rem; font-weight: 600;
+      font-family: inherit; cursor: pointer; transition: all 0.3s;
+    }
+    #showMoreBtn svg { width: 1rem; height: 1rem; transition: transform 0.2s; }
+    #showMoreBtn:hover { border-color: #39B090; color: #358062; transform: translateY(-1px); }
+    #showMoreBtn:hover svg { transform: translateY(2px); }
+    #showMoreBtn:disabled { opacity: 0.5; pointer-events: none; }
+
+    /* No-firebase fallback cards keep existing .article-card styles */
+    .article-card--live::before { background: linear-gradient(to right, #358062, #39B090); }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<nav id="navbar" class="navbar">
+  <div class="navbar__inner">
+    <div class="navbar__top-row">
+
+      <!-- Logo -->
+      <div class="logoDiv">
+        <a href="index.html" class="navbar__logo" id="navLogo">
+          <img src="images/logo-png.png" alt="Biology Club Logo" class="navbar__logo-img" id="logoImg" />
+        </a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <ul class="navbar__menu" id="desktopMenu">
+        <li><a href="index.html">Home</a></li>
+
+        <!-- About Dropdown -->
+        <li class="navbar__dropdown">
+          <a href="index.html#about" class="navbar__dropdown-toggle">
+            About
+            <svg class="navbar__dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <ul class="navbar__dropdown-menu">
+            <li><a href="vision.html">About us</a></li>
+            <li><a href="partner.html">Partners</a></li>
+          </ul>
+        </li>
+
+        <!-- Programs Dropdown -->
+        <li class="navbar__dropdown">
+          <a href="#programs" class="navbar__dropdown-toggle">
+            Programs
+            <svg class="navbar__dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <ul class="navbar__dropdown-menu">
+            <li><a href="bioleague.html">BioLeague</a></li>
+            <li><a href="magazine.html">Magazine</a></li>
+          </ul>
+        </li>
+
+        <!-- Branches Dropdown -->
+        <li class="navbar__dropdown">
+          <a href="#branches" class="navbar__dropdown-toggle">
+            Branches
+            <svg class="navbar__dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <ul class="navbar__dropdown-menu">
+            <li><a href="#molecular-biology">Molecular Biology</a></li>
+            <li><a href="#cell-biology">Cell Biology</a></li>
+            <li><a href="#genetics">Genetics</a></li>
+            <li><a href="#ecology">Ecology</a></li>
+            <li><a href="#evolutionary-biology">Evolutionary Biology</a></li>
+            <li><a href="#microbiology">Microbiology</a></li>
+            <li><a href="#botany">Botany</a></li>
+            <li><a href="#zoology">Zoology</a></li>
+            <li><a href="#marine-biology">Marine Biology</a></li>
+            <li><a href="#biochemistry">Biochemistry</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Desktop Action Buttons -->
+      <div class="navbar__actions">
+        <!-- Theme Toggle Button (Desktop) -->
+        <button id="themeToggle" class="navbar__btn navbar__btn--theme" aria-label="Toggle dark mode">
+          <svg id="themeIcon" class="navbar__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <span id="themeLabel">Dark</span>
+        </button>
+        <button class="navbar__btn navbar__btn--donate">
+          <svg class="navbar__btn-icon navbar__btn-icon--heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span>Donate</span>
+        </button>
+        <button class="navbar__btn navbar__btn--contact">
+          <svg class="navbar__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>Contact</span>
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+        <svg class="navbar__hamburger-icon navbar__hamburger-icon--menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="navbar__hamburger-icon navbar__hamburger-icon--close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="navbar__mobile-menu" id="mobileMenu">
+      <a href="#home" class="navbar__mobile-link">Home</a>
+
+      <!-- Mobile About Dropdown -->
+      <div class="navbar__mobile-dropdown">
+        <button class="navbar__mobile-dropdown-toggle">
+          About
+          <svg class="navbar__mobile-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="navbar__mobile-dropdown-menu">
+          <a href="#vision" class="navbar__mobile-link navbar__mobile-link--sub">Our Vision</a>
+          <a href="#meet-our-board" class="navbar__mobile-link navbar__mobile-link--sub">Meet Our Board</a>
+          <a href="#partners" class="navbar__mobile-link navbar__mobile-link--sub">Partners</a>
+        </div>
+      </div>
+
+      <!-- Mobile Programs Dropdown -->
+      <div class="navbar__mobile-dropdown">
+        <button class="navbar__mobile-dropdown-toggle">
+          Programs
+          <svg class="navbar__mobile-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="navbar__mobile-dropdown-menu">
+          <a href="#bioleague" class="navbar__mobile-link navbar__mobile-link--sub">BioLeague</a>
+          <a href="#magazine" class="navbar__mobile-link navbar__mobile-link--sub">Magazine</a>
+        </div>
+      </div>
+
+      <!-- Mobile Branches Dropdown -->
+      <div class="navbar__mobile-dropdown">
+        <button class="navbar__mobile-dropdown-toggle">
+          Branches
+          <svg class="navbar__mobile-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="navbar__mobile-dropdown-menu">
+          <a href="#molecular-biology" class="navbar__mobile-link navbar__mobile-link--sub">Molecular Biology</a>
+          <a href="#cell-biology" class="navbar__mobile-link navbar__mobile-link--sub">Cell Biology</a>
+          <a href="#genetics" class="navbar__mobile-link navbar__mobile-link--sub">Genetics</a>
+          <a href="#ecology" class="navbar__mobile-link navbar__mobile-link--sub">Ecology</a>
+          <a href="#evolutionary-biology" class="navbar__mobile-link navbar__mobile-link--sub">Evolutionary Biology</a>
+          <a href="#microbiology" class="navbar__mobile-link navbar__mobile-link--sub">Microbiology</a>
+          <a href="#botany" class="navbar__mobile-link navbar__mobile-link--sub">Botany</a>
+          <a href="#zoology" class="navbar__mobile-link navbar__mobile-link--sub">Zoology</a>
+          <a href="#marine-biology" class="navbar__mobile-link navbar__mobile-link--sub">Marine Biology</a>
+          <a href="#biochemistry" class="navbar__mobile-link navbar__mobile-link--sub">Biochemistry</a>
+        </div>
+      </div>
+
+      <div class="navbar__mobile-actions">
+        <!-- Theme Toggle Button (Mobile) -->
+        <button id="themeToggleMobile" class="navbar__btn navbar__btn--theme navbar__btn--full" aria-label="Toggle dark mode">
+          <svg id="themeIconMobile" class="navbar__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <span id="themeLabelMobile">Switch to Dark Mode</span>
+        </button>
+        <button class="navbar__btn navbar__btn--donate navbar__btn--full">
+          <svg class="navbar__btn-icon navbar__btn-icon--heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Donate
+        </button>
+        <button class="navbar__btn navbar__btn--contact navbar__btn--full">
+          <svg class="navbar__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Contact
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="mag-hero">
+  <div class="mag-hero__bg">
+    <div class="mag-hero__orb mag-hero__orb--1"></div>
+    <div class="mag-hero__orb mag-hero__orb--2"></div>
+    <div class="mag-hero__orb mag-hero__orb--3"></div>
+  </div>
+  <div class="mag-hero__grid"></div>
+  <div class="mag-hero__content">
+    <div class="mag-hero__eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-1H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-1h7z"/></svg>
+      Student-Written · Peer-Reviewed
+    </div>
+    <h1 class="mag-hero__title">Biology Club <span>Magazine</span></h1>
+    <p class="mag-hero__subtitle">
+      Scientific articles, research highlights, and cutting-edge discoveries — all written by the student researchers of October STEM School's Biology Club.
+    </p>
+    <div class="mag-hero__actions">
+      <a href="#latest-issue" class="mag-hero__btn mag-hero__btn--primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-1H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-1h7z"/></svg>
+        Read Latest Issue
+      </a>
+      <a href="#contribute" class="mag-hero__btn mag-hero__btn--secondary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        Submit an Article
+      </a>
+    </div>
+  </div>
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html#programs">Programs</a>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    <span>Magazine</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS BAR
+     ============================================================ -->
+<div class="mag-stats">
+  <div class="mag-stats__inner">
+    <div class="mag-stat">
+      <div class="mag-stat__val">3+</div>
+      <div class="mag-stat__label">Issues Published</div>
+    </div>
+    <div class="mag-stat">
+      <div class="mag-stat__val">20+</div>
+      <div class="mag-stat__label">Articles Written</div>
+    </div>
+    <div class="mag-stat">
+      <div class="mag-stat__val">15+</div>
+      <div class="mag-stat__label">Student Authors</div>
+    </div>
+    <div class="mag-stat">
+      <div class="mag-stat__val">10</div>
+      <div class="mag-stat__label">Biology Fields Covered</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     FEATURED ISSUE
+     ============================================================ -->
+<section class="mag-featured" id="latest-issue">
+  <div class="mag-featured__inner">
+    <div class="section-header reveal">
+      <span class="section-badge">Latest Release</span>
+      <h2 class="section-title">Featured Issue</h2>
+      <p class="section-subtitle">Our most recent publication, packed with original research, reviews, and scientific discoveries from our members.</p>
+    </div>
+
+    <div class="featured-card reveal" data-delay="100">
+      <!-- Cover panel -->
+      <div class="featured-card__cover">
+        <div class="featured-card__cover-bg"></div>
+        <div class="featured-card__cover-orb featured-card__cover-orb--1"></div>
+        <div class="featured-card__cover-orb featured-card__cover-orb--2"></div>
+        <div class="featured-card__cover-content">
+          <div class="issue-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-1H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-1h7z"/></svg>
+            Issue 03 · 2025
+          </div>
+          <div class="featured-card__cover-bottom">
+            <h2 class="featured-card__cover-title">
+              Frontiers of<br/><em>Biological Science</em>
+            </h2>
+            <div class="featured-card__cover-meta">
+              <span class="cover-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                May 2025
+              </span>
+              <span class="cover-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                8 Authors
+              </span>
+              <span class="cover-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                6 Articles
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Body panel -->
+      <div class="featured-card__body">
+        <div class="featured-card__tag-row">
+          <span class="mag-tag mag-tag--green">Genetics</span>
+          <span class="mag-tag mag-tag--teal">Microbiology</span>
+          <span class="mag-tag mag-tag--mint">Ecology</span>
+          <span class="mag-tag mag-tag--slate">Cell Biology</span>
+        </div>
+
+        <h3 class="featured-card__headline">
+          Exploring Life at Every Scale — From Molecules to Ecosystems
+        </h3>
+        <p class="featured-card__excerpt">
+          Issue 03 brings together six original articles covering the latest in genomics, antibiotic resistance, coral reef ecology, and cancer cell biology. Each piece is written, researched, and peer-reviewed by Biology Club members — a true showcase of student scientific talent.
+        </p>
+
+        <div class="featured-card__articles">
+          <div class="mini-article">
+            <div class="mini-article__num">01</div>
+            <div class="mini-article__info">
+              <div class="mini-article__title">CRISPR-Cas9 and the Future of Gene Editing in Human Disease</div>
+              <div class="mini-article__author">By Ahmed M. Hamed · Molecular Biology</div>
+            </div>
+          </div>
+          <div class="mini-article">
+            <div class="mini-article__num">02</div>
+            <div class="mini-article__info">
+              <div class="mini-article__title">Antibiotic Resistance: A Systematic Review of Mechanisms and Solutions</div>
+              <div class="mini-article__author">By Abdel-Aziz Gamal · Microbiology</div>
+            </div>
+          </div>
+          <div class="mini-article">
+            <div class="mini-article__num">03</div>
+            <div class="mini-article__info">
+              <div class="mini-article__title">Climate Change and Coral Bleaching: What the Reefs Are Telling Us</div>
+              <div class="mini-article__author">By Zeyad Waleed · Marine Biology & Ecology</div>
+            </div>
+          </div>
+        </div>
+
+        <button class="featured-card__cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-1H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-1h7z"/></svg>
+          Read Full Issue
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ALL ISSUES
+     ============================================================ -->
+<section class="mag-issues" id="all-issues">
+  <div class="mag-issues__inner">
+    <div class="section-header reveal">
+      <span class="section-badge">Archive</span>
+      <h2 class="section-title">All Issues</h2>
+      <p class="section-subtitle">Browse every issue of the Biology Club Magazine since our founding.</p>
+    </div>
+
+    <div class="mag-filters reveal" data-delay="100">
+      <button class="mag-filter-btn active">All Issues</button>
+      <button class="mag-filter-btn">2025</button>
+      <button class="mag-filter-btn">2024</button>
+      <button class="mag-filter-btn">Genetics</button>
+      <button class="mag-filter-btn">Ecology</button>
+      <button class="mag-filter-btn">Microbiology</button>
+    </div>
+
+    <div class="mag-issues__grid">
+
+      <!-- Issue 03 -->
+      <div class="issue-card reveal" data-delay="50">
+        <div class="issue-card__cover" style="background:linear-gradient(135deg,#0a0e27,#0f2518);">
+          <div class="issue-card__cover-bg" style="background:linear-gradient(135deg,#0a0e27,#1D5858);"></div>
+          <div class="issue-card__cover-overlay"></div>
+          <span class="issue-card__cover-num">Issue 03</span>
+          <span class="issue-card__cover-year">May 2025</span>
+          <!-- Decorative orb -->
+          <div style="position:absolute;top:-2rem;right:-2rem;width:10rem;height:10rem;background:radial-gradient(circle,rgba(57,176,144,0.25) 0%,transparent 70%);border-radius:50%;filter:blur(30px);pointer-events:none;"></div>
+        </div>
+        <div class="issue-card__body">
+          <div class="issue-card__tags">
+            <span class="mag-tag mag-tag--green">Genetics</span>
+            <span class="mag-tag mag-tag--mint">Ecology</span>
+          </div>
+          <h3 class="issue-card__title">Frontiers of Biological Science</h3>
+          <p class="issue-card__desc">Gene editing, antibiotic resistance, coral reef ecology — 6 original student articles exploring life at every scale.</p>
+          <div class="issue-card__footer">
+            <span class="issue-card__meta">6 articles · 8 authors</span>
+            <span class="issue-card__read">
+              Read
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Issue 02 -->
+      <div class="issue-card reveal" data-delay="100">
+        <div class="issue-card__cover" style="background:linear-gradient(135deg,#071510,#0a2b1a);">
+          <div class="issue-card__cover-bg" style="background:linear-gradient(135deg,#0a1a10,#1D5858);"></div>
+          <div class="issue-card__cover-overlay"></div>
+          <span class="issue-card__cover-num">Issue 02</span>
+          <span class="issue-card__cover-year">Dec 2024</span>
+          <div style="position:absolute;bottom:-2rem;left:-2rem;width:10rem;height:10rem;background:radial-gradient(circle,rgba(53,128,98,0.3) 0%,transparent 70%);border-radius:50%;filter:blur(30px);pointer-events:none;"></div>
+        </div>
+        <div class="issue-card__body">
+          <div class="issue-card__tags">
+            <span class="mag-tag mag-tag--teal">Microbiology</span>
+            <span class="mag-tag mag-tag--slate">Cell Biology</span>
+          </div>
+          <h3 class="issue-card__title">The Invisible World</h3>
+          <p class="issue-card__desc">Diving deep into microbiology and cell biology — viral mechanisms, probiotic research, and cellular signaling pathways.</p>
+          <div class="issue-card__footer">
+            <span class="issue-card__meta">5 articles · 6 authors</span>
+            <span class="issue-card__read">
+              Read
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Issue 01 -->
+      <div class="issue-card reveal" data-delay="150">
+        <div class="issue-card__cover" style="background:linear-gradient(135deg,#0a0e27,#161b3a);">
+          <div class="issue-card__cover-bg" style="background:linear-gradient(135deg,#0a0e27,#2B665A);"></div>
+          <div class="issue-card__cover-overlay"></div>
+          <span class="issue-card__cover-num">Issue 01</span>
+          <span class="issue-card__cover-year">Jun 2024</span>
+          <div style="position:absolute;top:-2rem;left:-2rem;width:12rem;height:12rem;background:radial-gradient(circle,rgba(43,102,90,0.3) 0%,transparent 70%);border-radius:50%;filter:blur(35px);pointer-events:none;"></div>
+        </div>
+        <div class="issue-card__body">
+          <div class="issue-card__tags">
+            <span class="mag-tag mag-tag--green">Genetics</span>
+            <span class="mag-tag mag-tag--teal">Biochemistry</span>
+          </div>
+          <h3 class="issue-card__title">Origins — The Inaugural Issue</h3>
+          <p class="issue-card__desc">Our first ever issue. A celebration of biology from DNA replication to evolutionary theory, setting the tone for all that followed.</p>
+          <div class="issue-card__footer">
+            <span class="issue-card__meta">4 articles · 5 authors</span>
+            <span class="issue-card__read">
+              Read
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HIGHLIGHTED ARTICLES
+     ============================================================ -->
+<section class="mag-articles" id="articles">
+  <div class="mag-articles__inner">
+
+    <div class="section-header reveal">
+      <span class="section-badge" id="articlesBadge">Published Articles</span>
+      <h2 class="section-title">Articles</h2>
+      <p class="section-subtitle" id="articlesSubtitle">Loading accepted articles from the Biology Club magazine…</p>
+    </div>
+
+    <!-- Search bar -->
+    <div class="articles-search-wrap reveal" data-delay="80">
+      <div class="articles-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="articlesSearchInput" placeholder="Search by title, author, branch, keyword…" autocomplete="off"/>
+        <button id="articlesSearchClear" onclick="clearSearch()" title="Clear">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Dynamic grid -->
+    <div class="articles-grid" id="articlesGrid">
+      <!-- Skeleton loaders -->
+      <div class="article-skeleton"></div>
+      <div class="article-skeleton"></div>
+      <div class="article-skeleton"></div>
+    </div>
+
+    <!-- No results state -->
+    <div id="articlesEmpty" style="display:none;text-align:center;padding:3rem 1rem;">
+      <div style="width:3.5rem;height:3.5rem;border-radius:50%;background:rgba(53,128,98,0.08);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#358062" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:1.5rem;height:1.5rem;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <p style="font-size:1rem;font-weight:600;color:var(--text,#111827);margin-bottom:0.35rem;">No articles found</p>
+      <p style="font-size:0.875rem;color:var(--text-muted,#6b7280);" id="articlesEmptyMsg">Try a different search term.</p>
+    </div>
+
+    <!-- Show more button -->
+    <div style="text-align:center;margin-top:2.5rem;" id="showMoreWrap">
+      <button id="showMoreBtn" onclick="showMore()" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        Show More Articles
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTRIBUTE CTA
+     ============================================================ -->
+<section class="mag-contribute" id="contribute">
+  <div class="mag-contribute__inner">
+    <div class="contribute-banner reveal">
+      <div class="contribute-banner__orb contribute-banner__orb--1"></div>
+      <div class="contribute-banner__orb contribute-banner__orb--2"></div>
+      <div class="contribute-banner__content">
+        <div>
+          <span class="contribute-banner__badge">Open Submissions</span>
+          <h2 class="contribute-banner__title">
+            Write for the<br/><em>Biology Club Magazine</em>
+          </h2>
+          <p class="contribute-banner__body">
+            Have a research idea, a topic you're passionate about, or a discovery you want to share? The magazine is open to all Biology Club members. We accept original articles, systematic reviews, opinion pieces, and lab reports. Your work will be peer-reviewed by fellow members and published for the entire community.
+          </p>
+          <div class="contribute-banner__actions">
+            <a href="join.html" class="contribute-btn contribute-btn--primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              Submit Your Article
+            </a>
+            <a href="index.html#contact" class="contribute-btn contribute-btn--secondary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Ask a Question
+            </a>
+          </div>
+        </div>
+        <div class="contribute-guide">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            Submission Guidelines
+          </h4>
+          <div class="contribute-guide__list">
+            <div class="contribute-guide__item"><div class="contribute-guide__dot"></div>500–2,000 words per article</div>
+            <div class="contribute-guide__item"><div class="contribute-guide__dot"></div>Must be original, unpublished work</div>
+            <div class="contribute-guide__item"><div class="contribute-guide__dot"></div>Cite all sources (APA or Vancouver)</div>
+            <div class="contribute-guide__item"><div class="contribute-guide__dot"></div>Submit as a Google Doc or .docx</div>
+            <div class="contribute-guide__item"><div class="contribute-guide__dot"></div>Peer review takes 5–7 business days</div>
+            <div class="contribute-guide__item"><div class="contribute-guide__dot"></div>Open to all Biology Club members</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     NEWSLETTER STRIP
+     ============================================================ -->
+<div class="mag-newsletter">
+  <div class="mag-newsletter__inner">
+    <div class="mag-newsletter__text">
+      <h3>Never Miss an Issue</h3>
+      <p>Get notified when new issues and articles are published.</p>
+    </div>
+    <div class="mag-newsletter__form">
+      <input type="email" placeholder="your@email.com" />
+      <button class="mag-newsletter__btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Subscribe
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand-row">
+      <div class="footer__brand">
+        <img src="images/logo-png.png" alt="Biology Club Logo" class="footer__logo" />
+        <div>
+          <h3>Biology Club</h3>
+          <p>Empowering high school students in biological sciences through research programs, competitions, workshops, and innovative education.</p>
+        </div>
+      </div>
+      <div class="footer__contacts">
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#39B090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="/cdn-cgi/l/email-protection#2b49424447444c5248475e496b44485f44494e59585f4e4a46054e4f5e054e4c"><span class="__cf_email__" data-cfemail="9af8f3f5f6f5fde3f9f6eff8daf5f9eef5f8ffe8e9eefffbf7b4fffeefb4fffd">[email&#160;protected]</span></a>
+        </div>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#39B090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>STEM October School, 6th of October City, Giza, Egypt</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__links-grid">
+      <div class="footer__col"><h4>Magazine</h4><ul><li><a href="#latest-issue">Latest Issue</a></li><li><a href="#all-issues">All Issues</a></li><li><a href="#articles">Articles</a></li><li><a href="#contribute">Contribute</a></li></ul></div>
+      <div class="footer__col"><h4>Programs</h4><ul><li><a href="index.html#programs">Research Program</a></li><li><a href="index.html#bioleague">BioLeague</a></li><li><a href="index.html#programs">Workshops</a></li><li><a href="index.html#programs">Computational Bio</a></li></ul></div>
+      <div class="footer__col"><h4>Resources</h4><ul><li><a href="#">Research Guide</a></li><li><a href="#">Guidelines</a></li><li><a href="vision.html">Our Vision</a></li><li><a href="join.html">Join the Club</a></li></ul></div>
+      <div class="footer__col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="vision.html">Our Vision</a></li><li><a href="index.html#meet-our-board">Board</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+    </div>
+    <div class="footer__divider"></div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">© 2026 Biology Club – October STEM School. All rights reserved.</p>
+      <div class="footer__socials">
+        <a href="#" class="footer__social footer__social--fb" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" class="footer__social footer__social--ig" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="#" class="footer__social footer__social--mail" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<!-- Firebase for live articles -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+<script>
+/* ── FIREBASE INIT ───────────────────────────────────── */
+const firebaseConfig = {
+  apiKey:            "AIzaSyBdshK30VmLob2YbBy3wpr5TnfEgjaaHy4",
+  authDomain:        "octbioclub.firebaseapp.com",
+  projectId:         "octbioclub",
+  storageBucket:     "octbioclub.firebasestorage.app",
+  messagingSenderId: "505676867746",
+  appId:             "1:505676867746:web:ccd769cbd1d5445afecffb"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+/* ── STATE ───────────────────────────────────────────── */
+const PAGE_SIZE   = 6;
+let   allArticles = [];   // all accepted articles from Firestore
+let   filtered    = [];   // after search filter
+let   shown       = 0;    // how many currently rendered
+
+/* ── BRANCH → TAG CLASS ──────────────────────────────── */
+const branchClass = branch => {
+  const b = (branch || '').toLowerCase();
+  if (b.includes('molecular') || b.includes('biochem') || b.includes('cell'))   return 'mag-tag--green';
+  if (b.includes('micro')     || b.includes('immuno'))                           return 'mag-tag--teal';
+  if (b.includes('marine')    || b.includes('eco')    || b.includes('botany'))   return 'mag-tag--mint';
+  if (b.includes('genetic')   || b.includes('evolut') || b.includes('zoology'))  return 'mag-tag--green';
+  return 'mag-tag--slate';
+};
+
+/* ── ARTICLE TYPE → ICON + COLOR ─────────────────────── */
+const typeInfo = type => {
+  const t = (type || '').toLowerCase();
+  if (t.includes('original') || t.includes('research'))
+    return { cls:'atype-research', svg:'<path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>', label:'Research' };
+  if (t.includes('review') || t.includes('systematic'))
+    return { cls:'atype-review',   svg:'<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-1H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-1h7z"/>', label:'Review' };
+  if (t.includes('opinion') || t.includes('perspective'))
+    return { cls:'atype-opinion',  svg:'<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>', label:'Opinion' };
+  if (t.includes('lab'))
+    return { cls:'atype-lab',      svg:'<path d="M9 3v11.5A3.5 3.5 0 0 0 12.5 18v0a3.5 3.5 0 0 0 3.5-3.5V3"/><line x1="6" y1="3" x2="18" y2="3"/>', label:'Lab Report' };
+  if (t.includes('case'))
+    return { cls:'atype-case',     svg:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>', label:'Case Study' };
+  return { cls:'atype-other',      svg:'<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>', label:'Article' };
+};
+
+/* ── INITIALS from name ──────────────────────────────── */
+const initials = name => {
+  if (!name) return '?';
+  const parts = name.trim().split(/\s+/);
+  return (parts[0][0] + (parts[1] ? parts[1][0] : '')).toUpperCase();
+};
+
+/* ── FORMAT DATE ─────────────────────────────────────── */
+const fmtDate = ts => {
+  if (!ts) return '';
+  const d = ts.toDate ? ts.toDate() : new Date(ts);
+  return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+};
+
+/* ── ESTIMATE READ TIME ──────────────────────────────── */
+const readTime = wc => {
+  const n = parseInt(wc, 10);
+  if (!n) return '';
+  return Math.max(1, Math.round(n / 200)) + ' min read';
+};
+
+/* ── BUILD ONE CARD ──────────────────────────────────── */
+const cardGradients = [
+  'linear-gradient(to right,#358062,#39B090)',
+  'linear-gradient(to right,#1D5858,#358062)',
+  'linear-gradient(to right,#39B090,#4DAF82)',
+  'linear-gradient(to right,#2B665A,#358062)',
+  'linear-gradient(to right,#358062,#1D5858)',
+  'linear-gradient(to right,#39B090,#358062)',
+];
+
+function buildCard(art, index) {
+  const ti      = typeInfo(art.articleType);
+  const bCls    = branchClass(art.branch);
+  const grad    = cardGradients[index % cardGradients.length];
+  const author  = art.fullName || ((art.firstName || '') + ' ' + (art.lastName || '')).trim();
+  const av      = initials(author);
+  const date    = fmtDate(art.submittedAt);
+  const rt      = readTime(art.wordCount);
+  const meta    = [date, rt].filter(Boolean).join(' · ');
+  const branch  = art.branch || art.articleType || '';
+  const gdoc    = art.gdocLink ? art.gdocLink.trim() : '';
+
+  const keywordsHtml = (art.keywords || []).slice(0, 2).map(k =>
+    `<span class="mag-tag ${bCls}">${escHtml(k)}</span>`
+  ).join('');
+
+  const typeLabel = ti.label;
+
+  return `
+    <div class="article-card article-card--live reveal" style="--grad:${grad}"
+         onclick="${gdoc ? `window.open('${escHtml(gdoc)}','_blank')` : ''}">
+      <style>.article-card--live:nth-child(${(index % PAGE_SIZE) + 1})::before{background:${grad}}</style>
+      <div class="article-card__icon-wrap ${ti.cls}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ti.svg}</svg>
+      </div>
+      <div class="article-card__tags">
+        ${branch ? `<span class="mag-tag ${bCls}">${escHtml(branch)}</span>` : ''}
+        <span class="mag-tag mag-tag--slate">${escHtml(typeLabel)}</span>
+        ${keywordsHtml}
+      </div>
+      <h3 class="article-card__title">${escHtml(art.title || 'Untitled Article')}</h3>
+      <p class="article-card__abstract">${escHtml(art.abstract || art.coverLetter || '')}</p>
+      <div class="article-card__footer">
+        <div class="article-card__author">
+          <div class="article-card__avatar">${escHtml(av)}</div>
+          <div>
+            <div class="article-card__author-name">${escHtml(author)}</div>
+            <div class="article-card__date">${escHtml(meta)}</div>
+          </div>
+        </div>
+        ${gdoc ? `<span class="article-card__read-link">
+          Read
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>` : ''}
+      </div>
+    </div>`;
+}
+
+/* ── RENDER PAGE ─────────────────────────────────────── */
+function renderPage(reset) {
+  const grid = document.getElementById('articlesGrid');
+  const empty = document.getElementById('articlesEmpty');
+  const showMoreBtn = document.getElementById('showMoreBtn');
+
+  if (reset) {
+    shown = 0;
+    grid.innerHTML = '';
+  }
+
+  if (filtered.length === 0) {
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+    showMoreBtn.style.display = 'none';
+    return;
+  }
+
+  empty.style.display = 'none';
+
+  const nextBatch = filtered.slice(shown, shown + PAGE_SIZE);
+  nextBatch.forEach((art, i) => {
+    grid.insertAdjacentHTML('beforeend', buildCard(art, shown + i));
+  });
+  shown += nextBatch.length;
+
+  // Re-trigger reveal observer for new cards
+  document.querySelectorAll('.article-card--live.reveal:not(.visible)').forEach(el => {
+    revealObserver.observe(el);
+  });
+
+  // Show/hide "Show More"
+  if (shown < filtered.length) {
+    showMoreBtn.style.display = 'inline-flex';
+    showMoreBtn.textContent = '';
+    showMoreBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg> Show More (${filtered.length - shown} remaining)`;
+  } else {
+    showMoreBtn.style.display = 'none';
+  }
+}
+
+/* ── SEARCH ──────────────────────────────────────────── */
+const searchInput = document.getElementById('articlesSearchInput');
+const clearBtn    = document.getElementById('articlesSearchClear');
+
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.trim().toLowerCase();
+  clearBtn.classList.toggle('visible', q.length > 0);
+  applySearch(q);
+});
+
+function applySearch(q) {
+  if (!q) {
+    filtered = [...allArticles];
+    document.getElementById('articlesEmptyMsg').textContent = 'No accepted articles yet. Check back soon!';
+  } else {
+    filtered = allArticles.filter(a => {
+      const searchable = [
+        a.title, a.abstract, a.fullName, a.firstName, a.lastName,
+        a.branch, a.articleType, ...(a.keywords || [])
+      ].join(' ').toLowerCase();
+      return searchable.includes(q);
+    });
+    document.getElementById('articlesEmptyMsg').textContent = `No articles match "${searchInput.value}". Try a different term.`;
+  }
+  renderPage(true);
+}
+
+function clearSearch() {
+  searchInput.value = '';
+  clearBtn.classList.remove('visible');
+  applySearch('');
+}
+
+/* ── SHOW MORE ───────────────────────────────────────── */
+function showMore() {
+  renderPage(false);
+}
+
+/* ── LOAD FROM FIRESTORE ─────────────────────────────── */
+async function loadArticles() {
+  const grid    = document.getElementById('articlesGrid');
+  const subtitle = document.getElementById('articlesSubtitle');
+  const badge    = document.getElementById('articlesBadge');
+
+  try {
+    const snap = await Promise.race([
+      db.collection('magazine').where('status', '==', 'accepted').get(),
+      new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 8000))
+    ]);
+
+    allArticles = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+
+    // Sort newest first
+    allArticles.sort((a, b) => {
+      const ta = a.submittedAt?.toDate?.()?.getTime() || 0;
+      const tb = b.submittedAt?.toDate?.()?.getTime() || 0;
+      return tb - ta;
+    });
+
+    filtered = [...allArticles];
+
+    // Update header text
+    const count = allArticles.length;
+    if (count === 0) {
+      badge.textContent = 'Coming Soon';
+      subtitle.textContent = 'No articles have been published yet. Submit your first article and watch this space!';
+      grid.innerHTML = '';
+      document.getElementById('articlesEmpty').style.display = 'block';
+      document.getElementById('articlesEmptyMsg').textContent = 'No accepted articles yet. Check back soon!';
+    } else {
+      badge.textContent = count + ' Published Article' + (count !== 1 ? 's' : '');
+      subtitle.textContent = 'Peer-reviewed articles written by Biology Club members — sorted by newest first.';
+      grid.innerHTML = '';
+      renderPage(true);
+    }
+
+  } catch (err) {
+    console.error('Articles load error:', err);
+    grid.innerHTML = `
+      <div style="grid-column:1/-1;text-align:center;padding:2.5rem 1rem;">
+        <p style="font-size:0.95rem;font-weight:600;color:var(--text,#111827);margin-bottom:0.35rem;">Could not load articles</p>
+        <p style="font-size:0.85rem;color:var(--text-muted,#6b7280);">${err.message} — check your Firestore rules.</p>
+      </div>`;
+    badge.textContent = 'Articles';
+    subtitle.textContent = 'Student-written, peer-reviewed articles from the Biology Club magazine.';
+  }
+}
+
+/* ── HTML ESCAPE ─────────────────────────────────────── */
+function escHtml(s) {
+  if (s == null) return '';
+  return String(s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ── REVEAL OBSERVER ─────────────────────────────────── */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const delay = parseInt(entry.target.dataset.delay, 10) || 0;
+    setTimeout(() => entry.target.classList.add('visible'), delay);
+    revealObserver.unobserve(entry.target);
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  /* Filter tabs (UI only — wire to real data when ready) */
+  document.querySelectorAll('.mag-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.mag-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+/* ── NEWSLETTER ──────────────────────────────────────── */
+document.querySelector('.mag-newsletter__btn').addEventListener('click', () => {
+  const inp = document.querySelector('.mag-newsletter__form input');
+  if (!inp.value || !inp.value.includes('@')) {
+    inp.style.borderColor = '#dc2626';
+    inp.focus();
+    setTimeout(() => inp.style.borderColor = '', 2000);
+    return;
+  }
+  const btn = document.querySelector('.mag-newsletter__btn');
+  btn.textContent = '✓ Subscribed!';
+  btn.style.background = 'linear-gradient(135deg,#39B090,#358062)';
+  inp.value = '';
+  setTimeout(() => {
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> Subscribe';
+    btn.style.background = '';
+  }, 3000);
+});
+
+/* ── KICK OFF ────────────────────────────────────────── */
+loadArticles();
+</script>
+</body>
+</html>
