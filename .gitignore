@@ -1,0 +1,4 @@
+# Ignore admin files
+admin.html
+admin.js
+firebase.js
