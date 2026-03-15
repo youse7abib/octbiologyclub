@@ -8,8 +8,8 @@ import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/fir
 // ======= CONFIG =======
 // SET YOUR APPLICATION DEADLINE HERE (UTC)
 // Format: new Date('YYYY-MM-DDTHH:mm:ssZ')
-// Example: new Date('2025-03-15T23:59:59Z') = March 15, 2025 at 11:59 PM UTC
-const APPLICATION_DEADLINE = new Date('2025-03-15T23:59:59Z');
+// Example: new Date('2025-02-15T23:59:59Z') = February 15, 2025 at 11:59 PM UTC
+const APPLICATION_DEADLINE = new Date('2025-02-15T23:59:59Z');
 
 // ======= APPLICATION STATUS CHECK =======
 function isApplicationOpen() {
