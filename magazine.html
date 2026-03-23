@@ -649,6 +649,284 @@
       from { opacity: 0; transform: translateY(14px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+
+    /* ============================================================
+       DARK MODE STYLES FOR MAGAZINE
+       ============================================================ */
+    body.dark-mode .mag-featured {
+      background: linear-gradient(135deg, var(--bg-soft), var(--bg));
+    }
+
+    body.dark-mode .mag-issues {
+      background: var(--bg);
+    }
+
+    body.dark-mode .mag-newsletter {
+      background: linear-gradient(135deg, var(--bg-soft), var(--bg));
+      border-top-color: var(--border-soft);
+    }
+
+    body.dark-mode .section-badge {
+      background: rgba(57, 176, 144, 0.15);
+      color: #39B090;
+      border-color: rgba(57, 176, 144, 0.3);
+    }
+
+    body.dark-mode .section-title {
+      color: var(--text);
+    }
+
+    body.dark-mode .section-subtitle {
+      color: var(--text-muted);
+    }
+
+    body.dark-mode .featured-card {
+      background: var(--bg-card);
+      border-color: var(--border-soft);
+    }
+
+    body.dark-mode .featured-card__headline {
+      color: var(--text);
+    }
+
+    body.dark-mode .featured-card__excerpt {
+      color: var(--text-muted);
+    }
+
+    body.dark-mode .featured-card__articles {
+      border-top-color: var(--border-soft);
+    }
+
+    body.dark-mode .mini-article {
+      border-color: var(--border-soft);
+    }
+
+    body.dark-mode .mini-article:hover {
+      border-color: rgba(57, 176, 144, 0.4);
+      background: rgba(57, 176, 144, 0.08);
+    }
+
+    body.dark-mode .mini-article__title {
+      color: var(--text);
+    }
+
+    body.dark-mode .mini-article__author {
+      color: var(--text-faint);
+    }
+
+    body.dark-mode .mag-tag--green {
+      background: rgba(53, 128, 98, 0.15);
+      color: #7dd3c0;
+      border-color: rgba(53, 128, 98, 0.3);
+    }
+
+    body.dark-mode .mag-tag--teal {
+      background: rgba(29, 88, 88, 0.15);
+      color: #5fb3a8;
+      border-color: rgba(29, 88, 88, 0.3);
+    }
+
+    body.dark-mode .mag-tag--mint {
+      background: rgba(57, 176, 144, 0.15);
+      color: #7dd3c0;
+      border-color: rgba(57, 176, 144, 0.3);
+    }
+
+    body.dark-mode .mag-tag--slate {
+      background: rgba(100, 116, 139, 0.15);
+      color: #cbd5e1;
+      border-color: rgba(100, 116, 139, 0.3);
+    }
+
+    body.dark-mode .mag-filter-btn {
+      background: var(--bg-card);
+      color: var(--text-muted);
+      border-color: var(--border-soft);
+    }
+
+    body.dark-mode .mag-filter-btn.active {
+      background: linear-gradient(135deg, #358062, #1D5858);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    body.dark-mode .mag-filter-btn:not(.active):hover {
+      background: var(--hover-bg);
+      border-color: rgba(57, 176, 144, 0.3);
+    }
+
+    body.dark-mode .article-card {
+      background: var(--bg-card);
+      border-color: var(--border-soft);
+    }
+
+    body.dark-mode .article-card:hover {
+      border-color: rgba(57, 176, 144, 0.3);
+    }
+
+    body.dark-mode .article-card__tag {
+      background: rgba(57, 176, 144, 0.15);
+      color: #7dd3c0;
+      border-color: rgba(57, 176, 144, 0.3);
+    }
+
+    body.dark-mode .article-card__title {
+      color: var(--text);
+    }
+
+    body.dark-mode .article-card__excerpt {
+      color: var(--text-muted);
+    }
+
+    body.dark-mode .article-card__meta {
+      color: var(--text-faint);
+    }
+
+    body.dark-mode .article-card__author {
+      color: var(--text-muted);
+    }
+
+    body.dark-mode .article-skeleton {
+      background: var(--bg-card);
+      border-color: var(--border-soft);
+    }
+
+    body.dark-mode .article-skeleton::before {
+      background: linear-gradient(90deg, var(--border-soft) 25%, var(--bg-soft) 50%, var(--border-soft) 75%);
+    }
+
+    body.dark-mode .issue-badge {
+      background: rgba(57, 176, 144, 0.2);
+      border-color: rgba(57, 176, 144, 0.4);
+      color: #39B090;
+    }
+
+    body.dark-mode .mag-newsletter__text h3 {
+      color: var(--text);
+    }
+
+    body.dark-mode .mag-newsletter__text p {
+      color: var(--text-muted);
+    }
+
+    body.dark-mode .mag-newsletter__form input {
+      background: var(--bg-input);
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    body.dark-mode .mag-newsletter__form input:focus {
+      background: var(--bg-card);
+      border-color: #39B090;
+      box-shadow: 0 0 0 4px rgba(57, 176, 144, 0.2);
+    }
+
+    body.dark-mode .mag-newsletter__form input::placeholder {
+      color: var(--text-faint);
+    }
+
+    body.dark-mode .articles-search {
+      background: var(--bg-card);
+      border-color: var(--border);
+    }
+
+    body.dark-mode .articles-search:focus-within {
+      border-color: #39B090;
+      box-shadow: 0 0 0 4px rgba(57, 176, 144, 0.15);
+    }
+
+    body.dark-mode .articles-search svg {
+      stroke: var(--text-faint);
+    }
+
+    body.dark-mode .articles-search input {
+      color: var(--text);
+    }
+
+    body.dark-mode .articles-search input::placeholder {
+      color: var(--text-faint);
+    }
+
+    body.dark-mode #articlesSearchClear {
+      color: var(--text-faint);
+    }
+
+    body.dark-mode #articlesSearchClear:hover {
+      color: var(--text);
+    }
+
+    body.dark-mode #showMoreBtn {
+      background: var(--bg-card);
+      border-color: var(--border-soft);
+      color: var(--text-muted);
+    }
+
+    body.dark-mode #showMoreBtn:hover {
+      border-color: #39B090;
+      color: #39B090;
+    }
+
+    body.dark-mode .atype-research {
+      background: rgba(53, 128, 98, 0.15);
+      color: #7dd3c0;
+    }
+
+    body.dark-mode .atype-review {
+      background: rgba(29, 88, 88, 0.15);
+      color: #5fb3a8;
+    }
+
+    body.dark-mode .atype-opinion {
+      background: rgba(57, 176, 144, 0.15);
+      color: #7dd3c0;
+    }
+
+    body.dark-mode .atype-lab {
+      background: rgba(43, 102, 90, 0.15);
+      color: #7dd3c0;
+    }
+
+    body.dark-mode .atype-case {
+      background: rgba(96, 125, 100, 0.15);
+      color: #8eccc0;
+    }
+
+    body.dark-mode .atype-other {
+      background: rgba(100, 116, 139, 0.15);
+      color: #cbd5e1;
+    }
+
+    body.dark-mode .contribute-btn--primary {
+      background: var(--bg-input);
+      color: var(--text);
+    }
+
+    body.dark-mode .contribute-btn--primary:hover {
+      box-shadow: 0 10px 24px rgba(57, 176, 144, 0.2);
+    }
+
+    body.dark-mode .contribute-guide {
+      background: rgba(57, 176, 144, 0.08);
+      border-color: rgba(57, 176, 144, 0.2);
+    }
+
+    body.dark-mode .contribute-guide h4 {
+      color: var(--text);
+    }
+
+    body.dark-mode .contribute-guide__item {
+      color: var(--text-muted);
+    }
+
+    body.dark-mode .mag-hero__btn--secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    body.dark-mode .mag-hero__btn--secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
   </style>
 </head>
 <body>
@@ -791,7 +1069,7 @@
 
     <!-- Mobile Menu -->
     <div class="navbar__mobile-menu" id="mobileMenu">
-      <a href="#home" class="navbar__mobile-link">Home</a>
+      <a href="index.html" class="navbar__mobile-link">Home</a>
 
       <!-- Mobile About Dropdown -->
       <div class="navbar__mobile-dropdown">
@@ -802,9 +1080,8 @@
           </svg>
         </button>
         <div class="navbar__mobile-dropdown-menu">
-          <a href="#vision" class="navbar__mobile-link navbar__mobile-link--sub">Our Vision</a>
-          <a href="#meet-our-board" class="navbar__mobile-link navbar__mobile-link--sub">Meet Our Board</a>
-          <a href="#partners" class="navbar__mobile-link navbar__mobile-link--sub">Partners</a>
+          <a href="vision.html" class="navbar__mobile-link navbar__mobile-link--sub">Our Vision</a>
+          <a href="partner.html" class="navbar__mobile-link navbar__mobile-link--sub">Partners</a>
         </div>
       </div>
 
@@ -817,8 +1094,8 @@
           </svg>
         </button>
         <div class="navbar__mobile-dropdown-menu">
-          <a href="#bioleague" class="navbar__mobile-link navbar__mobile-link--sub">BioLeague</a>
-          <a href="#magazine" class="navbar__mobile-link navbar__mobile-link--sub">Magazine</a>
+          <a href="#" class="navbar__mobile-link navbar__mobile-link--sub">BioLeague</a>
+          <a href="magazine.html" class="navbar__mobile-link navbar__mobile-link--sub">Magazine</a>
         </div>
       </div>
 
@@ -831,16 +1108,10 @@
           </svg>
         </button>
         <div class="navbar__mobile-dropdown-menu">
-          <a href="#molecular-biology" class="navbar__mobile-link navbar__mobile-link--sub">Molecular Biology</a>
-          <a href="#cell-biology" class="navbar__mobile-link navbar__mobile-link--sub">Cell Biology</a>
-          <a href="#genetics" class="navbar__mobile-link navbar__mobile-link--sub">Genetics</a>
-          <a href="#ecology" class="navbar__mobile-link navbar__mobile-link--sub">Ecology</a>
-          <a href="#evolutionary-biology" class="navbar__mobile-link navbar__mobile-link--sub">Evolutionary Biology</a>
-          <a href="#microbiology" class="navbar__mobile-link navbar__mobile-link--sub">Microbiology</a>
-          <a href="#botany" class="navbar__mobile-link navbar__mobile-link--sub">Botany</a>
-          <a href="#zoology" class="navbar__mobile-link navbar__mobile-link--sub">Zoology</a>
-          <a href="#marine-biology" class="navbar__mobile-link navbar__mobile-link--sub">Marine Biology</a>
-          <a href="#biochemistry" class="navbar__mobile-link navbar__mobile-link--sub">Biochemistry</a>
+          <a href="#anatomy-physiology" class="navbar__mobile-link navbar__mobile-link--sub">Anatomy & Physiology</a>
+          <a href="#genetics-evolution" class="navbar__mobile-link navbar__mobile-link--sub">Genetics & Evolution</a>
+          <a href="#biochemistry-cell" class="navbar__mobile-link navbar__mobile-link--sub">Biochemistry & Cell Biology</a>
+          <a href="#ecology-ethology" class="navbar__mobile-link navbar__mobile-link--sub">Ecology & Ethology</a>
         </div>
       </div>
 
@@ -1630,5 +1901,6 @@ document.querySelector('.mag-newsletter__btn').addEventListener('click', () => {
 /* ── KICK OFF ────────────────────────────────────────── */
 loadArticles();
 </script>
+<script src="themeToggle.js"></script>
 </body>
 </html>
