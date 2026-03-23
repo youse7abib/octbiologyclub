@@ -319,3 +319,128 @@ document.querySelectorAll('.navbar__mobile-link').forEach(link => {
     });
   });
 })();
+
+/* ============================================================
+   8. PROGRAM MODALS
+   ============================================================ */
+
+// Modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all Learn More buttons
+  const learnMoreButtons = document.querySelectorAll('.program-card__cta');
+  
+  // Modal elements
+  const modals = {
+    research: document.getElementById('researchModal'),
+    bioleague: document.getElementById('bioleagueModal'),
+    workshops: document.getElementById('workshopsModal'),
+    computational: document.getElementById('computationalModal')
+  };
+  
+  // Open modal function
+  function openModal(modal) {
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  }
+  
+  // Close modal function
+  function closeModal(modal) {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+  }
+  
+  // Add click event to Learn More buttons
+  learnMoreButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const card = this.closest('.program-card');
+      const titles = card.querySelectorAll('h3');
+      const titleText = titles.length ? titles[0].textContent.trim() : '';
+      let modalType = '';
+      
+      if (titleText === 'Research Program') {
+        modalType = 'research';
+      } else if (titleText === 'BioLeague Competition') {
+        modalType = 'bioleague';
+      } else if (titleText === 'Hands-on Workshops') {
+        modalType = 'workshops';
+      } else if (titleText === 'Computational Biology') {
+        modalType = 'computational';
+      } else if (this.dataset.modal) {
+        modalType = this.dataset.modal;
+      }
+
+      if (modalType && modals[modalType]) {
+        openModal(modals[modalType]);
+      }
+    });
+  });
+  
+  // Add close functionality to close buttons
+  Object.values(modals).forEach(modal => {
+    const closeBtn = modal.querySelector('.modal__close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function() {
+        closeModal(modal);
+      });
+    }
+    
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        closeModal(modal);
+      }
+    });
+  });
+  
+  // Close modal on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      Object.values(modals).forEach(modal => {
+        if (modal.style.display === 'block') {
+          closeModal(modal);
+        }
+      });
+    }
+  });
+  
+  // Branch modals functionality
+  const branchModals = {
+    anatomy: document.getElementById('anatomyModal'),
+    genetics: document.getElementById('geneticsModal'),
+    biochemistry: document.getElementById('biochemistryModal'),
+    ecology: document.getElementById('ecologyModal')
+  };
+  
+  // Add click event to branch "Explore Branch" buttons
+  const branchCards = document.querySelectorAll('.branch-card');
+  branchCards.forEach(card => {
+    const btn = card.querySelector('.branch-card__cta');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        const branchType = card.dataset.branch;
+        if (branchType && branchModals[branchType]) {
+          openModal(branchModals[branchType]);
+        }
+      });
+    }
+  });
+  
+  // Add close functionality to branch modal close buttons
+  Object.values(branchModals).forEach(modal => {
+    if (modal) {
+      const closeBtn = modal.querySelector('.modal__close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+          closeModal(modal);
+        });
+      }
+      
+      // Close modal when clicking outside
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeModal(modal);
+        }
+      });
+    }
+  });
+});

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Vision – Biology Club | October STEM School</title>
-  <meta name="description" content="Discover the vision, mission, and core values driving the Biology Club of October STEM School." />
+  <title>Our Partners – Biology Club | October STEM School</title>
+  <meta name="description" content="Discover our valued partners who support the Biology Club of October STEM School in advancing biological sciences education." />
   <meta name="theme-color" content="#358062" />
   <link rel="icon" type="image/png" href="images/logo-png.png">
 
@@ -17,11 +17,11 @@
 
   <style>
     /* ============================================================
-       VISION PAGE – SPECIFIC STYLES
+       PARTNERS PAGE – SPECIFIC STYLES
        ============================================================ */
 
     /* ---- Hero ------------------------------------------------- */
-    .vision-hero {
+    .partners-hero {
       position: relative;
       min-height: 70vh;
       display: flex;
@@ -32,30 +32,30 @@
     }
 
     /* Animated background mesh */
-    .vision-hero__bg {
+    .partners-hero__bg {
       position: absolute;
       inset: 0;
       overflow: hidden;
     }
-    .vision-hero__orb {
+    .partners-hero__orb {
       position: absolute;
       border-radius: 50%;
       filter: blur(80px);
       animation: orbFloat 8s ease-in-out infinite;
     }
-    .vision-hero__orb--1 {
+    .partners-hero__orb--1 {
       width: 40rem; height: 40rem;
       background: radial-gradient(circle, rgba(53,128,98,0.25) 0%, transparent 70%);
       top: -10rem; left: -10rem;
       animation-delay: 0s;
     }
-    .vision-hero__orb--2 {
+    .partners-hero__orb--2 {
       width: 30rem; height: 30rem;
       background: radial-gradient(circle, rgba(57,176,144,0.15) 0%, transparent 70%);
       bottom: -8rem; right: -5rem;
       animation-delay: 3s;
     }
-    .vision-hero__orb--3 {
+    .partners-hero__orb--3 {
       width: 20rem; height: 20rem;
       background: radial-gradient(circle, rgba(29,88,88,0.2) 0%, transparent 70%);
       top: 40%; left: 50%;
@@ -66,7 +66,7 @@
       50%       { transform: translateY(-20px) scale(1.05); }
     }
 
-    .vision-hero__grid {
+    .partners-hero__grid {
       position: absolute;
       inset: 0;
       background-image:
@@ -75,7 +75,7 @@
       background-size: 60px 60px;
     }
 
-    .vision-hero__content {
+    .partners-hero__content {
       position: relative;
       z-index: 10;
       text-align: center;
@@ -84,7 +84,7 @@
       margin-top: -3rem;
     }
 
-    .vision-hero__eyebrow {
+    .partners-hero__eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -99,11 +99,11 @@
       text-transform: uppercase;
       margin-bottom: 1.5rem;
     }
-    .vision-hero__eyebrow svg {
+    .partners-hero__eyebrow svg {
       width: 0.9rem; height: 0.9rem;
     }
 
-    .vision-hero__title {
+    .partners-hero__title {
       font-size: 3.5rem;
       font-weight: 700;
       color: #fff;
@@ -111,17 +111,17 @@
       letter-spacing: -3px;
       margin-bottom: 1.5rem;
     }
-    @media (min-width: 640px)  { .vision-hero__title { font-size: 4.5rem; } }
-    @media (min-width: 1024px) { .vision-hero__title { font-size: 5.5rem; } }
+    @media (min-width: 640px)  { .partners-hero__title { font-size: 4.5rem; } }
+    @media (min-width: 1024px) { .partners-hero__title { font-size: 5.5rem; } }
 
-    .vision-hero__title span {
+    .partners-hero__title span {
       background: linear-gradient(to right, #39B090, #4DAF82);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
-    .vision-hero__subtitle {
+    .partners-hero__subtitle {
       font-size: 1.1rem;
       color: rgba(255,255,255,0.65);
       max-width: 38rem;
@@ -129,10 +129,10 @@
       line-height: 1.7;
       letter-spacing: -0.3px;
     }
-    @media (min-width: 640px) { .vision-hero__subtitle { font-size: 1.25rem; } }
+    @media (min-width: 640px) { .partners-hero__subtitle { font-size: 1.25rem; } }
 
     /* Scroll indicator */
-    .vision-hero__scroll {
+    .partners-hero__scroll {
       position: absolute;
       bottom: 2.5rem;
       left: 50%;
@@ -143,67 +143,125 @@
       gap: 0.4rem;
       animation: bounce 2s infinite;
     }
-    .vision-hero__scroll span {
+    .partners-hero__scroll span {
       font-size: 0.75rem;
       color: rgba(255,255,255,0.4);
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
-    .vision-hero__scroll-line {
+    .partners-hero__scroll-line {
       width: 1px;
       height: 2.5rem;
       background: linear-gradient(to bottom, rgba(57,176,144,0.6), transparent);
     }
 
-    /* ---- Vision Statement ------------------------------------- */
-    .vision-statement {
+    /* ---- Partners Section (like Core Values) ------------------- */
+    .partners-section {
       padding: 6rem 1.5rem;
-      background: #fff;
-      position: relative;
-      overflow: hidden;
+      background: linear-gradient(135deg, #f9fafb, #fff);
     }
-    .vision-statement::before {
-      content: '';
-      position: absolute;
-      top: -1px; left: 0; right: 0;
-      height: 80px;
-      background: linear-gradient(to bottom, #0a1a12, transparent);
-      pointer-events: none;
+    .partners-section__inner { max-width: 72rem; margin: 0 auto; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
     }
-    .vision-statement__inner {
-      max-width: 72rem;
+    .section-badge {
+      display: inline-block;
+      background: rgba(53,128,98,0.1);
+      color: #358062;
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      border: 1px solid rgba(53,128,98,0.2);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #111827;
+      letter-spacing: -2px;
+      margin-bottom: 1rem;
+    }
+    @media (min-width: 640px) { .section-title { font-size: 3rem; } }
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: #4b5563;
+      max-width: 40rem;
       margin: 0 auto;
+      line-height: 1.65;
+      letter-spacing: -0.3px;
     }
 
-    /* Big quote-style statement */
-    .vision-statement__quote {
-      position: relative;
-      text-align: center;
-      padding: 3rem 0;
-      margin-bottom: 5rem;
+    .partners-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
-    .vision-statement__quote-mark {
+    @media (min-width: 640px)  { .partners-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .partners-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .partner-card {
+      position: relative;
+      background: #fff;
+      border: 1px solid #f3f4f6;
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      cursor: default;
+    }
+    .partner-card:hover {
+      border-color: #358062;
+      box-shadow: 0 20px 40px -8px rgba(53,128,98,0.15);
+      transform: translateY(-4px);
+    }
+    .partner-card__accent {
       position: absolute;
-      top: -1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 12rem;
-      line-height: 1;
-      color: rgba(57,176,144,0.07);
-      font-family: Georgia, serif;
-      pointer-events: none;
-      user-select: none;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      border-radius: 1.25rem 1.25rem 0 0;
+      opacity: 0;
+      transition: opacity 0.3s;
     }
-    .vision-statement__quote p {
-      position: relative;
-      font-size: 1.5rem;
-      font-weight: 600;
+    .partner-card:hover .partner-card__accent { opacity: 1; }
+
+    .partner-card__icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 0.75rem;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s;
+      background: #f8f9fa;
+      overflow: hidden;
+    }
+    .partner-card:hover .partner-card__icon { transform: scale(1.1) rotate(5deg); }
+    .partner-card__icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 0.25rem;
+    }
+
+    .partner-card h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
       color: #111827;
-      line-height: 1.6;
-      max-width: 50rem;
-      margin: 0 auto;
-      letter-spacing: -0.5px;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.3px;
     }
+    .partner-card p {
+      font-size: 0.9rem;
+      color: #4b5563;
+      line-height: 1.7;
+    }
+
+    /* Vision quote style (unused for partners page) */
     @media (min-width: 640px) { .vision-statement__quote p { font-size: 1.875rem; } }
     .vision-statement__quote-line {
       display: block;
@@ -222,32 +280,7 @@
       margin-bottom: 5rem;
     }
     @media (min-width: 768px) { .vision-mv-grid { grid-template-columns: 1fr 1fr; } }
-
-    .vision-mv-card {
-      position: relative;
-      border-radius: 1.25rem;
-      padding: 2.5rem;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .vision-mv-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
-    }
-    .vision-mv-card--mission {
-      background: linear-gradient(135deg, #0a0e27, #1a1f3a);
-      color: #fff;
-    }
-    .vision-mv-card--vision {
-      background: linear-gradient(135deg, #358062, #1D5858);
-      color: #fff;
-    }
-
-    .vision-mv-card__deco {
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
-    }
+    
     .vision-mv-card--mission .vision-mv-card__deco {
       width: 12rem; height: 12rem;
       background: rgba(57,176,144,0.1);
@@ -726,6 +759,17 @@
     }
     body.dark-mode .vision-cta { background: linear-gradient(135deg, var(--bg-soft, #161b27), var(--bg, #0f1117)); }
 
+    /* Dark mode overrides for Partners section */
+    body.dark-mode .partners-section { background: linear-gradient(135deg, var(--bg-soft, #161b27), var(--bg, #0f1117)); }
+    body.dark-mode .section-title  { color: var(--text, #f1f5f9); }
+    body.dark-mode .section-subtitle { color: var(--text-muted, #94a3b8); }
+    body.dark-mode .partner-card {
+      background: var(--bg-card, #1a2035);
+      border-color: var(--border-soft, #1e2a3a);
+    }
+    body.dark-mode .partner-card h3 { color: var(--text, #f1f5f9); }
+    body.dark-mode .partner-card p  { color: var(--text-muted, #94a3b8); }
+
     /* Breadcrumb */
     .breadcrumb {
       position: absolute;
@@ -747,10 +791,10 @@
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* Vision hero entrance */
-    .vision-hero__eyebrow { animation: fadeUp 0.8s ease 0.1s both; }
-    .vision-hero__title   { animation: fadeUp 0.8s ease 0.25s both; }
-    .vision-hero__subtitle{ animation: fadeUp 0.8s ease 0.45s both; }
+    /* Partners hero entrance */
+    .partners-hero__eyebrow { animation: fadeUp 0.8s ease 0.1s both; }
+    .partners-hero__title   { animation: fadeUp 0.8s ease 0.25s both; }
+    .partners-hero__subtitle{ animation: fadeUp 0.8s ease 0.45s both; }
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -777,60 +821,102 @@
         </a>
       </div>
 
-      <!-- Desktop Menu -->
+           <!-- Desktop Menu -->
+
       <ul class="navbar__menu" id="desktopMenu">
+
         <li><a href="index.html">Home</a></li>
 
+
+
         <!-- About Dropdown -->
+
         <li class="navbar__dropdown">
+
           <a href="index.html#about" class="navbar__dropdown-toggle">
+
             About
+
             <svg class="navbar__dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
               <polyline points="6 9 12 15 18 9"></polyline>
+
             </svg>
+
           </a>
+
           <ul class="navbar__dropdown-menu">
+
             <li><a href="vision.html">About us</a></li>
+
             <li><a href="partner.html">Partners</a></li>
+
           </ul>
+
         </li>
+
+
 
         <!-- Programs Dropdown -->
+
         <li class="navbar__dropdown">
+
           <a href="#programs" class="navbar__dropdown-toggle">
+
             Programs
+
             <svg class="navbar__dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
               <polyline points="6 9 12 15 18 9"></polyline>
+
             </svg>
+
           </a>
+
           <ul class="navbar__dropdown-menu">
-            <li><a href="bioleague.html">BioLeague</a></li>
+
+            <li><a href="#">BioLeague</a></li>
+
             <li><a href="magazine.html">Magazine</a></li>
+
           </ul>
+
         </li>
 
+
+
         <!-- Branches Dropdown -->
+
         <li class="navbar__dropdown">
+
           <a href="#branches" class="navbar__dropdown-toggle">
+
             Branches
+
             <svg class="navbar__dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
               <polyline points="6 9 12 15 18 9"></polyline>
+
             </svg>
+
           </a>
+
           <ul class="navbar__dropdown-menu">
-            <li><a href="#molecular-biology">Molecular Biology</a></li>
-            <li><a href="#cell-biology">Cell Biology</a></li>
-            <li><a href="#genetics">Genetics</a></li>
-            <li><a href="#ecology">Ecology</a></li>
-            <li><a href="#evolutionary-biology">Evolutionary Biology</a></li>
-            <li><a href="#microbiology">Microbiology</a></li>
-            <li><a href="#botany">Botany</a></li>
-            <li><a href="#zoology">Zoology</a></li>
-            <li><a href="#marine-biology">Marine Biology</a></li>
-            <li><a href="#biochemistry">Biochemistry</a></li>
+
+            <li><a href="#anatomy-physiology">Anatomy & Physiology</a></li>
+
+            <li><a href="#genetics-evolution">Genetics & Evolution</a></li>
+
+            <li><a href="#biochemistry-cell">Biochemistry & Cell Biology</a></li>
+
+            <li><a href="#ecology-ethology">Ecology & Ethology</a></li>
+
           </ul>
+
         </li>
+
       </ul>
+
 
       <!-- Desktop Action Buttons -->
       <div class="navbar__actions">
@@ -845,10 +931,10 @@
           <svg class="navbar__btn-icon navbar__btn-icon--heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           <span>Donate</span>
         </button>
-        <button class="navbar__btn navbar__btn--contact">
+        <a href="contact.html" class="navbar__btn navbar__btn--contact">
           <svg class="navbar__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           <span>Contact</span>
-        </button>
+        </a>
       </div>
 
       <!-- Mobile Hamburger -->
@@ -925,10 +1011,10 @@
           <svg class="navbar__btn-icon navbar__btn-icon--heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           Donate
         </button>
-        <button class="navbar__btn navbar__btn--contact navbar__btn--full">
+        <a href="contact.html" class="navbar__btn navbar__btn--contact navbar__btn--full">
           <svg class="navbar__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           Contact
-        </button>
+        </a>
       </div>
     </div>
   </div>
@@ -936,31 +1022,38 @@
 <!-- ============================================================
      HERO
      ============================================================ -->
-<section class="vision-hero">
-  <div class="vision-hero__bg">
-    <div class="vision-hero__orb vision-hero__orb--1"></div>
-    <div class="vision-hero__orb vision-hero__orb--2"></div>
-    <div class="vision-hero__orb vision-hero__orb--3"></div>
+<section class="partners-hero">
+  <div class="partners-hero__bg">
+    <div class="partners-hero__orb partners-hero__orb--1"></div>
+    <div class="partners-hero__orb partners-hero__orb--2"></div>
+    <div class="partners-hero__orb partners-hero__orb--3"></div>
   </div>
-  <div class="vision-hero__grid"></div>
+  <div class="partners-hero__grid"></div>
 
-  <div class="vision-hero__content">
-    <div class="vision-hero__eyebrow">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-      Will be soon
-
+  <div class="partners-hero__content">
+    <div class="partners-hero__eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Our Partners
     </div>
-    <h1 class="vision-hero__title">
-       Our<span>Partners</span>
+    <h1 class="partners-hero__title">
+      Building<span>Together</span>
     </h1>
+    <p class="partners-hero__subtitle">
+      Discover the organizations and institutions that collaborate with us to advance biological sciences education and research.
+    </p>
+  </div>
 
+  <!-- Scroll indicator -->
+  <div class="partners-hero__scroll">
+    <span>Scroll to explore</span>
+    <div class="partners-hero__scroll-line"></div>
   </div>
 
   <!-- Breadcrumb -->
   <div class="breadcrumb">
     <a href="index.html">Home</a>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    <span>Bio Leagure</span>
+    <span>Partners</span>
   </div>
 
 
@@ -969,6 +1062,75 @@
 
 
 
+
+<!-- ============================================================
+     PARTNERS SECTION
+     ============================================================ -->
+<section class="partners-section" id="partners">
+  <div class="partners-section__inner">
+    <div class="section-header">
+      <div class="section-badge">Partners</div>
+      <h2 class="section-title">Our Partners</h2>
+      <p class="section-subtitle">We are proud to collaborate with leading organizations that empower the Biology Club through mentorship, research, and educational offerings.</p>
+    </div>
+
+    <div class="partners-grid">
+      <article class="partner-card">
+        <div class="partner-card__accent" style="background: linear-gradient(to right, #358062, #39B090);"></div>
+        <div class="partner-card__icon">
+          <img src="images/iro.jpg" alt="International Research Olympiad logo" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <h3>International Research Olympiad</h3>
+        <p>A global platform championing student research and scientific inquiry across disciplines, helping talented learners thrive.</p>
+      </article>
+
+      <article class="partner-card">
+        <div class="partner-card__accent" style="background: linear-gradient(to right, #358062, #39B090);"></div>
+        <div class="partner-card__icon">
+          <img src="images/emse.jpg" alt="Egyptian Medical Society of Echocardiology logo" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <h3>Egyptian Medical Society of Echocardiology</h3>
+        <p>A leading medical community supporting cardiovascular research, education, and clinical excellence in Egypt.</p>
+      </article>
+
+      <article class="partner-card">
+        <div class="partner-card__accent" style="background: linear-gradient(to right, #358062, #39B090);"></div>
+        <div class="partner-card__icon">
+          <img src="images/egbioclub.jpg" alt="Egyptian Biology Club logo" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <h3>Egyptian Biology Club</h3>
+        <p>A national biology network uniting students and educators in biology outreach, innovation, and competitions.</p>
+      </article>
+
+      <article class="partner-card">
+        <div class="partner-card__accent" style="background: linear-gradient(to right, #358062, #39B090);"></div>
+        <div class="partner-card__icon">
+          <img src="images/Lumiere.jpg" alt="Lumiere Education logo" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <h3>Lumiere Education</h3>
+        <p>An education leader offering dynamic learning solutions and workshops for science and medical students.</p>
+      </article>
+
+      <article class="partner-card">
+        <div class="partner-card__accent" style="background: linear-gradient(to right, #358062, #39B090);"></div>
+        <div class="partner-card__icon">
+          <img src="images/ceb.jpg" alt="Creative Egyptian Biotechnologists logo" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <h3>Creative Egyptian Biotechnologists</h3>
+        <p>A growing biotech community supporting applied science projects, research training, and networking for young scientists.</p>
+      </article>
+
+      <article class="partner-card">
+        <div class="partner-card__accent" style="background: linear-gradient(to right, #358062, #39B090);"></div>
+        <div class="partner-card__icon">
+          <img src="images/leaf.jpg" alt="Leaf Courses logo" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <h3>Leaf Courses</h3>
+        <p>Academic Partner for Bioleague Competition</p>
+      </article>
+    </div>
+  </div>
+</section>
 
 <!-- ============================================================
      CTA
@@ -986,10 +1148,10 @@
         </p>
         <div class="vision-cta__buttons">
           <button class="vision-cta__btn vision-cta__btn--primary">
-            Join the Club
+            <a href="join.html">Join the Club</a>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
-          <a href="index.html#contact" class="vision-cta__btn vision-cta__btn--secondary">
+          <a href="contact.html" class="vision-cta__btn vision-cta__btn--secondary">
             Get in Touch
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </a>
@@ -1050,21 +1212,12 @@
         </ul>
       </div>
       <div class="footer__col">
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="#">Research Guide</a></li>
-          <li><a href="#">Publications</a></li>
-          <li><a href="#">Magazine</a></li>
-          <li><a href="#">Guidelines</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#meet-our-board">Board</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="vision.html">About Us</a></li>
+          <li><a href="vision.html#meet-our-board">Board</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -1073,12 +1226,12 @@
 
     <!-- Bottom row -->
     <div class="footer__bottom">
-      <p class="footer__copyright">© 2025 Biology Club – October STEM School. &nbsp; All rights reserved to <a href="https://abdelrahman-website-sigma.vercel.app">Abdelrahman Mohamed</a></p>
+      <p class="footer__copyright">© 2026 STEM October Biology Club. &nbsp; All rights reserved</p>
       <div class="footer__socials">
-        <a href="#" class="footer__social footer__social--fb" title="Facebook">
+        <a href="https://www.facebook.com/OctBiologyClub" class="footer__social footer__social--fb" title="Facebook">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
         </a>
-        <a href="#" class="footer__social footer__social--ig" title="Instagram">
+        <a href="https://www.instagram.com/octoberbiologyclub?igsh=dzFsYTg1OHQ0dzN1" class="footer__social footer__social--ig" title="Instagram">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         </a>
         <a href="mailto:info@biologyclub.com" class="footer__social footer__social--mail" title="Email">
@@ -1088,6 +1241,7 @@
     </div>
   </div>
 </footer>
+
 
 <script src="script.js"></script>
 <script src="themeToggle.js"></script>
@@ -1105,54 +1259,6 @@
     reveals.forEach(el => observer.observe(el));
   })();
 
-  /* ============================================================
-   10. THEME TOGGLE – Dark / Light mode
-   ============================================================ */
-(function () {
-  var STORAGE_KEY = 'bio-club-theme';
-  var body = document.body;
-
-  var btn        = document.getElementById('themeToggle');
-  var btnMobile  = document.getElementById('themeToggleMobile');
-
-  // Moon SVG path (dark mode icon)
-  var moonPath = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
-  // Sun SVG path (light mode icon)
-  var sunPath  = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
-
-  function setIcons(isDark) {
-    var icon = document.getElementById('themeIcon');
-    var iconM = document.getElementById('themeIconMobile');
-    if (icon)  icon.innerHTML  = isDark ? sunPath  : moonPath;
-    if (iconM) iconM.innerHTML = isDark ? sunPath  : moonPath;
-  }
-
-  function setLabels(isDark) {
-    var label  = document.getElementById('themeLabel');
-    var labelM = document.getElementById('themeLabelMobile');
-    if (label)  label.textContent  = isDark ? 'Light' : 'Dark';
-    if (labelM) labelM.textContent = isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode';
-  }
-
-  function applyTheme(isDark) {
-    if (isDark) {
-      body.classList.add('dark-mode');
-    } else {
-      body.classList.remove('dark-mode');
-    }
-    setIcons(isDark);
-    setLabels(isDark);
-    localStorage.setItem(STORAGE_KEY, isDark ? 'dark' : 'light');
-  }
-
-  // Load saved preference
-  var saved = localStorage.getItem(STORAGE_KEY);
-  applyTheme(saved === 'dark');
-
-  // Button click handlers
-  if (btn)       btn.addEventListener('click',       function () { applyTheme(!body.classList.contains('dark-mode')); });
-  if (btnMobile) btnMobile.addEventListener('click', function () { applyTheme(!body.classList.contains('dark-mode')); });
-})();
 </script>
 </body>
 </html>
