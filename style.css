@@ -1451,13 +1451,29 @@ button {
 }
 .board__mng-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   justify-items: center;
+  justify-content: center;
 }
 @media (min-width:640px) { .board__mng-grid { grid-template-columns: repeat(2,1fr); } }
 @media (min-width:768px) { .board__mng-grid { grid-template-columns: repeat(3,1fr); } }
 @media (min-width:1024px) { .board__mng-grid { grid-template-columns: repeat(4,1fr); } }
+
+/* Board rows */
+.board__row {
+  margin-bottom: 3rem;
+}
+.board__row-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  justify-items: center;
+  justify-content: center;
+}
+@media (min-width:640px) { .board__row-grid { grid-template-columns: repeat(2,1fr); } }
+@media (min-width:768px) { .board__row-grid { grid-template-columns: repeat(3,1fr); } }
+@media (min-width:1024px) { .board__row-grid { grid-template-columns: repeat(4,1fr); } }
 
 .board-avatar {
   position: relative;
